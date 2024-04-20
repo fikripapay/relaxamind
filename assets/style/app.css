@@ -1,0 +1,246 @@
+:root {
+  /* Color */
+  --primary: #fcfcfc;
+  --bg: #eff9ff;
+  --text: #858796;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+  background-color: var(--primary);
+}
+
+p {
+  color: var(--text);
+}
+
+/* Loader */
+#preloader {
+  background: #000 url(assets/svg/preloader.gif) no-repeat center center;
+  height: 100vh;
+  width: 100%;
+  position: fixed;
+  z-index: 9999;
+}
+
+/* Navbar */
+.navbar.bg-navbar {
+  background-color: var(--primary);
+}
+
+.brand-title {
+  font-size: 1rem;
+  font-weight: 600;
+}
+
+.login {
+  background-color: #00a0e3;
+}
+
+/* Sambutan */
+.judul {
+  letter-spacing: 1px;
+  font-weight: 700;
+  font-size: 1.5em;
+}
+
+.sambutan .row p {
+  text-align: justify;
+}
+
+.sambutan img {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  object-fit: cover;
+  box-shadow: 0 0 20px #aaa;
+  cursor: pointer;
+}
+
+.sambutan h3 {
+  font-size: 1rem;
+  font-weight: 600;
+  text-align: left;
+  text-align: center;
+  margin-bottom: 1.5em;
+}
+
+/* Jurusan */
+.jurusan {
+  background-color: var(--bg);
+}
+
+.jurusan h3 {
+  font-size: 1.3em;
+}
+
+.jurusan p {
+  font-size: 0.8rem;
+}
+
+.jurusan .mm {
+  background-color: #d3fcf8;
+}
+
+.jurusan .mp {
+  background-color: #f9e8e8;
+}
+
+/* Ekskul */
+.futsal,
+.marawis,
+.paskib {
+  position: relative;
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--text);
+}
+
+.futsal {
+  background-color: #deeffa;
+}
+
+.marawis {
+  background-color: #d1f9f5;
+}
+
+.paskib {
+  background-color: #f6e2d7;
+}
+
+.futsal::before,
+.marawis::before,
+.paskib::before {
+  content: "";
+  position: absolute;
+  height: 100%;
+  width: 5px;
+  left: 0;
+}
+
+.futsal::before {
+  background-color: #4986ff;
+}
+
+.marawis::before {
+  background-color: #019688;
+}
+
+.paskib::before {
+  background-color: #ff8b4a;
+}
+
+.futsal i,
+.marawis i,
+.paskib i {
+  font-size: 2.5rem;
+  margin-right: 1rem;
+}
+
+.futsal i {
+  color: #4986ff;
+}
+
+.marawis i {
+  color: #019688;
+}
+
+.paskib i {
+  color: #ff8b4a;
+}
+
+/* Berita */
+.berita {
+  background-color: var(--bg);
+}
+
+/* Kontak */
+.kontak {
+  background-color: #00a0e3;
+  color: #fff;
+}
+
+.kontak h3 {
+  display: inline-block;
+  position: relative;
+  font-size: 1.1rem;
+  font-weight: 500;
+  margin-bottom: 2rem;
+  padding-bottom: 0.7rem;
+}
+
+.kontak h3::after {
+  content: "";
+  width: 100%;
+  height: 2px;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  background-color: #fff;
+}
+
+.kontak .followme a {
+  text-decoration: none;
+  color: #fff;
+}
+
+.kontak .followme i {
+  font-size: 1.8rem;
+  margin-right: 0.3rem;
+}
+
+.kontak .detail,
+.kontak .detail a {
+  display: flex;
+  align-items: center;
+}
+
+.kontak .detail a {
+  text-decoration: none;
+  color: #fff;
+}
+
+.kontak .detail i {
+  font-size: 1.8rem;
+  margin-right: 1rem;
+}
+
+.kontak .lokasi {
+  width: 100%;
+}
+
+.kontak iframe {
+  width: 100%;
+}
+
+/* Footer */
+.footer {
+  height: 4rem;
+  line-height: 4rem;
+  background-color: #62b8f4;
+}
+
+/* Responsive Breakpoints */
+/* Mobile */
+@media screen and (max-width: 767px) {
+  /* Navbar */
+  .brand-title {
+    font-size: 0.7em;
+  }
+
+  /* Sambutan */
+  .judul {
+    font-size: 1.5rem;
+  }
+
+  /* Kontak */
+  .kontak .followme,
+  .kontak .detail {
+    margin-bottom: 2rem;
+  }
+
+  /* Footer */
+  footer p {
+    font-size: 0.8em;
+  }
+}
