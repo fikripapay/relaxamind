@@ -1,10 +1,16 @@
 <?php
-$servername = "localhost"; // Gantilah dengan nama server database Anda
-$username = "root"; // Gantilah dengan nama pengguna database Anda
-$password = ""; // Gantilah dengan kata sandi database Anda
-$database = "smktonjong"; // Gantilah dengan nama database yang Anda gunakan
+$servername = "localhost";
+$username = "root";
+$password = "";
+$database = "smktonjong";
 
 // Membuat koneksi ke database
 $conn = new mysqli($servername, $username, $password, $database);
+
+if ($conn->connect_errno) {
+  echo "Koneksi gagal: " . $conn->connect_error;
+} else {
+  echo "Koneksi berhasil!";
+}
 
 ?>
