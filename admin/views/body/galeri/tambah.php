@@ -16,12 +16,6 @@
             </div>
             <div class="row">
                 <div class="form-group">
-                    <label for="link">Link Video:</label>
-                    <input type="text" class="form-control" id="link" name="link">
-                </div>
-            </div>
-            <div class="row">
-                <div class="form-group">
                     <label for="deskripsi">Keterangan:</label>
                     <textarea name="deskripsi" class="form-control" id="deskripsi" cols="30" rows="10"></textarea>
                 </div>

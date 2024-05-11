@@ -2,10 +2,10 @@
 class Galeri_Model
 {
 
-    public function tambahGaleri($path, $link, $deskripsi, $conn)
+    public function tambahGaleri($path, $deskripsi, $conn)
     {
-        $stmt = $conn->prepare("INSERT INTO tb_galeri (`path`, `link`, `deskripsi`) VALUES (?, ?, ?)");
-        $stmt->bind_param("sss", $path, $link, $deskripsi);
+        $stmt = $conn->prepare("INSERT INTO tb_galeri (`path`, `deskripsi`) VALUES (?, ?)");
+        $stmt->bind_param("ss", $path, $deskripsi);
 
         if ($stmt->execute()) {
             return true; // Jika berhasil memasukkan data
@@ -14,14 +14,14 @@ class Galeri_Model
         }
     }
 
-    public function hapusGaleri($id_banner, $nama_banner, $conn)
+    public function hapusGaleri($id, $namafile, $conn)
     {
 
-        unlink("../assets/img/hero/$nama_banner.png");
+        unlink("../assets/img/galeri/$namafile");
 
-        $stmt = $conn->prepare("DELETE FROM tbl_banner WHERE id_banner = ?");
-        $stmt->bind_param("i", $id_banner);
-
+        $stmt = $conn->prepare("DELETE FROM tb_galeri WHERE id = ?");
+        $stmt->bind_param("i", $id);
+        
         if ($stmt->execute()) {
             return true; // Jika berhasil menghapus data
         } else {

@@ -1,10 +1,38 @@
+<?php
+
+    include "koneksi.php";
+    if (isset($_GET['detail'])){
+        
+        $id_berita = $_GET['detail'];
+
+        $query = "SELECT * FROM tb_berita WHERE id = ?";
+        $stmt = $conn->prepare($query);
+        $stmt->bind_param ("s", $id_berita);
+        $stmt->execute();
+        $result = $stmt->get_result();
+
+        if ($result->num_rows > 0){
+            while ($row = $result->fetch_assoc()){
+                $thumbnail = $row['thumbnail'];
+                $judul = $row['judul'];
+                $waktu = $row['waktu'];
+                $berita = $row['berita'];
+            }
+        }
+
+    }
+
+    
+
+?>
+
 <!DOCTYPE html>
 <html lang="id">
 
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Berita - SMK TONJONG</title>
+    <title>SMK TONJONG</title>
     <link rel="icon" href="assets/img/icon/icon.png" />
 
     <!-- Fonts -->
@@ -26,6 +54,22 @@
 
     <!-- My CSS -->
     <link rel="stylesheet" href="assets/style/app.css" />
+
+    <style>
+      .thumbnail img {
+        width: 50%;
+      }
+
+      p {
+        text-align: justify;
+      }
+
+      @media (max-width: 768px) {
+        .thumbnail img {
+          width: 100%;
+        }
+      }
+    </style>
 </head>
 
 <body>
@@ -34,8 +78,8 @@
     <!-- Start Navbar -->
     <nav class="navbar navbar-expand-lg sticky-top bg-navbar border-bottom">
         <div class="container">
-            <a class="navbar-brand d-flex align-items-center" href="index.php" data-aos="fade-down"
-                data-aos-once="true" data-aos-duration="1000">
+            <a class="navbar-brand d-flex align-items-center" href="index.php" data-aos="fade-down" data-aos-once="true"
+                data-aos-duration="1000">
                 <img src="assets/img/icon/navbar.png" alt="logo smk tonjong" height="65"
                     class="d-inline-block align-text-center me-2" />
                 <div class="brand-title">
@@ -51,7 +95,7 @@
             <div class="collapse navbar-collapse justify-content-end" id="navbarNavAltMarkup" data-aos="fade-right"
                 data-aos-once="true" data-aos-duration="1000">
                 <div class="navbar-nav">
-                <a class="nav-link active" href="index.php">Home</a>
+                    <a class="nav-link active" href="index.php">Home</a>
                     <a class="nav-link" href="profile.php">Profile</a>
                     <a class="nav-link" href="galeri.php">Galeri</a>
                     <a class="nav-link" href="berita.php">Berita</a>
@@ -63,44 +107,35 @@
     </nav>
     <!-- End Navbar -->
 
-    <!-- Start Berita Section -->
-    <section id="berita" class="berita py-5">
-        <div class="container">
-            <h2 class="judul text-center" data-aos="fade-up" data-aos-duration="1000">BERITA</h2>
-            <div class="row mt-4 gap-3 justify-content-center" data-aos="fade-up" data-aos-duration="1000"
-                data-aos-easing="ease-in-sine" data-aos-delay="500">
-                <!-- BERITA -->
-                <?php
-        include "koneksi.php";
-        $sql = "SELECT * FROM tb_berita";
-        // Eksekusi query
-        $result = $conn->query($sql);
-        // Loop melalui hasil query dan tampilkan dalam tabel
-        if ($result->num_rows > 0) {
-          while ($row = $result->fetch_assoc()) {
-        ?>
-                <div class="col-md-5 col-lg-3" data-aos="fade-up" data-aos-duration="1000">
-                    <div class="card">
-                        <img src="assets/img/berita/<?php echo $row['judul'] ?>.png" class="card-img-top"
-                            alt="<?php echo $row['judul'] ?>" width="200" height="150"/>
-                        <div class="card-body">
-                            <h5 class="card-title fs-6">
-                                <?php echo $row['judul'] ?>
-                            </h5>
-                            <p class="card-text"><?php echo $row['waktu'] ?></p>
-                            <a href="detail-berita.php?detail=<?php echo $row['id'] ?>" class="btn btn-primary">Selengkapnya</a>
-                        </div>
-                    </div>
-                </div>
-                <?php
-          }
-        }
-        ?>
-                <!-- END BERITA -->
-            </div>
+    <!-- Start Main -->
+    <main>
+      <div class="container py-5 text-center">
+        <h2 style="color: #21409a;"><?php echo $judul ?></h2>
+        <p><?php echo $waktu ?></p>
+        <div class="thumbnail">
+          <img src="assets/img/berita/<?php echo basename($thumbnail); ?>" alt="Picture" class="img-fluid">
         </div>
-    </section>
-    <!-- End Berita Section -->
+        <div class="content text-start mt-5">
+
+
+          <?php
+          // Misalkan $prestasi_siswa adalah teks yang berisi prestasi yang didapatkan oleh siswa dari database
+          $prestasi_siswa = $berita;
+
+          // Memisahkan teks menjadi array berdasarkan tanda titik
+          $prestasi_siswa_array = explode("...", $prestasi_siswa);
+
+          // Menampilkan setiap elemen array dalam tag <p>
+          foreach ($prestasi_siswa_array as $prestasi) {
+              echo "<p>$prestasi.</p>";
+          }
+          ?>
+
+          
+        </div>
+      </div>
+    </main>
+    <!-- End Main -->
 
     <!-- Start Kontak Section -->
     <section id="kontak" class="kontak">
@@ -148,7 +183,9 @@
 
     <!-- Start Footer -->
     <footer class="footer text-center">
-        <p class="text-white">Copyright &copy; 2024 SMK Tonjong. All Rights Reserved.</p>
+        <p class="text-white">
+            Copyright &copy; 2024 SMK Tonjong. All Rights Reserved.
+        </p>
     </footer>
     <!-- End Footer -->
 
@@ -163,6 +200,9 @@
     <script>
     AOS.init();
     </script>
+
+    <!-- My Script -->
+    <script src="assets/script/app.js"></script>
 </body>
 
 </html>

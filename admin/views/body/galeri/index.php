@@ -63,8 +63,8 @@ if (isset($_GET['insert'])) {
                             echo "<td>" . $row["deskripsi"] . "</td>";
                             echo "<td>";
                             ?>
-                            <a href='index.php?page=edit_galeri&id=<?php echo $row["id"] ?>' class='btn btn-primary' style='margin-left: 5px'>
-                                <span class='text'>Ubah</span>
+                            <a href='index.php?page=galeri&hapus=<?php echo $row["id"] ?>&nama=<?php echo basename($row['path']) ?>' class='btn btn-danger' style='margin-left: 5px;' onclick="return confirm('Apakah Anda yakin ingin menghapus data ini?')">
+                                <span class='text'>Hapus</span>
                             </a>
                     <?php
 

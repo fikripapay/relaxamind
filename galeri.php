@@ -22,15 +22,10 @@
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
 
     <!-- Font Awesome -->
-    <link rel="stylesheet" href="fontawesome/css/all.min.css" />
+    <link rel="stylesheet" href="assets/fontawesome/css/all.min.css" />
 
     <!-- My CSS -->
     <link rel="stylesheet" href="assets/style/app.css" />
-    <style>
-    main {
-        background-color: #eff9ff;
-    }
-    </style>
 </head>
 
 <body>
@@ -39,7 +34,7 @@
     <!-- Start Navbar -->
     <nav class="navbar navbar-expand-lg sticky-top bg-navbar border-bottom">
         <div class="container">
-            <a class="navbar-brand d-flex align-items-center" href="index.html" data-aos="fade-down"
+            <a class="navbar-brand d-flex align-items-center" href="index.php" data-aos="fade-down"
                 data-aos-once="true" data-aos-duration="1000">
                 <img src="assets/img/icon/navbar.png" alt="logo smk tonjong" height="65"
                     class="d-inline-block align-text-center me-2" />
@@ -56,25 +51,12 @@
             <div class="collapse navbar-collapse justify-content-end" id="navbarNavAltMarkup" data-aos="fade-right"
                 data-aos-once="true" data-aos-duration="1000">
                 <div class="navbar-nav">
-                    <a class="nav-link active" href="index.html">Home</a>
-                    <a class="nav-link" href="../profile.html">Profile</a>
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
-                            aria-expanded="false">
-                            Galeri
-                        </a>
-                        <ul class="dropdown-menu">
-                            <li>
-                                <a class="dropdown-item" href="foto.html">Foto</a>
-                            </li>
-                            <li>
-                                <a class="dropdown-item" href="video.html">Video</a>
-                            </li>
-                        </ul>
-                    </li>
-                    <a class="nav-link" href="../berita.html">Berita</a>
+                <a class="nav-link active" href="index.php">Home</a>
+                    <a class="nav-link" href="profile.php">Profile</a>
+                    <a class="nav-link" href="galeri.php">Galeri</a>
+                    <a class="nav-link" href="berita.php">Berita</a>
                     <a class="nav-link" href="#kontak">Kontak</a>
-                    <a class="nav-link ms-lg-3 mt-3 mt-lg-0 text-center rounded login" href="login.html">Login</a>
+                    <a class="nav-link ms-lg-3 mt-3 mt-lg-0 text-center rounded login" href="admin/">Login</a>
                 </div>
             </div>
         </div>
@@ -89,13 +71,31 @@
                     GALERI KEGIATAN
                 </h2>
                 <div class="row row-cols-lg-6 row-cols-md-4 row-cols-2 row-gap-3 justify-content-center mt-4">
-                    <div class="col" data-aos="fade-up" data-aos-duration="1000">
-                        <a href="https://unsplash.it/1200/768.jpg?image=251" data-toggle="lightbox"
-                            data-gallery="gallery" data-caption="Kegiatan 1"><img
-                                src="https://unsplash.it/600.jpg?image=251" alt="Picture"
-                                class="img-fluid rounded" /></a>
-                        <span>Kegiatan 1</span>
-                    </div>
+                
+                <?php
+                
+                 include "koneksi.php";
+                    $sql = "SELECT * FROM tb_galeri";
+                    // Eksekusi query
+                    $result = $conn->query($sql);
+                    // Loop melalui hasil query dan tampilkan dalam tabel
+                    if ($result->num_rows > 0) {
+                    
+                    while ($row = $result->fetch_assoc()) {
+                    ?>
+                            
+                        <div class="col" data-aos="fade-up" data-aos-duration="1000">
+                            <a href="assets/img/galeri/<?php echo basename($row['path']); ?>" data-toggle="lightbox"
+                                data-gallery="gallery" data-caption="<?php echo $row['deskripsi'] ?>"><img
+                                    src="assets/img/galeri/<?php echo basename($row['path']); ?>" alt="Picture"
+                                    class="img-fluid rounded" /></a>
+                            <span><?php echo $row['deskripsi'] ?></span>
+                        </div>
+                            <?php
+                    }
+                    }
+                ?>
+                
                 </div>
             </div>
         </div>

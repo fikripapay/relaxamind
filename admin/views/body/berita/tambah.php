@@ -17,6 +17,12 @@
             <div class="row">
                 <div class="form-group">
                     <label for="berita">Isi Berita:</label>
+                    <div class="alert alert-warning" role="alert">
+                    Gunakan titik 3 "..." pada penulisan untuk membuat paragraf baru!
+                    <p>Paragraf 1</p>
+                    <p>...</p>
+                    <p>Paragraf 2</p>
+                    </div>
                     <textarea name="berita" id="berita" class="form-control" cols="30" rows="10"></textarea>
                 </div>
             </div>

@@ -228,7 +228,7 @@
                 <!-- BERITA -->
 
                 <?php
-        $sql = "SELECT * FROM tb_berita ORDER BY id DESC LIMIT 4";
+        $sql = "SELECT * FROM tb_berita ORDER BY id DESC LIMIT 6";
         // Eksekusi query
         $result = $conn->query($sql);
         // Loop melalui hasil query dan tampilkan dalam tabel
@@ -237,14 +237,13 @@
         ?>
                 <div class="col-md-5 col-lg-3" data-aos="fade-up" data-aos-duration="1000">
                     <div class="card">
-                        <img src="assets/img/berita/<?php echo $row['judul'] ?>.png" class="card-img-top"
-                            alt="<?php echo $row['judul'] ?>" />
+                        <img src="assets/img/berita/<?php echo $row['judul'] ?>.png" class="card-img-top" alt="<?php echo $row['judul'] ?>" width="200" height="150"/>
                         <div class="card-body">
                             <h5 class="card-title fs-6">
                                 <?php echo $row['judul'] ?>
                             </h5>
                             <p class="card-text"><?php echo $row['waktu'] ?></p>
-                            <a href="#" class="btn btn-primary">Selengkapnya</a>
+                            <a href="detail-berita.php?detail=<?php echo $row['id'] ?>" class="btn btn-primary">Selengkapnya</a>
                         </div>
                     </div>
                 </div>
@@ -253,7 +252,7 @@
         }
         ?>
 
-                <a class="text-center" href="pages/berita.html" data-aos="fade-up" data-aos-duration="1000">Lihat Berita
+                <a class="text-center" href="berita.php" data-aos="fade-up" data-aos-duration="1000">Lihat Berita
                     Lainya</a>
             </div>
         </div>

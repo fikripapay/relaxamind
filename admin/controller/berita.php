@@ -46,6 +46,6 @@ if ($_SERVER["REQUEST_METHOD"] == "GET" && isset($_GET['hapus'])) {
         header("Location: index.php?page=berita&delete");
         exit();
     } else {
-        echo "<script>alert('Gagal menghapus karena data masih dibutuhkan');</script>";
+        echo "<script>alert('Gagal menghapus');</script>";
     }
 }

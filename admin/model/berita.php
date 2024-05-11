@@ -17,9 +17,9 @@ class Berita_Model
     public function hapusBerita($id_berita, $nama_berita, $conn)
     {
 
-        unlink("../assets/img/hero/$nama_berita.png");
+        unlink("../assets/img/hero/$nama_berita");
 
-        $stmt = $conn->prepare("DELETE FROM tb_berita WHERE id_berita = ?");
+        $stmt = $conn->prepare("DELETE FROM tb_berita WHERE id = ?");
         $stmt->bind_param("i", $id_berita);
 
         if ($stmt->execute()) {

@@ -70,12 +70,8 @@ if (isset($_GET['insert'])) {
                             echo "<td>" . $row["waktu"] . "</td>";
                             echo "<td>";
                             ?>
-                    <a href='index.php?page=edit-berita&id=<?php echo $row["id"] ?>' class='btn btn-primary'
-                        style='margin-left: 5px'>
-                        <span class='text'>Edit</span>
-                    </a>
-                    <a href='index.php?page=edit-berita&id=<?php echo $row["id"] ?>' class='btn btn-danger'
-                        style='margin-left: 5px'>
+                    <a href='index.php?page=berita&hapus=<?php echo $row["id"] ?>&nama=<?php echo basename($row['thumbnail']) ?>' class='btn btn-danger'
+                        style='margin-left: 5px' onclick="return confirm('Apakah Anda yakin ingin menghapus data ini?')">
                         <span class='text'>Hapus</span>
                     </a>
                     <?php

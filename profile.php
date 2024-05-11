@@ -19,7 +19,7 @@
   <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
 
   <!-- Font Awesome -->
-  <link rel="stylesheet" href="fontawesome/css/all.min.css" />
+  <link rel="stylesheet" href="assets/fontawesome/css/all.min.css" />
 
   <!-- My CSS -->
   <link rel="stylesheet" href="assets/style/app.css" />
@@ -44,39 +44,34 @@
 
   <!-- Start Navbar -->
   <nav class="navbar navbar-expand-lg sticky-top bg-navbar border-bottom">
-    <div class="container">
-      <a class="navbar-brand d-flex align-items-center" href="index.html" data-aos="fade-down" data-aos-once="true" data-aos-duration="1000">
-        <img src="assets/img/icon/navbar.png" alt="logo smk tonjong" height="65" class="d-inline-block align-text-center me-2" />
-        <div class="brand-title">
-          <span>YAYASAN DHARMA BHAKTI<br />
-            SMK TONJONG</span>
+        <div class="container">
+            <a class="navbar-brand d-flex align-items-center" href="index.php" data-aos="fade-down" data-aos-once="true"
+                data-aos-duration="1000">
+                <img src="assets/img/icon/navbar.png" alt="logo smk tonjong" height="65"
+                    class="d-inline-block align-text-center me-2" />
+                <div class="brand-title">
+                    <span>YAYASAN DHARMA BHAKTI<br />
+                        SMK TONJONG</span>
+                </div>
+            </a>
+            <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false"
+                aria-label="Toggle navigation" data-aos="fade-right" data-aos-once="true" data-aos-duration="1000">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse justify-content-end" id="navbarNavAltMarkup" data-aos="fade-right"
+                data-aos-once="true" data-aos-duration="1000">
+                <div class="navbar-nav">
+                    <a class="nav-link active" href="index.php">Home</a>
+                    <a class="nav-link" href="profile.php">Profile</a>
+                    <a class="nav-link" href="galeri.php">Galeri</a>
+                    <a class="nav-link" href="berita.php">Berita</a>
+                    <a class="nav-link" href="#kontak">Kontak</a>
+                    <a class="nav-link ms-lg-3 mt-3 mt-lg-0 text-center rounded login" href="admin/">Login</a>
+                </div>
+            </div>
         </div>
-      </a>
-      <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation" data-aos="fade-right" data-aos-once="true" data-aos-duration="1000">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse justify-content-end" id="navbarNavAltMarkup" data-aos="fade-right" data-aos-once="true" data-aos-duration="1000">
-        <div class="navbar-nav">
-          <a class="nav-link active" href="index.php">Home</a>
-          <a class="nav-link" href="profile.php">Profile</a>
-          <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false"> Galeri </a>
-            <ul class="dropdown-menu">
-              <li>
-                <a class="dropdown-item" href="galeri/foto.php">Foto</a>
-              </li>
-              <li>
-                <a class="dropdown-item" href="galeri/video.php">Video</a>
-              </li>
-            </ul>
-          </li>
-          <a class="nav-link" href="berita.php">Berita</a>
-          <a class="nav-link" href="#kontak">Kontak</a>
-          <a class="nav-link ms-lg-3 mt-3 mt-lg-0 text-center rounded login" href="admin/">Login</a>
-        </div>
-      </div>
-    </div>
-  </nav>
+    </nav>
   <!-- End Navbar -->
 
   <!-- Start Main Section -->
@@ -127,7 +122,7 @@
       <div class="row py-5 justify-content-sm-between">
         <div class="col-md-2">
           <h3>Ikuti Kami</h3>
-          <div class="followme">
+          <div class="followme">  
             <a href="https://instagram.com/" target="_blank"><i class="fa-brands fa-square-instagram"></i></a>
             <a href="https://tiktok.com/" target="_blank"><i class="fa-brands fa-tiktok"></i></a>
             <a href="https://youtube.com/" target="_blank"><i class="fa-brands fa-square-youtube"></i></a>

@@ -7,7 +7,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     // Memanggil fungsi tambah galeri jika tombol tambah di tekan
     if (isset($_POST['tambah'])) {
         $deskripsi = $_POST['deskripsi'];
-        $link = $_POST['link'];
 
         // Lakukan query ke database untuk memeriksa apakah nama galeri sudah ada
         $query_cek = "SELECT COUNT(*) AS jumlah FROM tb_galeri WHERE deskripsi = '$deskripsi'";
@@ -23,7 +22,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             $lokasi_galeri = $_FILES['galeri']['tmp_name'];
             $path = "../assets/img/galeri/$deskripsi.png";
             if (move_uploaded_file($lokasi_galeri, $path)) {
-                if ($controller->tambahGaleri($path, $link, $deskripsi, $conn)) {
+                if ($controller->tambahGaleri($path, $deskripsi, $conn)) {
                     header("Location: index.php?page=galeri&insert");
                     exit();
                 }
@@ -37,12 +36,12 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 if ($_SERVER["REQUEST_METHOD"] == "GET" && isset($_GET['hapus'])) {
     $controller = new Galeri_Model();
 
-    // Mendapatkan id_galeri yang akan dihapus
-    $id_galeri = $_GET['hapus'];
-    $nama_galeri = $_GET['nama'];
+    // Mendapatkan id_banner yang akan dihapus
+    $id = $_GET['hapus'];
+    $namafile = $_GET['nama'];
 
-    // Memanggil fungsi hapus galeri
-    if ($controller->hapusGaleri($id_galeri, $nama_galeri, $conn)) {
+    // Memanggil fungsi hapus banner
+    if ($controller->hapusGaleri($id, $namafile, $conn)) {
         header("Location: index.php?page=galeri&delete");
         exit();
     } else {
