@@ -72,7 +72,7 @@ $username=strtoupper($_SESSION['username']);
             ?>
             <!-- Heading -->
             <div class="sidebar-heading">
-                MENUz
+                MENU
             </div>
 
             <!-- Nav Item - Dashboard -->
@@ -87,6 +87,17 @@ $username=strtoupper($_SESSION['username']);
                 <a class="nav-link" href="index.php?page=sambutan">
                 <i class="fa-solid fa-door-open"></i>
                     <span>Sambutan</span></a>
+            </li>
+
+            <li class="nav-item">
+                <a class="nav-link" href="index.php?page=berita">
+                <i class="fa-solid fa-newspaper"></i>
+                    <span>Berita</span></a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="index.php?page=galeri">
+                <i class="fa-solid fa-photo-film"></i>
+                    <span>Galeri</span></a>
             </li>
 
 

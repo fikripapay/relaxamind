@@ -1,13 +1,28 @@
 <?php
 session_start();
 
+include "config/database.php";
+
+
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
   if (isset($_POST['submit'])) {
     $username = $_POST["username"];
-    $password = $_POST["password"];
-    
+    $password = md5($_POST["password"]);
+
+    $sql = "SELECT * FROM tbl_user";
+    // Eksekusi query
+    $result = $conn->query($sql);
+    // Loop melalui hasil query dan tampilkan dalam tabel
+    if ($result->num_rows > 0) {
+        while ($row = $result->fetch_assoc()) {
+            $userdatabase = $row ['username'];
+            $passdatabase = $row ['password'];
+        }
+    }
+
+
     // Cek apakah username dan password sesuai dengan yang diinginkan
-    if ($username === "admin" && $password === "admin") {
+    if ($username === $userdatabase && $password === $passdatabase) {
         // Set session
         $_SESSION["username"] = $username;
         

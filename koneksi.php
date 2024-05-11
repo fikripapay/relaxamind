@@ -6,11 +6,3 @@ $database = "smktonjong";
 
 // Membuat koneksi ke database
 $conn = new mysqli($servername, $username, $password, $database);
-
-if ($conn->connect_errno) {
-  echo "Koneksi gagal: " . $conn->connect_error;
-} else {
-  echo "Koneksi berhasil!";
-}
-
-?>
