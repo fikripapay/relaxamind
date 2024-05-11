@@ -60,10 +60,6 @@
         width: 50%;
       }
 
-      p {
-        text-align: justify;
-      }
-
       @media (max-width: 768px) {
         .thumbnail img {
           width: 100%;
@@ -111,7 +107,21 @@
     <main>
       <div class="container py-5 text-center">
         <h2 style="color: #21409a;"><?php echo $judul ?></h2>
-        <p><?php echo $waktu ?></p>
+        
+        <?php 
+        
+        // Ubah format waktu menjadi format timestamp
+        $timestamp = strtotime($waktu);
+
+        // Atur zona waktu menjadi Waktu Indonesia Barat (WIB)
+        date_default_timezone_set('Asia/Jakarta');
+
+        // Format waktu sesuai dengan format yang diinginkan
+        $waktu_indonesia = date('l, d F Y H:i:s', $timestamp);
+        
+        echo '<p>' . $waktu_indonesia . '</p>';
+
+        ?>
         <div class="thumbnail">
           <img src="assets/img/berita/<?php echo basename($thumbnail); ?>" alt="Picture" class="img-fluid">
         </div>
@@ -127,7 +137,7 @@
 
           // Menampilkan setiap elemen array dalam tag <p>
           foreach ($prestasi_siswa_array as $prestasi) {
-              echo "<p>$prestasi.</p>";
+              echo '<p style="text-align: justify;">$prestasi.</p>';
           }
           ?>
 
