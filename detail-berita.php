@@ -137,7 +137,7 @@
 
           // Menampilkan setiap elemen array dalam tag <p>
           foreach ($prestasi_siswa_array as $prestasi) {
-              echo '<p style="text-align: justify;">$prestasi.</p>';
+              echo "<p style='text-align: justify;'>$prestasi.</p>";
           }
           ?>
 
