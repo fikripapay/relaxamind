@@ -26,6 +26,18 @@
 
     <!-- My CSS -->
     <link rel="stylesheet" href="assets/style/app.css" />
+
+    <style>
+        .thumbnail {
+            height: 150px;
+        }
+
+        @media (max-width: 768px) {
+            .thumbnail {
+                height: 100px;
+            }
+        }
+    </style>
 </head>
 
 <body>
@@ -88,8 +100,8 @@
                             <a href="assets/img/galeri/<?php echo basename($row['path']); ?>" data-toggle="lightbox"
                                 data-gallery="gallery" data-caption="<?php echo $row['deskripsi'] ?>"><img
                                     src="assets/img/galeri/<?php echo basename($row['path']); ?>" alt="Picture"
-                                    class="img-fluid rounded" /></a>
-                            <span><?php echo $row['deskripsi'] ?></span>
+                                    class="img-fluid rounded thumbnail"/></a>
+                            <p><?php echo $row['deskripsi'] ?></p>
                         </div>
                             <?php
                     }

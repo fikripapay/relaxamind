@@ -11,7 +11,7 @@
     
             $nama_file = $_FILES['foto_kepsek']['name'];
             $lokasi_file = $_FILES['foto_kepsek']['tmp_name'];
-            $tujuan_file = "../assets/img/$nama_kepsek.png";
+            $tujuan_file = "../assets/img/sambutan/$nama_kepsek.png";
     
             if (move_uploaded_file($lokasi_file, $tujuan_file)) {
                 if ($controller->updateSambutan($tujuan_file, $nama_kepsek, $sambutan, $id_sambutan, $conn)) {
