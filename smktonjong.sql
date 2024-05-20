@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: May 12, 2024 at 06:32 AM
+-- Generation Time: May 20, 2024 at 05:08 AM
 -- Server version: 10.4.28-MariaDB
 -- PHP Version: 8.2.4
 
@@ -42,7 +42,8 @@ INSERT INTO `tbl_banner` (`id_banner`, `nama`, `path`) VALUES
 (20, 'Banner 2', '../assets/img/hero/Banner 2.png'),
 (21, 'Banner 3', '../assets/img/hero/Banner 3.png'),
 (22, 'Banner 4', '../assets/img/hero/Banner 4.png'),
-(23, 'Banner 5', '../assets/img/hero/Banner 5.png');
+(23, 'Banner 5', '../assets/img/hero/Banner 5.png'),
+(25, 'tes', '../assets/img/hero/tes.png');
 
 -- --------------------------------------------------------
 
@@ -62,7 +63,7 @@ CREATE TABLE `tbl_sambutan` (
 --
 
 INSERT INTO `tbl_sambutan` (`id_sambutan`, `foto_kepsek`, `nama_kepsek`, `sambutan`) VALUES
-(1, '../assets/img/sambutan/Herdi Supardi, S.E, M.Pd..png', 'Herdi Supardi, S.E, M.Pd.', 'Dengan penuh rasa syukur dan puji kepada Allah SWT, kami dengan bangga mempersembahkan laman resmi SMK Tonjong. Laman ini dibangun dengan tujuan menjadi jembatan informasi bagi para siswa, guru, dan masyarakat yang membutuhkan informasi terkait dengan kegiatan dan berita terbaru dari SMK Tonjong. Kami telah berupaya untuk meningkatkan kualitas tampilan dan tata letak laman ini agar lebih mudah diakses oleh pengguna yang mencari informasi tentang berita sekolah, prestasi siswa, video kegiatan, pendaftaran siswa baru, dan informasi akademik lainnya. Kami mengucapkan terima kasih kepada semua pihak yang telah memberikan kontribusi dan bantuan dalam pembuatan laman ini sehingga dapat disajikan kepada Anda. Terima kasih banyak atas dukungan dan partisipasinya.');
+(1, '../assets/img/Herdi Supardi, S.E, M.Pd..png', 'Herdi Supardi, S.E, M.Pd.', 'Dengan penuh rasa syukur dan puji kepada Allah SWT, kami dengan bangga mempersembahkan laman resmi SMK Tonjong. Laman ini dibangun dengan tujuan menjadi jembatan informasi bagi para siswa, guru, dan masyarakat yang membutuhkan informasi terkait dengan kegiatan dan berita terbaru dari SMK Tonjong. Kami telah berupaya untuk meningkatkan kualitas tampilan dan tata letak laman ini agar lebih mudah diakses oleh pengguna yang mencari informasi tentang berita sekolah, prestasi siswa, video kegiatan, pendaftaran siswa baru, dan informasi akademik lainnya. Kami mengucapkan terima kasih kepada semua pihak yang telah memberikan kontribusi dan bantuan dalam pembuatan laman ini sehingga dapat disajikan kepada Anda. Terima kasih banyak atas dukungan dan partisipasinya.');
 
 -- --------------------------------------------------------
 
@@ -101,10 +102,7 @@ CREATE TABLE `tb_berita` (
 --
 
 INSERT INTO `tb_berita` (`id`, `thumbnail`, `judul`, `berita`, `waktu`) VALUES
-(4, '../assets/img/berita/coba.png', 'coba', 'coba aja', '2024-05-11 14:37:42'),
-(5, '../assets/img/berita/tes2.png', 'tes2', 'testes', '2024-05-11 14:38:19'),
-(6, '../assets/img/berita/testes.png', 'testes', 'testes', '2024-05-11 14:40:22'),
-(9, '../assets/img/berita/Viral Bocah SD di Jambi Setinggi 2 Meter, Sering Gonta-ganti Seragam.png', 'Viral Bocah SD di Jambi Setinggi 2 Meter, Sering Gonta-ganti Seragam', 'Berbagai macam informasi terkait sekolah, siswa, guru, dan wali murid dapat ditampilkan dan diumumkan dengan mudah melalui website sekolah.Informasi sekolah seperti sejarah, visi misi, pengurus, lambang, dan masih banyak lagi. |\n\nSelain informasi sekolah, melalui website juga dapat membagikan informasi untuk siswa, guru, dan wali murid.\n\nMisalnya informasi kalender pendidikan untuk siswa, informasi yang berkaitan dengan guru, hingga informasi perkembangan sekolah yang ditujukan untuk wali murid.\n...\nDengan memberikan informasi apa saja melalui website sekolah, informasi dapat disebarluaskan dengan mudah, cepat, dan efektif.\n\nWebsite sekolah juga bisa dimanfaatkan sebagai media promosi demi ksejahteraan sekolah.\n\nBiasanya promosi yang ditampilkan pada website sekolah berupa prestasi sekolah itu sendiri dan prestasi yang didapatkan oleh murid.\n\nPrestasi sekolah misalnya mendapatkan penghargaan Sekolah Adiwiyata, Sekolah Rujukan, dan sebagainya.\n\nSedangkan prestasi yang didapatkan oleh murid seperti kejuaraan baik tingkat nasional hingga internasional dan juga dapat menampilkan peringkat paralel di setiap kelas.', '2024-05-11 16:04:50');
+(4, '../assets/img/berita/coba.png', 'coba', 'coba aja', '2024-05-11 14:37:42');
 
 -- --------------------------------------------------------
 
@@ -123,10 +121,11 @@ CREATE TABLE `tb_galeri` (
 --
 
 INSERT INTO `tb_galeri` (`id`, `path`, `deskripsi`) VALUES
-(2, '../assets/img/galeri/asdawdas.png', 'asdawdas'),
-(3, '../assets/img/galeri/asd.png', 'asd'),
-(6, '../assets/img/galeri/tes.png', 'tes'),
-(7, '../assets/img/galeri/testes.png', 'testes');
+(6, '../assets/img/galeri/Lomba Pencak Silat.png', 'Lomba Pencak Silat'),
+(7, '../assets/img/galeri/Turnamen Futsal.png', 'Turnamen Futsal'),
+(8, '../assets/img/galeri/Lomba Hadroh.png', 'Lomba Hadroh'),
+(9, '../assets/img/galeri/Lomba Paskibra.png', 'Lomba Paskibra'),
+(11, '../assets/img/galeri/Penampilan Ekstrakurikuler Tari.png', 'Penampilan Ekstrakurikuler Tari');
 
 --
 -- Indexes for dumped tables
@@ -164,7 +163,7 @@ ALTER TABLE `tb_galeri`
 -- AUTO_INCREMENT for table `tbl_banner`
 --
 ALTER TABLE `tbl_banner`
-  MODIFY `id_banner` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=25;
+  MODIFY `id_banner` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=26;
 
 --
 -- AUTO_INCREMENT for table `tbl_sambutan`
@@ -182,7 +181,7 @@ ALTER TABLE `tb_berita`
 -- AUTO_INCREMENT for table `tb_galeri`
 --
 ALTER TABLE `tb_galeri`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

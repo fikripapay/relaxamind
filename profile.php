@@ -123,9 +123,8 @@
         <div class="col-md-2">
           <h3>Ikuti Kami</h3>
           <div class="followme">  
-            <a href="https://instagram.com/" target="_blank"><i class="fa-brands fa-square-instagram"></i></a>
-            <a href="https://tiktok.com/" target="_blank"><i class="fa-brands fa-tiktok"></i></a>
-            <a href="https://youtube.com/" target="_blank"><i class="fa-brands fa-square-youtube"></i></a>
+            <a href="https://www.instagram.com/smktonjong/" target="_blank" title="Instagram SMKS Tonjong"><i class="fa-brands fa-square-instagram"></i></a>
+            <a href="https://www.youtube.com/@smkstonjong6210" target="_blank" title="Youtube SMKS Tonjong"><i class="fa-brands fa-square-youtube"></i></a>
           </div>
         </div>
         <div class="col-md-3">
