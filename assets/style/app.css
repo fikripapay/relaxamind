@@ -14,30 +14,15 @@ p {
   color: var(--text);
 }
 
-/* Loader */
-#preloader {
-  background: #000 url(assets/svg/preloader.gif) no-repeat center center;
-  height: 100vh;
-  width: 100%;
-  position: fixed;
-  z-index: 9999;
-}
-
 /* Navbar */
-.navbar.bg-navbar {
-  background-color: var(--primary);
-}
-
 .brand-title {
   font-size: 1rem;
   font-weight: 600;
-}
-
-.login {
-  background-color: #00a0e3;
+  color: var(--primary);
 }
 
 /* Sambutan */
+
 .judul {
   letter-spacing: 1px;
   font-weight: 700;

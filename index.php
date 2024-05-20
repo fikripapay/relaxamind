@@ -9,7 +9,7 @@
         content="smk tonjong, yayasan dharma bhakti, smk bogor, smk tonjong bogor, smk tonjong bojong gede" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>SMK TONJONG</title>
-    <link rel="icon" href="assets/img/icon/icon.png" />
+    <link rel="icon" href="assets/img/icon/logo.png" />
 
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -33,17 +33,16 @@
 </head>
 
 <body>
-    <!-- Preloader -->
 
     <!-- Start Navbar -->
-    <nav class="navbar navbar-expand-lg sticky-top bg-navbar border-bottom" style="background-color: #071952;">
+    <nav class="navbar navbar-dark navbar-expand-lg sticky-top border-bottom" style="background-color: #071952;">
         <div class="container">
             <a class="navbar-brand d-flex align-items-center" href="index.php" data-aos="fade-down" data-aos-once="true"
                 data-aos-duration="1000">
-                <img src="assets/img/icon/navbar.png" alt="logo smk tonjong" height="65"
+                <img src="assets/img/icon/logo.png" alt="logo smk tonjong" height="65"
                     class="d-inline-block align-text-center me-2" />
-                <div class="brand-title">
-                    <span class="text-white">YAYASAN DHARMA BHAKTI<br />
+                <div class="brand-title text-white">
+                    <span>YAYASAN DHARMA BHAKTI<br />
                         SMK TONJONG</span>
                 </div>
             </a>
@@ -55,12 +54,44 @@
             <div class="collapse navbar-collapse justify-content-end" id="navbarNavAltMarkup" data-aos="fade-right"
                 data-aos-once="true" data-aos-duration="1000">
                 <div class="navbar-nav">
-                    <a class="nav-link active text-white" href="index.php">Home</a>
-                    <a class="nav-link text-white" href="profile.php">Profile</a>
+                    <a class="nav-link active" href="index.php">Home</a>
+                    <li class="nav-item dropdown">
+                        <a
+                            class="nav-link dropdown-toggle text-white"
+                            href="#"
+                            role="button"
+                            data-bs-toggle="dropdown"
+                            aria-expanded="false"
+                        >
+                            Profile
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li>
+                            <a class="dropdown-item my-dropdown" style="color: #071952;" href="profile.php"
+                                >Profile</a
+                            >
+                            </li>
+                            <li>
+                            <a class="dropdown-item my-dropdown" style="color: #071952;" href="dkv.php"
+                                >Desain Komunikasi Visual</a
+                            >
+                            </li>
+                            <li>
+                            <a class="dropdown-item my-dropdown" style="color: #071952;" href="mplb.php"
+                                >Manajemen Perkantoran dan Layanan Bisnis</a
+                            >
+                            </li>
+                            <a class="dropdown-item my-dropdown" style="color: #071952;" href="pengajarstaff.php"
+                                >Pengajar & Staff</a
+                            >
+                            </li>
+                        </ul>
+                    </li>
                     <a class="nav-link text-white" href="galeri.php">Galeri</a>
                     <a class="nav-link text-white" href="berita.php">Berita</a>
                     <a class="nav-link text-white" href="#kontak">Kontak</a>
-                    <a class="nav-link ms-lg-3 mt-3 mt-lg-0 text-center rounded login text-white" href="admin/">Login</a>
+                    <a class="nav-link ms-lg-3 mt-3 mt-lg-0 text-center rounded text-white" href="ppdb.php" style="background-color: #28a745";>Info PPDB</a>
+                    <!-- <a class="nav-link ms-lg-3 mt-3 mt-lg-0 text-center rounded text-white" href="admin/" style="background-color: #00a0e3;">Login</a> -->
                 </div>
             </div>
         </div>
@@ -119,43 +150,24 @@
     </section>
     <!-- End Hero Section -->
 
-    <?php
-  $sqlsambutan = "SELECT * FROM tbl_sambutan";
-  // Eksekusi query
-  $resultsambutan = $conn->query($sqlsambutan);
-  // Loop melalui hasil query dan tampilkan dalam tabel
-  if ($resultsambutan->num_rows > 0) {
-    while ($rowsambutan = $resultsambutan->fetch_assoc()) {
-
-
-  ?>
-
-    <!-- Start About Section -->
-    <section class="sambutan mt-5">
-        <div class="container text-center">
-            <h2 class="judul" data-aos="fade-up" data-aos-duration="1000" data-aos-once="true">
-                SAMBUTAN KEPALA SEKOLAH
-            </h2>
-            <div class="row mt-4">
-                <div class="col-md-4 col-lg-3 text-center" data-aos="fade-up" data-aos-duration="1000"
-                    data-aos-easing="ease-in-sine" data-aos-once="true">
-                    <img src="assets/img/sambutan/<?php echo $rowsambutan["nama_kepsek"] ?>.png" alt="gambar kepsek" />
-                    <h3 class="mt-3"><?php echo $rowsambutan["nama_kepsek"] ?></h3>
-                </div>
-                <div class="col" data-aos="fade-up" data-aos-duration="1000" data-aos-easing="ease-in-sine"
-                    data-aos-once="true">
-                    <p><?php echo $rowsambutan["sambutan"] ?></p>
+    <!-- Start Intro Video -->
+    <section id="introsekolah" class="mt-5">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-12 col-lg-10">
+                    <video class="w-100 rounded" controls>
+                        <source src="assets/video/intro.mp4" type="video/mp4">
+                    </video>
                 </div>
             </div>
+            <!-- <div class="video w-100 text-center">
+                <video class="w-100 rounded" controls>
+                    <source src="assets/video/intro.mp4" type="video/mp4">
+                </video>
+            </div> -->
         </div>
     </section>
-    <!-- End About Section -->
-    <?php
-    }
-  }
-  ?>
-
-
+    <!-- End Intro Video -->
 
     <!-- Start Jurusan Section -->
     <section id="jurusan" class="jurusan mt-5 py-5">
@@ -266,28 +278,27 @@
                 <div class="col-md-2">
                     <h3>Ikuti Kami</h3>
                     <div class="followme">
-                        <a href="https://instagram.com/" target="_blank"><i
+                        <a href="https://www.instagram.com/smktonjong/" target="_blank"><i
                                 class="fa-brands fa-square-instagram"></i></a>
-                        <a href="https://tiktok.com/" target="_blank"><i class="fa-brands fa-tiktok"></i></a>
-                        <a href="https://youtube.com/" target="_blank"><i class="fa-brands fa-square-youtube"></i></a>
+                        <a href="https://www.youtube.com/@smkstonjong6210" target="_blank"><i class="fa-brands fa-square-youtube"></i></a>
                     </div>
                 </div>
                 <div class="col-md-3">
                     <h3>Hubungi Kami</h3>
                     <div class="detail">
                         <i class="fa-solid fa-phone"></i>
-                        <span>-</span>
+                        <span>(0251) 8583881</span>
                     </div>
                     <div class="detail mt-3">
-                        <a href="https://wa.me/6289660800425" target="_blank">
+                        <a href="https://wa.me/6285772226602" target="_blank">
                             <i class="fa-brands fa-whatsapp"></i>
-                            +62
+                            +62 857-7222-6602
                         </a>
                     </div>
                     <div class="detail mt-3">
-                        <a href="mailto:" target="_blank">
+                        <a href="mailto:smktonjong@gmail.com" target="_blank">
                             <i class="fa-regular fa-envelope"></i>
-                            -</a>
+                            smktonjong@gmail.com</a>
                     </div>
                 </div>
                 <div class="col-md-4">
