@@ -74,7 +74,11 @@ p {
 /* Ekskul */
 .futsal,
 .marawis,
-.paskib {
+.paskib,
+.tari,
+.silat,
+.itclub,
+.esport {
   position: relative;
   font-size: 1.5rem;
   font-weight: 700;
@@ -93,9 +97,29 @@ p {
   background-color: #f6e2d7;
 }
 
+.tari {
+  background-color: #f7bbe4;
+}
+
+.silat {
+  background-color: #f8bdb2;
+}
+
+.itclub {
+  background-color: #d8dde0;
+}
+
+.esport {
+  background-color: #f5edbe;
+}
+
 .futsal::before,
 .marawis::before,
-.paskib::before {
+.paskib::before,
+.tari::before,
+.silat::before,
+.itclub::before,
+.esport::before {
   content: "";
   position: absolute;
   height: 100%;
@@ -113,6 +137,22 @@ p {
 
 .paskib::before {
   background-color: #ff8b4a;
+}
+
+.tari::before {
+  background-color: #ff66cc;
+}
+
+.silat::before {
+  background-color: #ff6347;
+}
+
+.itclub::before {
+  background-color: #b0bec5;
+}
+
+.esport::before {
+  background-color: #ffd700;
 }
 
 .futsal i,

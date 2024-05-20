@@ -9,7 +9,7 @@
         content="smk tonjong, yayasan dharma bhakti, smk bogor, smk tonjong bogor, smk tonjong bojong gede" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>SMK TONJONG</title>
-    <link rel="icon" href="assets/img/icon/logo.png" />
+    <link rel="icon" href="assets/img/logo/logo.png" />
 
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -39,7 +39,7 @@
         <div class="container">
             <a class="navbar-brand d-flex align-items-center" href="index.php" data-aos="fade-down" data-aos-once="true"
                 data-aos-duration="1000">
-                <img src="assets/img/icon/logo.png" alt="logo smk tonjong" height="65"
+                <img src="assets/img/logo/logo.png" alt="logo smk tonjong" height="65"
                     class="d-inline-block align-text-center me-2" />
                 <div class="brand-title text-white">
                     <span>YAYASAN DHARMA BHAKTI<br />
@@ -155,16 +155,11 @@
         <div class="container">
             <div class="row justify-content-center">
                 <div class="col-12 col-lg-10">
-                    <video class="w-100 rounded" controls>
+                    <video class="w-100 rounded" controls data-aos="fade-up" data-aos-duration="1000" data-aos-easing="ease-in-sine" data-aos-delay="500">
                         <source src="assets/video/intro.mp4" type="video/mp4">
                     </video>
                 </div>
             </div>
-            <!-- <div class="video w-100 text-center">
-                <video class="w-100 rounded" controls>
-                    <source src="assets/video/intro.mp4" type="video/mp4">
-                </video>
-            </div> -->
         </div>
     </section>
     <!-- End Intro Video -->
@@ -176,26 +171,15 @@
                 JURUSAN
             </h2>
             <div class="row justify-content-center gap-3 mt-4">
-                <div class="col-11 col-md-4 rounded mm" data-aos="fade-up" data-aos-duration="1000"
+                <div class="col-11 col-md-5 rounded py-2 mm" data-aos="fade-up" data-aos-duration="1000"
                     data-aos-easing="ease-in-sine" data-aos-delay="500">
-                    <img src="assets/img/jurusan/mm.png" alt="multimedia" class="img-fluid" />
-                    <h3>Desan Komunikasi Visual</h3>
-                    <p>
-                        Jurusan ini memberikan pendidikan dan pelatihan kepada siswa
-                        mengenai konsep dan teknik desain grafis yang meliputi tipografi,
-                        ilustrasi, fotografi, animasi, dan berbagai aspek lainnya.
-                    </p>
+                    <img src="assets/img/logo/dkv.png" width="150" alt="Logo DKV" class="img-fluid" />
+                    <h3 class="mt-1">Desain Komunikasi Visual</h3>
                 </div>
-                <div class="col-11 col-md-4 rounded mp" data-aos="fade-up" data-aos-duration="1000"
+                <div class="col-11 col-md-5 rounded py-2 mp" data-aos="fade-up" data-aos-duration="1000"
                     data-aos-easing="ease-in-sine" data-aos-delay="500">
-                    <img src="assets/img/jurusan/mp.png" alt="manajemen perkantoran" class="img-fluid" />
-                    <h3>Manajemen Perkantoran dan Layanan Bisnis</h3>
-                    <p>
-                        Di jurusan ini, peserta didik akan berfokus pada bidang
-                        administrasi, teknologi informasi perkantoran, kearsipan,
-                        pengetikan naskah, penanganan telepon, kas kecil, data entry, dan
-                        berbagai kompetensi lainnya terkait administrasi perkantoran.
-                    </p>
+                    <img src="assets/img/logo/mplb.png" width="150" alt="Logo MPLB" class="img-fluid" />
+                    <h3 class="mt-1">Manajemen Perkantoran dan Layanan Bisnis</h3>
                 </div>
             </div>
         </div>
@@ -217,12 +201,32 @@
                 <div class="col-7 col-md-4 col-lg-3 d-flex justify-content-md-center align-items-center p-3 marawis"
                     data-aos="fade-up" data-aos-duration="1000" data-aos-easing="ease-in-sine" data-aos-delay="500">
                     <i class="fa-solid fa-drum me-4"></i>
-                    <span>Marawis</span>
+                    <span>Hadroh</span>
                 </div>
                 <div class="col-7 col-md-4 col-lg-3 d-flex justify-content-md-center align-items-center p-3 paskib"
                     data-aos="fade-up" data-aos-duration="1000" data-aos-easing="ease-in-sine" data-aos-delay="500">
-                    <i class="fa-solid fa-flag me-4"></i>
+                    <i class="fa-solid fa-person-military-pointing me-4"></i>
                     <span>Paskibra</span>
+                </div>
+                <div class="col-7 col-md-4 col-lg-3 d-flex justify-content-md-center align-items-center p-3 tari"
+                    data-aos="fade-up" data-aos-duration="1000" data-aos-easing="ease-in-sine" data-aos-delay="500">
+                    <i class="fa-solid fa-people-group me-4"></i>
+                    <span>Tari</span>
+                </div>
+                <div class="col-7 col-md-4 col-lg-3 d-flex justify-content-md-center align-items-center p-3 silat"
+                    data-aos="fade-up" data-aos-duration="1000" data-aos-easing="ease-in-sine" data-aos-delay="500">
+                    <i class="fa-solid fa-people-robbery me-4"></i>
+                    <span>Pencak Silat</span>
+                </div>
+                <div class="col-7 col-md-4 col-lg-3 d-flex justify-content-md-center align-items-center p-3 itclub"
+                    data-aos="fade-up" data-aos-duration="1000" data-aos-easing="ease-in-sine" data-aos-delay="500">
+                    <i class="fa-solid fa-computer me-4"></i>
+                    <span>IT Club</span>
+                </div>
+                <div class="col-7 col-md-4 col-lg-3 d-flex justify-content-md-center align-items-center p-3 esport"
+                    data-aos="fade-up" data-aos-duration="1000" data-aos-easing="ease-in-sine" data-aos-delay="500">
+                    <i class="fa-solid fa-gamepad me-4"></i>
+                    <span>E-Sport</span>
                 </div>
             </div>
         </div>
