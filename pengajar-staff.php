@@ -4,11 +4,11 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="description"
-    content="Desain Komunikasi Visual (DKV) merupakan jurusan yang membekali siswanya dengan kemampuan untuk menghasilkan karya visual yang komunikatif dan efektif. Lulusan DKV memiliki prospek kerja yang luas di berbagai industri kreatif, seperti periklanan, multimedia, desain produk, dan masih banyak lagi." />
+    content="Daftar Pengajar dan Staff di SMK Tonjong Bogor" />
     <meta name="keywords"
     content="smk tonjong, smks tonjong, smp tonjong, smp bogor, smk bogor, yayasan dharma bhakti tonjong bogor, yayasan dharma bhakti smk tonjong bogor, smk tonjong bojong gede, dkv, desain komunikasi visual, jurusan dkv, jurusan desain komunikasi visual" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Desain Komunikasi Visual - SMK TONJONG</title>
+    <title>Pengajar dan Staff - SMK TONJONG</title>
     <link rel="icon" href="assets/img/logo/logo.png" />
 
     <!-- Fonts -->
@@ -27,25 +27,6 @@
 
     <!-- My CSS -->
     <link rel="stylesheet" href="assets/style/app.css" />
-    <style>
-        .dkv p, li {
-        text-align: justify;
-        }
-
-        h2 {
-          font-weight: 500;
-          font-size: 1.5rem;
-        }
-
-        ol {
-          list-style-type: decimal;
-          list-style-position: inside;
-        }
-
-        li {
-          color: #858796;
-        }
-    </style>
 </head>
 
 <body>
@@ -117,26 +98,32 @@
     <main>
       <div class="dkv mt-5">
         <div class="container text-center">
-        <img src="assets/img/logo/dkv.png" width="150" alt="Logo DKV" class="img-fluid" data-aos="fade-up" data-aos-duration="1000"/>
-          <h1 class="judul mt-3" data-aos="fade-up" data-aos-duration="1000">DESAIN KOMUNIKASI VISUAL</h1>
+          <h1 class="judul mt-3" data-aos="fade-up" data-aos-duration="1000">PENGAJAR DAN STAFF SMK TONJONG</h1>
           <div class="row mt-3">
             <div class="col" data-aos="fade-up" data-aos-duration="1000"
                     data-aos-easing="ease-in-sine" data-aos-delay="500">
-              <p>Desain Komunikasi Visual (DKV) merupakan jurusan yang membekali siswanya dengan kemampuan untuk menghasilkan karya visual yang komunikatif dan efektif. Lulusan DKV memiliki prospek kerja yang luas di berbagai industri kreatif, seperti periklanan, multimedia, desain produk, dan masih banyak lagi.</p>
-              <p>DKV memadukan seni, desain, dan teknologi untuk menghasilkan karya yang tidak hanya indah, tetapi juga informatif dan memiliki makna.</p>
-              <p>Di era digital ini, kebutuhan akan desainer visual semakin meningkat. Hampir semua aspek kehidupan manusia membutuhkan sentuhan desain, mulai dari kemasan produk, website, hingga konten media sosial. Oleh karena itu, jurusan DKV menjadi pilihan tepat bagi para peminat desain yang ingin berkarya dan memiliki karir yang cemerlang di masa depan.</p>
-            
-
-              <h2 class="text-start">Prospek Karir Jurusan DKV:</h2>
-              <ol>
-                <li>Desainer Grafis: Lulusan dapat bekerja sebagai desainer grafis di berbagai perusahaan, baik itu perusahaan periklanan, media, penerbitan, atau perusahaan kreatif lainnya.</li>
-                <li>Desainer Web dan UI/UX: Membuat dan merancang tampilan antarmuka untuk situs web dan aplikasi, memastikan pengalaman pengguna yang optimal.</li>
-                <li>Animator dan Desainer Multimedia: Bekerja dalam produksi animasi untuk film, televisi, atau media digital lainnya.</li>
-                <li>Ilustrator: Menghasilkan ilustrasi untuk buku, majalah, iklan, dan berbagai media lainnya.</li>
-                <li>Fotografer: Menjadi fotografer profesional yang mengkhususkan diri dalam berbagai bidang seperti fashion, produk, atau event.</li>
-                <li>Pengembang Konten Visual untuk Media Sosial: Membuat konten visual yang menarik untuk berbagai platform media sosial.</li>
-              </ol>
-              <p>Dan masih banyak lagi prospek karir pada jurusan DKV selain yang disebutkan. Lulusan DKV juga bisa mengejar karir sebagai editor video, spesialis media sosial, desainer game, konsultan branding, dan banyak lagi. Dengan keterampilan yang fleksibel dan adaptif, lulusan DKV memiliki potensi untuk bekerja di berbagai industri kreatif yang terus berkembang, baik di tingkat lokal maupun global. Keberhasilan dalam jurusan ini sangat bergantung pada kreativitas, inovasi, dan kemampuan untuk terus belajar dan beradaptasi dengan teknologi dan tren desain terbaru.</p>
+              <table class="table table-bordered border-primary">
+                <thead>
+                  <tr>
+                    <th scope="col" class="bg-secondary-subtle">No.</th>
+                    <th scope="col" class="bg-secondary-subtle">Nama</th>
+                    <th scope="col" class="bg-secondary-subtle">Jenis Kelamin</th>
+                    <th scope="col" class="bg-secondary-subtle">Pendidikan</th>
+                    <th scope="col" class="bg-secondary-subtle">Pengajar/Staff</th>
+                    <th scope="col" class="bg-secondary-subtle">Deskripsi</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <th scope="row">1</th>
+                    <td>Data</td>
+                    <td>Data</td>
+                    <td>Data</td>
+                    <td>Data</td>
+                    <td>Data</td>
+                  </tr>
+                </tbody>
+              </table>
             </div>
           </div>
         </div>

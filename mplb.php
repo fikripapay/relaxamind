@@ -4,11 +4,11 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="description"
-    content="Desain Komunikasi Visual (DKV) merupakan jurusan yang membekali siswanya dengan kemampuan untuk menghasilkan karya visual yang komunikatif dan efektif. Lulusan DKV memiliki prospek kerja yang luas di berbagai industri kreatif, seperti periklanan, multimedia, desain produk, dan masih banyak lagi." />
+    content="Jurusan Manajemen Perkantoran dan Layanan Bisnis (MPLB) membekali siswa dengan keahlian yang dibutuhkan untuk bekerja di berbagai bidang administrasi dan layanan bisnis. Lulusan MPLB siap berkarya di berbagai sektor, seperti perkantoran, layanan pelanggan, bisnis, pendidikan, dan lembaga swadaya masyarakat." />
     <meta name="keywords"
-    content="smk tonjong, smks tonjong, smp tonjong, smp bogor, smk bogor, yayasan dharma bhakti tonjong bogor, yayasan dharma bhakti smk tonjong bogor, smk tonjong bojong gede, dkv, desain komunikasi visual, jurusan dkv, jurusan desain komunikasi visual" />
+    content="smk tonjong, smks tonjong, smp tonjong, smp bogor, smk bogor, yayasan dharma bhakti tonjong bogor, yayasan dharma bhakti smk tonjong bogor, smk tonjong bojong gede, mplb, mpklb, manajemen perkantoran dan layanan bisnis, jurusan mplb, jurusan mpklb, jurusan manajemen perkantoran dan layanan bisnis" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Desain Komunikasi Visual - SMK TONJONG</title>
+    <title>Manajemen Perkantoran dan Layanan Bisnis - SMK TONJONG</title>
     <link rel="icon" href="assets/img/logo/logo.png" />
 
     <!-- Fonts -->
@@ -117,26 +117,30 @@
     <main>
       <div class="dkv mt-5">
         <div class="container text-center">
-        <img src="assets/img/logo/dkv.png" width="150" alt="Logo DKV" class="img-fluid" data-aos="fade-up" data-aos-duration="1000"/>
-          <h1 class="judul mt-3" data-aos="fade-up" data-aos-duration="1000">DESAIN KOMUNIKASI VISUAL</h1>
+        <img src="assets/img/logo/mplb.png" width="150" alt="Logo DKV" class="img-fluid" data-aos="fade-up" data-aos-duration="1000"/>
+          <h1 class="judul mt-3" data-aos="fade-up" data-aos-duration="1000">MANAJEMEN PERKANTORAN DAN LAYANAN BISNIS</h1>
           <div class="row mt-3">
             <div class="col" data-aos="fade-up" data-aos-duration="1000"
                     data-aos-easing="ease-in-sine" data-aos-delay="500">
-              <p>Desain Komunikasi Visual (DKV) merupakan jurusan yang membekali siswanya dengan kemampuan untuk menghasilkan karya visual yang komunikatif dan efektif. Lulusan DKV memiliki prospek kerja yang luas di berbagai industri kreatif, seperti periklanan, multimedia, desain produk, dan masih banyak lagi.</p>
-              <p>DKV memadukan seni, desain, dan teknologi untuk menghasilkan karya yang tidak hanya indah, tetapi juga informatif dan memiliki makna.</p>
-              <p>Di era digital ini, kebutuhan akan desainer visual semakin meningkat. Hampir semua aspek kehidupan manusia membutuhkan sentuhan desain, mulai dari kemasan produk, website, hingga konten media sosial. Oleh karena itu, jurusan DKV menjadi pilihan tepat bagi para peminat desain yang ingin berkarya dan memiliki karir yang cemerlang di masa depan.</p>
+              <p>Jurusan Manajemen Perkantoran dan Layanan Bisnis (MPLB) membekali siswa dengan keahlian yang dibutuhkan untuk bekerja di berbagai bidang administrasi dan layanan bisnis. Lulusan MPLB siap berkarya di berbagai sektor, seperti perkantoran, layanan pelanggan, bisnis, pendidikan, dan lembaga swadaya masyarakat.</p>
+              <p>MPLB fokus pada pengembangan keahlian praktis seperti administrasi, komunikasi, komputer, interpersonal, dan etika bisnis. Keahlian ini sangat dibutuhkan di berbagai sektor dan menjamin prospek karir yang cerah bagi lulusannya.</p>
+              <p>Di era digital ini, kebutuhan akan tenaga profesional dengan keahlian MPLB semakin meningkat. MPLB menjadi pilihan tepat bagi para siswa yang ingin memiliki karir yang stabil dan menjanjikan di masa depan.</p>
             
 
-              <h2 class="text-start">Prospek Karir Jurusan DKV:</h2>
+              <h2 class="text-start">Prospek Karir Jurusan MPLB:</h2>
               <ol>
-                <li>Desainer Grafis: Lulusan dapat bekerja sebagai desainer grafis di berbagai perusahaan, baik itu perusahaan periklanan, media, penerbitan, atau perusahaan kreatif lainnya.</li>
-                <li>Desainer Web dan UI/UX: Membuat dan merancang tampilan antarmuka untuk situs web dan aplikasi, memastikan pengalaman pengguna yang optimal.</li>
-                <li>Animator dan Desainer Multimedia: Bekerja dalam produksi animasi untuk film, televisi, atau media digital lainnya.</li>
-                <li>Ilustrator: Menghasilkan ilustrasi untuk buku, majalah, iklan, dan berbagai media lainnya.</li>
-                <li>Fotografer: Menjadi fotografer profesional yang mengkhususkan diri dalam berbagai bidang seperti fashion, produk, atau event.</li>
-                <li>Pengembang Konten Visual untuk Media Sosial: Membuat konten visual yang menarik untuk berbagai platform media sosial.</li>
+                <li>Sekretaris/Asisten Administrasi: Bertanggung jawab atas tugas-tugas administratif, pengaturan jadwal, dan korespondensi.</li>
+                <li>Staf Administrasi: Mengelola berbagai fungsi administrasi di perusahaan, lembaga pemerintah, atau organisasi non-profit.</li>
+                <li>Resepsionis: Menyambut dan mengarahkan tamu, serta menangani panggilan telepon dan tugas-tugas front office lainnya.</li>
+                <li>Manajer Kantor: Mengawasi operasi sehari-hari di kantor, termasuk pengelolaan staf, anggaran, dan prosedur administrasi.</li>
+                <li>Petugas Arsip: Mengelola dan menjaga sistem pengarsipan dokumen dan informasi penting.</li>
+                <li>Customer Service Representative: Memberikan layanan dan dukungan kepada pelanggan, baik melalui telepon, email, atau tatap muka.</li>
+                <li>Staff HRD (Sumber Daya Manusia): Mendukung fungsi HRD seperti rekrutmen, pelatihan, dan pengelolaan data karyawan.</li>
+                <li>Pengelola Data: Mengelola dan menganalisis data untuk mendukung keputusan bisnis.</li>
+                <li>Manajer Operasional: Mengawasi operasi harian bisnis dan memastikan proses berjalan efisien.</li>
+                <li>Konsultan Administrasi: Memberikan saran dan solusi untuk meningkatkan efisiensi administrasi dan manajemen perkantoran di berbagai organisasi.</li>
               </ol>
-              <p>Dan masih banyak lagi prospek karir pada jurusan DKV selain yang disebutkan. Lulusan DKV juga bisa mengejar karir sebagai editor video, spesialis media sosial, desainer game, konsultan branding, dan banyak lagi. Dengan keterampilan yang fleksibel dan adaptif, lulusan DKV memiliki potensi untuk bekerja di berbagai industri kreatif yang terus berkembang, baik di tingkat lokal maupun global. Keberhasilan dalam jurusan ini sangat bergantung pada kreativitas, inovasi, dan kemampuan untuk terus belajar dan beradaptasi dengan teknologi dan tren desain terbaru.</p>
+              <p>Dan masih banyak lagi prospek karir pada jurusan MPLB selain yang disebutkan. Lulusan MPLB juga bisa mengejar karir sebagai koordinator proyek, analis bisnis, pengelola fasilitas, manajer layanan pelanggan, atau bahkan wirausaha di bidang layanan bisnis. Dengan keterampilan yang serbaguna dan adaptif, lulusan dari jurusan ini memiliki potensi untuk berkarir di berbagai sektor industri yang terus berkembang, baik di tingkat lokal maupun internasional. Kunci kesuksesan dalam bidang ini adalah kemampuan untuk terus belajar, beradaptasi dengan perubahan teknologi, dan mengembangkan keterampilan komunikasi serta manajemen yang kuat.</p>
             </div>
           </div>
         </div>

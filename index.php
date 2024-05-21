@@ -4,9 +4,9 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="description"
-        content="Dengan penuh rasa syukur dan puji kepada Allah SWT, kami dengan bangga mempersembahkan laman resmi SMK Tonjong. Laman ini dibangun dengan tujuan menjadi jembatan informasi bagi para siswa, guru, dan masyarakat yang membutuhkan informasi terkait dengan kegiatan dan berita terbaru dari SMK Tonjong." />
+        content="SMK Tonjong didirikan oleh Yayasan Dharma Bhakti dengan tujuan untuk berkontribusi dalam meningkatkan kualitas sumber daya manusia di Indonesia." />
     <meta name="keywords"
-        content="smk tonjong, yayasan dharma bhakti, smk bogor, smk tonjong bogor, smk tonjong bojong gede" />
+        content="smk tonjong, smks tonjong, smp tonjong, smp bogor, smk bogor, yayasan dharma bhakti tonjong bogor, yayasan dharma bhakti smk tonjong bogor, smk tonjong bojong gede" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>SMK TONJONG</title>
     <link rel="icon" href="assets/img/logo/logo.png" />
@@ -81,7 +81,7 @@
                                 >Manajemen Perkantoran dan Layanan Bisnis</a
                             >
                             </li>
-                            <a class="dropdown-item my-dropdown" style="color: #071952;" href="pengajarstaff.php"
+                            <a class="dropdown-item my-dropdown" style="color: #071952;" href="pengajar-staff.php"
                                 >Pengajar & Staff</a
                             >
                             </li>
@@ -90,8 +90,7 @@
                     <a class="nav-link text-white" href="galeri.php">Galeri</a>
                     <a class="nav-link text-white" href="berita.php">Berita</a>
                     <a class="nav-link text-white" href="#kontak">Kontak</a>
-                    <a class="nav-link ms-lg-3 mt-3 mt-lg-0 text-center rounded text-white" href="ppdb.php" style="background-color: #28a745";>Info PPDB</a>
-                    <!-- <a class="nav-link ms-lg-3 mt-3 mt-lg-0 text-center rounded text-white" href="admin/" style="background-color: #00a0e3;">Login</a> -->
+                    <a class="nav-link ms-lg-3 mt-3 mt-lg-0 text-center rounded text-white" href="info-ppdb.php" style="background-color: #28a745";>Info PPDB</a>
                 </div>
             </div>
         </div>
@@ -193,37 +192,37 @@
                 EKSTRA KURIKULER
             </h2>
             <div class="row justify-content-center gap-4 mt-4">
-                <div class="col-7 col-md-4 col-lg-3 d-flex justify-content-md-center align-items-center p-3 futsal"
+                <div class="col-8 col-md-4 col-lg-3 d-flex justify-content-md-center align-items-center p-3 futsal"
                     data-aos="fade-up" data-aos-duration="1000" data-aos-easing="ease-in-sine" data-aos-delay="500">
                     <i class="fa-regular fa-futbol me-4"></i>
                     <span>Futsal</span>
                 </div>
-                <div class="col-7 col-md-4 col-lg-3 d-flex justify-content-md-center align-items-center p-3 marawis"
+                <div class="col-8 col-md-4 col-lg-3 d-flex justify-content-md-center align-items-center p-3 marawis"
                     data-aos="fade-up" data-aos-duration="1000" data-aos-easing="ease-in-sine" data-aos-delay="500">
                     <i class="fa-solid fa-drum me-4"></i>
                     <span>Hadroh</span>
                 </div>
-                <div class="col-7 col-md-4 col-lg-3 d-flex justify-content-md-center align-items-center p-3 paskib"
+                <div class="col-8 col-md-4 col-lg-3 d-flex justify-content-md-center align-items-center p-3 paskib"
                     data-aos="fade-up" data-aos-duration="1000" data-aos-easing="ease-in-sine" data-aos-delay="500">
                     <i class="fa-solid fa-person-military-pointing me-4"></i>
                     <span>Paskibra</span>
                 </div>
-                <div class="col-7 col-md-4 col-lg-3 d-flex justify-content-md-center align-items-center p-3 tari"
+                <div class="col-8 col-md-4 col-lg-3 d-flex justify-content-md-center align-items-center p-3 tari"
                     data-aos="fade-up" data-aos-duration="1000" data-aos-easing="ease-in-sine" data-aos-delay="500">
                     <i class="fa-solid fa-people-group me-4"></i>
                     <span>Tari</span>
                 </div>
-                <div class="col-7 col-md-4 col-lg-3 d-flex justify-content-md-center align-items-center p-3 silat"
+                <div class="col-8 col-md-4 col-lg-3 d-flex justify-content-md-center align-items-center p-3 silat"
                     data-aos="fade-up" data-aos-duration="1000" data-aos-easing="ease-in-sine" data-aos-delay="500">
                     <i class="fa-solid fa-people-robbery me-4"></i>
                     <span>Pencak Silat</span>
                 </div>
-                <div class="col-7 col-md-4 col-lg-3 d-flex justify-content-md-center align-items-center p-3 itclub"
+                <div class="col-8 col-md-4 col-lg-3 d-flex justify-content-md-center align-items-center p-3 itclub"
                     data-aos="fade-up" data-aos-duration="1000" data-aos-easing="ease-in-sine" data-aos-delay="500">
                     <i class="fa-solid fa-computer me-4"></i>
                     <span>IT Club</span>
                 </div>
-                <div class="col-7 col-md-4 col-lg-3 d-flex justify-content-md-center align-items-center p-3 esport"
+                <div class="col-8 col-md-4 col-lg-3 d-flex justify-content-md-center align-items-center p-3 esport"
                     data-aos="fade-up" data-aos-duration="1000" data-aos-easing="ease-in-sine" data-aos-delay="500">
                     <i class="fa-solid fa-gamepad me-4"></i>
                     <span>E-Sport</span>
@@ -287,7 +286,7 @@
                         <a href="https://www.youtube.com/@smkstonjong6210" target="_blank"><i class="fa-brands fa-square-youtube"></i></a>
                     </div>
                 </div>
-                <div class="col-md-3">
+                <div class="col-md-4">
                     <h3>Hubungi Kami</h3>
                     <div class="detail">
                         <i class="fa-solid fa-phone"></i>
@@ -305,7 +304,7 @@
                             smktonjong@gmail.com</a>
                     </div>
                 </div>
-                <div class="col-md-4">
+                <div class="col-md-5">
                     <h3>Lokasi</h3>
                     <div class="lokasi">
                         <iframe

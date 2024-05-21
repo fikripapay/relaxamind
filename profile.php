@@ -2,46 +2,56 @@
 <html lang="id">
 
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Profile - SMK TONJONG</title>
-  <link rel="icon" href="assets/img/icon/icon.png" />
+    <meta charset="UTF-8" />
+    <meta name="description"
+    content="Visi sekolah sebagai wawasan yang menjadi sumber arahan bagi sekolah harus memiliki pandangan jauh ke depan. Gambaran masa depan sekolah harus tercermin pada visi sekolah." />
+    <meta name="keywords"
+    content="smk tonjong, smks tonjong, smp tonjong, smp bogor, smk bogor, yayasan dharma bhakti tonjong bogor, yayasan dharma bhakti smk tonjong bogor, smk tonjong bojong gede" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Profile - SMK TONJONG</title>
+    <link rel="icon" href="assets/img/logo/logo.png" />
 
-  <!-- Fonts -->
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet" />
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet" />
 
-  <!-- Bootstrap CSS -->
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous" />
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous" />
 
-  <!-- Style AOS -->
-  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+    <!-- Style AOS -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
 
-  <!-- Font Awesome -->
-  <link rel="stylesheet" href="assets/fontawesome/css/all.min.css" />
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="assets/fontawesome/css/all.min.css" />
 
-  <!-- My CSS -->
-  <link rel="stylesheet" href="assets/style/app.css" />
-  <style>
-    .sejarah,
-    .visi p {
-      text-align: justify;
-    }
+    <!-- My CSS -->
+    <link rel="stylesheet" href="assets/style/app.css" />
+    <style>
+        .sejarah,
+        .visi p {
+        text-align: justify;
+        }
 
-    .misi p {
-      text-align: start;
-    }
-  </style>
+        .misi ol {
+            list-style-type: lower-alpha;
+        }
+
+        .misi li {
+            color: #858796;
+            text-align: justify;
+        }
+    </style>
 </head>
 
 <body>
-  <!-- Start Navbar -->
-  <nav class="navbar navbar-dark navbar-expand-lg sticky-top border-bottom" style="background-color: #071952;">
+
+    <!-- Start Navbar -->
+    <nav class="navbar navbar-dark navbar-expand-lg sticky-top border-bottom" style="background-color: #071952;">
         <div class="container">
             <a class="navbar-brand d-flex align-items-center" href="index.php" data-aos="fade-down" data-aos-once="true"
                 data-aos-duration="1000">
-                <img src="assets/img/icon/logo.png" alt="logo smk tonjong" height="65"
+                <img src="assets/img/logo/logo.png" alt="logo smk tonjong" height="65"
                     class="d-inline-block align-text-center me-2" />
                 <div class="brand-title text-white">
                     <span>YAYASAN DHARMA BHAKTI<br />
@@ -83,7 +93,7 @@
                                 >Manajemen Perkantoran dan Layanan Bisnis</a
                             >
                             </li>
-                            <a class="dropdown-item my-dropdown" style="color: #071952;" href="pengajarstaff.php"
+                            <a class="dropdown-item my-dropdown" style="color: #071952;" href="pengajar-staff.php"
                                 >Pengajar & Staff</a
                             >
                             </li>
@@ -92,85 +102,98 @@
                     <a class="nav-link text-white" href="galeri.php">Galeri</a>
                     <a class="nav-link text-white" href="berita.php">Berita</a>
                     <a class="nav-link text-white" href="#kontak">Kontak</a>
-                    <a class="nav-link ms-lg-3 mt-3 mt-lg-0 text-center rounded text-white" href="ppdb.php" style="background-color: #28a745";>Info PPDB</a>
-                    <!-- <a class="nav-link ms-lg-3 mt-3 mt-lg-0 text-center rounded text-white" href="admin/" style="background-color: #00a0e3;">Login</a> -->
+                    <a class="nav-link ms-lg-3 mt-3 mt-lg-0 text-center rounded text-white" href="info-ppdb.php" style="background-color: #28a745";>Info PPDB</a>
                 </div>
             </div>
         </div>
     </nav>
     <!-- End Navbar -->
 
-  <!-- Start Main Section -->
-  <main>
-    <!-- Bagian Sambutan Kepala Sekolah -->
-    <?php
-    include "koneksi.php";
-    $sqlsambutan = "SELECT * FROM tbl_sambutan";
-    // Eksekusi query
-    $resultsambutan = $conn->query($sqlsambutan);
-    // Loop melalui hasil query dan tampilkan dalam tabel
-    if ($resultsambutan->num_rows > 0) {
-        while ($rowsambutan = $resultsambutan->fetch_assoc()) {
-    ?>
-        <section class="sambutan mt-5">
-            <div class="container text-center">
-                <h2 class="judul" data-aos="fade-up" data-aos-duration="1000" data-aos-once="true">
-                    SAMBUTAN KEPALA SEKOLAH
-                </h2>
-                <div class="row mt-4">
-                    <div class="col-md-4 col-lg-3 text-center" data-aos="fade-up" data-aos-duration="1000"
-                        data-aos-easing="ease-in-sine" data-aos-once="true">
-                        <img src="assets/img/sambutan/<?php echo $rowsambutan["nama_kepsek"]; ?>.png" alt="gambar kepsek" />
-                        <h3 class="mt-3"><?php echo $rowsambutan["nama_kepsek"]; ?></h3>
-                    </div>
-                    <div class="col" data-aos="fade-up" data-aos-duration="1000" data-aos-easing="ease-in-sine"
-                        data-aos-once="true">
-                        <p><?php echo $rowsambutan["sambutan"]; ?></p>
+    <!-- Start Main Section -->
+    <main>
+        <!-- Bagian Sambutan Kepala Sekolah -->
+        <?php
+        include "koneksi.php";
+        $sqlsambutan = "SELECT * FROM tbl_sambutan";
+        // Eksekusi query
+        $resultsambutan = $conn->query($sqlsambutan);
+        // Loop melalui hasil query dan tampilkan dalam tabel
+        if ($resultsambutan->num_rows > 0) {
+            while ($rowsambutan = $resultsambutan->fetch_assoc()) {
+        ?>
+            <section class="sambutan mt-5">
+                <div class="container text-center">
+                    <h2 class="judul" data-aos="fade-up" data-aos-duration="1000" data-aos-once="true">
+                        SAMBUTAN KEPALA SEKOLAH
+                    </h2>
+                    <div class="row mt-4">
+                        <div class="col-md-4 col-lg-3 text-center" data-aos="fade-up" data-aos-duration="1000"
+                            data-aos-easing="ease-in-sine" data-aos-once="true">
+                            <img src="assets/img/sambutan/<?php echo $rowsambutan["nama_kepsek"]; ?>.png" alt="gambar kepsek" />
+                            <h3 class="mt-3"><?php echo $rowsambutan["nama_kepsek"]; ?></h3>
+                        </div>
+                        <div class="col" data-aos="fade-up" data-aos-duration="1000" data-aos-easing="ease-in-sine"
+                            data-aos-once="true">
+                            <p><?php echo $rowsambutan["sambutan"]; ?></p>
+                        </div>
                     </div>
                 </div>
-            </div>
-        </section>
-    <?php
+            </section>
+        <?php
+            }
         }
-    }
-    ?>
+        ?>
 
-    <!-- Bagian Sejarah -->
-    <div class="sejarah mt-5">
-        <div class="container text-center">
-            <h2 class="judul" data-aos="fade-up" data-aos-duration="1000">SEJARAH</h2>
-            <div class="row justify-content-center mt-3">
-                <div class="sejarah col-11 col-md-8 col-lg-6 border-2 border-start border-info" data-aos="fade-up" data-aos-duration="1000">
-                    <p>SMK Tonjong didirikan oleh Yayasan Dharma Bhakti dengan tujuan untuk berkontribusi dalam meningkatkan kualitas sumber daya manusia di Indonesia.</p>
-                    <p>Dalam upaya mencapai misi ini, Yayasan Dharma Bhakti Tonjong menjalin kerjasama dengan Pemerintah Daerah Kabupaten Bogor dan berbagai perusahaan swasta di Bogor. Kolaborasi ini bertujuan untuk mempersiapkan siswa/siswi agar siap untuk dunia kerja maupun berwirausaha.</p>
+        <!-- Bagian Sejarah -->
+        <div class="sejarah mt-5">
+            <div class="container text-center">
+                <h2 class="judul" data-aos="fade-up" data-aos-duration="1000">SEJARAH</h2>
+                <div class="row justify-content-center mt-3">
+                    <div class="sejarah col-11 col-md-8 col-lg-6 border-2 border-start border-info" data-aos="fade-up" data-aos-duration="1000">
+                        <p>SMK Tonjong didirikan oleh Yayasan Dharma Bhakti dengan tujuan untuk berkontribusi dalam meningkatkan kualitas sumber daya manusia di Indonesia.</p>
+                        <p>Dalam upaya mencapai misi ini, Yayasan Dharma Bhakti Tonjong menjalin kerjasama dengan Pemerintah Daerah Kabupaten Bogor dan berbagai perusahaan swasta di Bogor. Kolaborasi ini bertujuan untuk mempersiapkan siswa/siswi agar siap untuk dunia kerja maupun berwirausaha.</p>
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
-    <!-- Bagian Visi & Misi -->
-    <div class="visimisi mt-5">
-        <div class="container text-center">
-            <h2 class="judul" data-aos="fade-up" data-aos-duration="1000">VISI & MISI</h2>
-            <div class="row justify-content-center gap-3 mt-3">
-                <div class="visi col-11 col-md-8 col-lg-6 border-2 border-start border-info" data-aos="fade-up" data-aos-duration="1000">
-                    <h3>Visi</h3>
-                    <p>Sekolah sebagai wawasan yang menjadi sumber arahan bagi sekolah harus memiliki pandangan jauh ke depan. Gambaran masa depan sekolah harus tercermin pada visi sekolah. Dengan menganalisis segala kekuatan dan kelemahan dan memperhatikan berbagai aspek dan tuntutan, visi SMKS Tonjong ditetapkan sebagai berikut:</p>
-                    <p><q>Disiplin, Terampil, Mandiri, dan Tanggung Jawab Berdasarkan Iman dan Taqwa</q>.</p>
-                </div>
-                <div class="misi col-11 col-md-8 col-lg-6 border-2 border-start border-info" data-aos="fade-up" data-aos-duration="1000">
-                    <h3>Misi</h3>
-                    <p>• Kreatif</p>
-                    <p>• Kompetitif</p>
-                    <p>• Siap Kerja</p>
+        <!-- Akhir Sejarah -->
+
+        <!-- Bagian Visi & Misi -->
+        <div class="visimisi mt-5">
+            <div class="container text-center">
+                <h2 class="judul" data-aos="fade-up" data-aos-duration="1000">VISI & MISI</h2>
+                <div class="row justify-content-center gap-3 mt-3">
+                    <div class="visi col-11 col-md-8 col-lg-6 border-2 border-start border-info" data-aos="fade-up" data-aos-duration="1000">
+                        <h3>Visi</h3>
+                        <p>Sekolah sebagai wawasan yang menjadi sumber arahan bagi sekolah harus memiliki pandangan jauh ke depan. Gambaran masa depan sekolah harus tercermin pada visi sekolah. Dengan menganalisis segala kekuatan dan kelemahan dan memperhatikan berbagai aspek dan tuntutan, visi SMKS Tonjong ditetapkan sebagai berikut:</p>
+                        <p><q>Disiplin, Terampil, Mandiri, dan Tanggung Jawab Berdasarkan Iman dan Taqwa</q>.</p>
+                    </div>
+                    <div class="misi col-11 col-md-8 col-lg-6 border-2 border-start border-info" data-aos="fade-up" data-aos-duration="1000">
+                        <h3>Misi</h3>
+                        <ol>
+                            <li>Mengembangkan keyakinan semua warga sekolah bahwa sekolah ini dapat berprestasi dan meraih keunggulan kompetitif.</li>
+                            <li>Menciptakan kehidupan sekolah yang berbudaya religius dan bermartabat.</li>
+                            <li>Mememenuhi Standar Kompetensi Lulusan sesuai standar nasional.</li>
+                            <li>Memenuhi standar kompetensi lulusan yang sesuai dengan kebutuhan hidup siswa pada konteks pasar bebas.</li>
+                            <li>Mengembangkan pembelajaran aktif, inovatif, kreatif, efektif dan menyenangkan untuk mengembangkan potensi peserta didik secara optimal.</li>
+                            <li>Menerapkan manajemen perubahan sebagai strategi percepatan pembaharuan sekolah.</li>
+                            <li>Meningkatkan kompetensi pendidik dan tenaga kependidikan melalui peningkatan keprofesian berkelanjutan.</li>
+                            <li>Memenuhi standar sarana dan prasarana secara bertahap dan terukur.</li>
+                            <li>Menggunakan lingkungan sekolah dan dunia industri sebagai sumber belajar.</li>
+                            <li>Memberdayakan teknologi informasi dan komunikasi sebagai pendukung keunggulan pembelajaran.</li>
+                            <li>Mengembangkan kultur sekolah yang menjaga keamanan fisik, psikologis, social yang sehat, dinamis, dan kompetitif.</li>
+                            <li>Menciptakan lingkungan dan budaya yang kondusif untuk indah, nyaman, dan damai sebagai tempat belajar untuk guru, siswa, dan seluruh warga sekolah yang berkarakter.</li>
+                        </ol>
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
-  </main>
-  <!-- End Main Section -->
+        <!-- Akhir Visi & Misi -->
+    </main>
+    <!-- End Main Section -->
 
-  <!-- Start Kontak Section -->
-  <section id="kontak" class="kontak mt-5">
+    <!-- Start Kontak Section -->
+    <section id="kontak" class="kontak mt-5">
         <div class="container">
             <div class="row py-5 justify-content-sm-between">
                 <div class="col-md-2">
@@ -181,7 +204,7 @@
                         <a href="https://www.youtube.com/@smkstonjong6210" target="_blank"><i class="fa-brands fa-square-youtube"></i></a>
                     </div>
                 </div>
-                <div class="col-md-3">
+                <div class="col-md-4">
                     <h3>Hubungi Kami</h3>
                     <div class="detail">
                         <i class="fa-solid fa-phone"></i>
@@ -199,7 +222,7 @@
                             smktonjong@gmail.com</a>
                     </div>
                 </div>
-                <div class="col-md-4">
+                <div class="col-md-5">
                     <h3>Lokasi</h3>
                     <div class="lokasi">
                         <iframe
@@ -212,22 +235,28 @@
     </section>
     <!-- End Kontak Section -->
 
-  <!-- Start Footer -->
-  <footer class="footer text-center">
-    <p class="text-white">Copyright &copy; 2024 SMK Tonjong. All Rights Reserved.</p>
-  </footer>
-  <!-- End Footer -->
+    <!-- Start Footer -->
+    <footer class="footer text-center">
+        <p class="text-white">
+            Copyright &copy; 2024 SMK Tonjong. All Rights Reserved.
+        </p>
+    </footer>
+    <!-- End Footer -->
 
-  <!-- Bootstrap Script -->
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous">
-  </script>
+    <!-- Bootstrap Script -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous">
+    </script>
 
-  <!-- Script AOS -->
-  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <!-- Script AOS -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 
-  <script>
+    <script>
     AOS.init();
-  </script>
+    </script>
+
+    <!-- My Script -->
+    <script src="assets/script/app.js"></script>
 </body>
 
 </html>
