@@ -211,7 +211,7 @@
                         <span>(0251) 8583881</span>
                     </div>
                     <div class="detail mt-3">
-                        <a href="https://wa.me/6285772226602" target="_blank">
+                        <a href="https://wa.me/6285772226202" target="_blank">
                             <i class="fa-brands fa-whatsapp"></i>
                             +62 857-7222-6602
                         </a>

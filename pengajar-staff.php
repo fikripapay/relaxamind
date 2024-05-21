@@ -100,7 +100,7 @@
         <div class="container text-center">
           <h1 class="judul mt-3" data-aos="fade-up" data-aos-duration="1000">PENGAJAR DAN STAFF SMK TONJONG</h1>
           <div class="row mt-3">
-            <div class="col" data-aos="fade-up" data-aos-duration="1000"
+            <div class="col overflow-x-scroll" data-aos="fade-up" data-aos-duration="1000"
                     data-aos-easing="ease-in-sine" data-aos-delay="500">
               <table class="table table-bordered border-primary">
                 <thead>
@@ -150,7 +150,7 @@
                         <span>(0251) 8583881</span>
                     </div>
                     <div class="detail mt-3">
-                        <a href="https://wa.me/6285772226602" target="_blank">
+                        <a href="https://wa.me/6285772226202" target="_blank">
                             <i class="fa-brands fa-whatsapp"></i>
                             +62 857-7222-6602
                         </a>
