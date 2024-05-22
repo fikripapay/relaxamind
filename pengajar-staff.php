@@ -109,7 +109,7 @@
                     <th scope="col" class="bg-secondary-subtle">Nama</th>
                     <th scope="col" class="bg-secondary-subtle">Jenis Kelamin</th>
                     <th scope="col" class="bg-secondary-subtle">Pendidikan</th>
-                    <th scope="col" class="bg-secondary-subtle">Pengajar/Staff</th>
+                    <th scope="col" class="bg-secondary-subtle">Jabatan</th>
                     <th scope="col" class="bg-secondary-subtle">Deskripsi</th>
                   </tr>
                 </thead>

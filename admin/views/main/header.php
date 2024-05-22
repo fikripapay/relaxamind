@@ -58,11 +58,13 @@ $username=strtoupper($_SESSION['username']);
             <div class="sidebar-heading">
                 Home
             </div>
+
             <!-- Nav Item - Dashboard -->
             <li class="nav-item">
                 <a class="nav-link" href="index.php?page=dashboard">
                     <i class="fas fa-fw fa-tachometer-alt"></i>
-                    <span>Dashboard</span></a>
+                    <span>Dashboard</span>
+                </a>
             </li>
 
             <!-- Divider -->
@@ -70,59 +72,70 @@ $username=strtoupper($_SESSION['username']);
             <?php
                 if(isset($_SESSION['username']) && $_SESSION['username'] === 'admin') {
             ?>
-            <!-- Heading -->
-            <div class="sidebar-heading">
-                MENU
-            </div>
+                <!-- Heading -->
+                <div class="sidebar-heading">
+                    MENU
+                </div>
 
-            <!-- Nav Item - Dashboard -->
-            <li class="nav-item">
-                <a class="nav-link" href="index.php?page=banner">
-                    <i class="fa-solid fa-image"></i>
-                    <span>Banner</span></a>
-            </li>
+                <!-- Nav Item - Dashboard -->
+                <li class="nav-item">
+                    <a class="nav-link" href="index.php?page=banner">
+                        <i class="fa-solid fa-image"></i>
+                        <span>Banner</span>
+                    </a>
+                </li>
 
-            <!-- Nav Item - Dashboard -->
-            <li class="nav-item">
-                <a class="nav-link" href="index.php?page=sambutan">
-                <i class="fa-solid fa-door-open"></i>
-                    <span>Sambutan</span></a>
-            </li>
+                <!-- Nav Item - Dashboard -->
+                <li class="nav-item">
+                    <a class="nav-link" href="index.php?page=sambutan">
+                        <i class="fa-solid fa-door-open"></i>
+                        <span>Sambutan</span>
+                    </a>
+                </li>
 
-            <li class="nav-item">
-                <a class="nav-link" href="index.php?page=berita">
-                <i class="fa-solid fa-newspaper"></i>
-                    <span>Berita</span></a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="index.php?page=galeri">
-                <i class="fa-solid fa-photo-film"></i>
-                    <span>Galeri</span></a>
-            </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="index.php?page=berita">
+                    <i class="fa-solid fa-newspaper"></i>
+                        <span>Berita</span>
+                    </a>
+                </li>
 
+                <li class="nav-item">
+                    <a class="nav-link" href="index.php?page=galeri">
+                    <i class="fa-solid fa-photo-film"></i>
+                        <span>Galeri</span>
+                    </a>
+                </li>
 
-            <!-- Divider -->
-            <hr class="sidebar-divider">
+                <li class="nav-item">
+                    <a class="nav-link" href="index.php?page=dataps">
+                    <i class="fa-solid fa-users"></i>
+                        <span>Pengajar & Staff</span>
+                    </a>
+                </li>
 
+                <!-- Divider -->
+                <hr class="sidebar-divider">
 
-            <!-- Heading -->
-            <div class="sidebar-heading">
-                USER
-            </div>
+                <!-- Heading -->
+                <div class="sidebar-heading">
+                    USER
+                </div>
             
-            <li class="nav-item">
-                <a class="nav-link collapsed" href="index.php?page=admin" >
-                    <i class="fas fa-fw fa-wrench"></i>
-                    <span>Admin</span>
-                </a>
-            </li>
-            <?php
-                } else {?>           
+                <li class="nav-item">
+                    <a class="nav-link collapsed" href="index.php?page=admin" >
+                        <i class="fas fa-fw fa-wrench"></i>
+                        <span>Admin</span>
+                    </a>
+                </li>
+
+            <?php } else {?>           
                     <!-- Nav Item - Dashboard -->
                     <li class="nav-item">
                         <a class="nav-link" href="index.php?page=rekap">
                             <i class="fas fa-fw fa-tachometer-alt"></i>
-                            <span>Rekap Data</span></a>
+                            <span>Rekap Data</span>
+                        </a>
                     </li>
                 <?php
                 }

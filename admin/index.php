@@ -1,13 +1,14 @@
 <?php
 require('views/main/header.php');
 require('config/database.php');
+
 if (isset($_GET['page'])) {
     switch ($_GET['page']) {
         case 'dashboard':
             include 'views/body/dashboard/index.php';
             break;
 
-            // BANNER
+        // BANNER
         case 'banner':
             include 'views/body/banner/index.php';
             break;
@@ -15,7 +16,7 @@ if (isset($_GET['page'])) {
             include 'views/body/banner/tambah.php';
             break;
 
-            // SAMBUTAN
+        // SAMBUTAN
         case 'sambutan':
             include 'views/body/sambutan/index.php';
             break;
@@ -23,7 +24,7 @@ if (isset($_GET['page'])) {
             include 'views/body/sambutan/ubah.php';
             break;
 
-            // BERITA
+        // BERITA
         case 'berita':
             include 'views/body/berita/index.php';
             break;
@@ -34,7 +35,7 @@ if (isset($_GET['page'])) {
             include 'views/body/berita/ubah.php';
             break;
 
-            // GALERI
+        // GALERI
         case 'galeri':
             include 'views/body/galeri/index.php';
             break;
@@ -45,7 +46,18 @@ if (isset($_GET['page'])) {
             include 'views/body/galeri/ubah.php';
             break;
 
-            // ADMIN            
+        // DATA PENGAJAR & STAFF
+        case 'dataps':
+            include 'views/body/dataps/index.php';
+            break;
+        case 'tambah_dataps':
+            include 'views/body/dataps/tambah.php';
+            break;
+        case 'edit_dataps':
+            include 'views/body/dataps/ubah.php';
+            break;
+
+        // ADMIN
         case 'admin':
             include 'views/body/admin/index.php';
             break;
@@ -58,3 +70,4 @@ if (isset($_GET['page'])) {
 }
 
 require('views/main/footer.php');
+?>

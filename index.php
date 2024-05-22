@@ -336,9 +336,6 @@
     <script>
     AOS.init();
     </script>
-
-    <!-- My Script -->
-    <script src="assets/script/app.js"></script>
 </body>
 
 </html>
