@@ -86,7 +86,7 @@ if (isset($_GET['insert'])) {
                             echo "<td>";
                             ?>
                             <!-- Tombol edit -->
-                            <a href='index.php?page=edit-dataps&id=<?php echo $row["id_dataps"] ?>' class='btn btn-primary' style='margin-left: 5px'>
+                            <a href='index.php?page=edit_dataps&id=<?php echo $row["id_dataps"] ?>' class='btn btn-primary' style='margin-left: 5px'>
                               <span class='text'>Edit</span>
                             </a>
                             <!-- Tombol hapus -->

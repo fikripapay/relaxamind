@@ -96,7 +96,3 @@ if (isset($_GET['id'])){
         </form>
     </div>
 </div>
-
-<script>
-    window.alert("cek");
-</script>

@@ -31,9 +31,6 @@ if (isset($_GET['page'])) {
         case 'tambah_berita':
             include 'views/body/berita/tambah.php';
             break;
-        case 'edit_berita':
-            include 'views/body/berita/ubah.php';
-            break;
 
         // GALERI
         case 'galeri':
@@ -41,9 +38,6 @@ if (isset($_GET['page'])) {
             break;
         case 'tambah_galeri':
             include 'views/body/galeri/tambah.php';
-            break;
-        case 'edit_galeri':
-            include 'views/body/galeri/ubah.php';
             break;
 
         // DATA PENGAJAR & STAFF

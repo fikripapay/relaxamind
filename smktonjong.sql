@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Waktu pembuatan: 23 Bulan Mei 2024 pada 11.38
+-- Waktu pembuatan: 23 Bulan Mei 2024 pada 15.06
 -- Versi server: 10.4.28-MariaDB
 -- Versi PHP: 8.2.4
 
@@ -60,7 +60,7 @@ CREATE TABLE `tbl_dataps` (
 --
 
 INSERT INTO `tbl_dataps` (`id_dataps`, `nama`, `jenis_kelamin`, `pendidikan`, `jabatan`, `deskripsi`) VALUES
-(3, 'papay', 'Laki-laki', 'SMK', 'Mahasiswa', 'Nothing');
+(4, 'papay', 'Laki-laki', 'S1', 'Tech Lead', 'Nothing');
 
 -- --------------------------------------------------------
 
@@ -191,7 +191,7 @@ ALTER TABLE `tbl_banner`
 -- AUTO_INCREMENT untuk tabel `tbl_dataps`
 --
 ALTER TABLE `tbl_dataps`
-  MODIFY `id_dataps` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id_dataps` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT untuk tabel `tbl_sambutan`

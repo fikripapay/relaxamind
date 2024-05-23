@@ -114,14 +114,38 @@
                   </tr>
                 </thead>
                 <tbody>
-                  <tr>
-                    <th scope="row">1</th>
-                    <td>Data</td>
-                    <td>Data</td>
-                    <td>Data</td>
-                    <td>Data</td>
-                    <td>Data</td>
-                  </tr>
+                  <?php
+                    // Memuat file konfigurasi database
+                    include "koneksi.php";
+                    // Inisialisasi variabel nomor
+                    $no = 0;
+                    // Query untuk mengambil data dari tabel dataps
+                    $sql = "SELECT * FROM tbl_dataps";
+                    // Eksekusi query
+                    $result = $conn->query($sql);
+                    // Memeriksa apakah terdapat data yang ditemukan
+                    if ($result->num_rows > 0) {
+                        // Melakukan iterasi terhadap hasil query dan menampilkan dalam tabel
+                        while ($row = $result->fetch_assoc()) {
+                            $no++;
+                            echo "<tr>";
+                            ?>
+                            <!-- Nomor urut -->
+                            <th scope='row'> <?php echo $no ?></th>
+                            <?php
+                            echo "<td>" . htmlspecialchars($row["nama"]) . "</td>";
+                            echo "<td>" . htmlspecialchars($row["jenis_kelamin"]) . "</td>";
+                            echo "<td>" . htmlspecialchars($row["pendidikan"]) . "</td>";
+                            echo "<td>" . htmlspecialchars($row["jabatan"]) . "</td>";
+                            echo "<td>" . htmlspecialchars($row["deskripsi"]) . "</td>";
+                            echo "</tr>";
+                        }
+                    } else {
+                        echo "<tr><td colspan='7'>Data tidak ditemukan</td></tr>";
+                    }
+                    // Menutup koneksi database
+                    $conn->close();
+                    ?>
                 </tbody>
               </table>
             </div>
