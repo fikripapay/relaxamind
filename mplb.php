@@ -122,7 +122,7 @@
           <div class="row mt-3">
             <div class="col" data-aos="fade-up" data-aos-duration="1000"
                     data-aos-easing="ease-in-sine" data-aos-delay="500">
-              <p>Jurusan Manajemen Perkantoran dan Layanan Bisnis (MPLB) membekali siswa dengan keahlian yang dibutuhkan untuk bekerja di berbagai bidang administrasi dan layanan bisnis. Lulusan MPLB siap berkarya di berbagai sektor, seperti perkantoran, layanan pelanggan, bisnis, pendidikan, dan lembaga swadaya masyarakat.</p>
+              <p>Jurusan Manajemen Perkantoran dan Layanan Bisnis (MPLB) membekali siswa/i nya dengan keahlian yang dibutuhkan untuk bekerja di berbagai bidang administrasi dan layanan bisnis. Lulusan MPLB siap berkarya di berbagai sektor, seperti perkantoran, layanan pelanggan, bisnis, pendidikan, dan lembaga swadaya masyarakat.</p>
               <p>MPLB fokus pada pengembangan keahlian praktis seperti administrasi, komunikasi, komputer, interpersonal, dan etika bisnis. Keahlian ini sangat dibutuhkan di berbagai sektor dan menjamin prospek karir yang cerah bagi lulusannya.</p>
               <p>Di era digital ini, kebutuhan akan tenaga profesional dengan keahlian MPLB semakin meningkat. MPLB menjadi pilihan tepat bagi para siswa yang ingin memiliki karir yang stabil dan menjanjikan di masa depan.</p>
             

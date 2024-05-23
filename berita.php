@@ -3,9 +3,11 @@
 
 <head>
     <meta charset="UTF-8" />
+    <meta name="keywords"
+        content="smk tonjong, smks tonjong, smp tonjong, smp bogor, smk bogor, yayasan dharma bhakti tonjong bogor, yayasan dharma bhakti smk tonjong bogor, smk tonjong bojong gede" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Berita - SMK TONJONG</title>
-    <link rel="icon" href="assets/img/icon/icon.png" />
+    <link rel="icon" href="assets/img/logo/logo.png" />
 
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -29,16 +31,15 @@
 </head>
 
 <body>
-    <!-- Preloader -->
 
     <!-- Start Navbar -->
-    <nav class="navbar navbar-expand-lg sticky-top bg-navbar border-bottom">
+    <nav class="navbar navbar-dark navbar-expand-lg sticky-top border-bottom" style="background-color: #071952;">
         <div class="container">
-            <a class="navbar-brand d-flex align-items-center" href="index.php" data-aos="fade-down"
-                data-aos-once="true" data-aos-duration="1000">
-                <img src="assets/img/icon/navbar.png" alt="logo smk tonjong" height="65"
+            <a class="navbar-brand d-flex align-items-center" href="index.php" data-aos="fade-down" data-aos-once="true"
+                data-aos-duration="1000">
+                <img src="assets/img/logo/logo.png" alt="logo smk tonjong" height="65"
                     class="d-inline-block align-text-center me-2" />
-                <div class="brand-title">
+                <div class="brand-title text-white">
                     <span>YAYASAN DHARMA BHAKTI<br />
                         SMK TONJONG</span>
                 </div>
@@ -51,12 +52,43 @@
             <div class="collapse navbar-collapse justify-content-end" id="navbarNavAltMarkup" data-aos="fade-right"
                 data-aos-once="true" data-aos-duration="1000">
                 <div class="navbar-nav">
-                <a class="nav-link active" href="index.php">Home</a>
-                    <a class="nav-link" href="profile.php">Profile</a>
-                    <a class="nav-link" href="galeri.php">Galeri</a>
-                    <a class="nav-link" href="berita.php">Berita</a>
-                    <a class="nav-link" href="#kontak">Kontak</a>
-                    <a class="nav-link ms-lg-3 mt-3 mt-lg-0 text-center rounded login" href="admin/">Login</a>
+                    <a class="nav-link active" href="index.php">Home</a>
+                    <li class="nav-item dropdown">
+                        <a
+                            class="nav-link dropdown-toggle text-white"
+                            href="#"
+                            role="button"
+                            data-bs-toggle="dropdown"
+                            aria-expanded="false"
+                        >
+                            Profile
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li>
+                            <a class="dropdown-item my-dropdown" style="color: #071952;" href="profile.php"
+                                >Profile</a
+                            >
+                            </li>
+                            <li>
+                            <a class="dropdown-item my-dropdown" style="color: #071952;" href="dkv.php"
+                                >Desain Komunikasi Visual</a
+                            >
+                            </li>
+                            <li>
+                            <a class="dropdown-item my-dropdown" style="color: #071952;" href="mplb.php"
+                                >Manajemen Perkantoran dan Layanan Bisnis</a
+                            >
+                            </li>
+                            <a class="dropdown-item my-dropdown" style="color: #071952;" href="pengajar-staff.php"
+                                >Pengajar & Staff</a
+                            >
+                            </li>
+                        </ul>
+                    </li>
+                    <a class="nav-link text-white" href="galeri.php">Galeri</a>
+                    <a class="nav-link text-white" href="berita.php">Berita</a>
+                    <a class="nav-link text-white" href="#kontak">Kontak</a>
+                    <a class="nav-link ms-lg-3 mt-3 mt-lg-0 text-center rounded text-white" href="info-ppdb.php" style="background-color: #28a745";>Info PPDB</a>
                 </div>
             </div>
         </div>
@@ -109,31 +141,30 @@
                 <div class="col-md-2">
                     <h3>Ikuti Kami</h3>
                     <div class="followme">
-                        <a href="https://instagram.com/" target="_blank"><i
+                        <a href="https://www.instagram.com/smktonjong/" target="_blank"><i
                                 class="fa-brands fa-square-instagram"></i></a>
-                        <a href="https://tiktok.com/" target="_blank"><i class="fa-brands fa-tiktok"></i></a>
-                        <a href="https://youtube.com/" target="_blank"><i class="fa-brands fa-square-youtube"></i></a>
-                    </div>
-                </div>
-                <div class="col-md-3">
-                    <h3>Hubungi Kami</h3>
-                    <div class="detail">
-                        <i class="fa-solid fa-phone"></i>
-                        <span>-</span>
-                    </div>
-                    <div class="detail mt-3">
-                        <a href="https://wa.me/6289660800425" target="_blank">
-                            <i class="fa-brands fa-whatsapp"></i>
-                            +62
-                        </a>
-                    </div>
-                    <div class="detail mt-3">
-                        <a href="mailto:" target="_blank">
-                            <i class="fa-regular fa-envelope"></i>
-                            -</a>
+                        <a href="https://www.youtube.com/@smkstonjong6210" target="_blank"><i class="fa-brands fa-square-youtube"></i></a>
                     </div>
                 </div>
                 <div class="col-md-4">
+                    <h3>Hubungi Kami</h3>
+                    <div class="detail">
+                        <i class="fa-solid fa-phone"></i>
+                        <span>(0251) 8583881</span>
+                    </div>
+                    <div class="detail mt-3">
+                        <a href="https://wa.me/6285772226202" target="_blank">
+                            <i class="fa-brands fa-whatsapp"></i>
+                            +62 857-7222-6602
+                        </a>
+                    </div>
+                    <div class="detail mt-3">
+                        <a href="mailto:smktonjong@gmail.com" target="_blank">
+                            <i class="fa-regular fa-envelope"></i>
+                            smktonjong@gmail.com</a>
+                    </div>
+                </div>
+                <div class="col-md-5">
                     <h3>Lokasi</h3>
                     <div class="lokasi">
                         <iframe

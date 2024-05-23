@@ -122,7 +122,7 @@
           <div class="row mt-3">
             <div class="col" data-aos="fade-up" data-aos-duration="1000"
                     data-aos-easing="ease-in-sine" data-aos-delay="500">
-              <p>Desain Komunikasi Visual (DKV) merupakan jurusan yang membekali siswanya dengan kemampuan untuk menghasilkan karya visual yang komunikatif dan efektif. Lulusan DKV memiliki prospek kerja yang luas di berbagai industri kreatif, seperti periklanan, multimedia, desain produk, dan masih banyak lagi.</p>
+              <p>Desain Komunikasi Visual (DKV) merupakan jurusan yang membekali siswa/i nya dengan kemampuan untuk menghasilkan karya visual yang komunikatif dan efektif. Lulusan DKV memiliki prospek kerja yang luas di berbagai industri kreatif, seperti periklanan, multimedia, desain produk, dan masih banyak lagi.</p>
               <p>DKV memadukan seni, desain, dan teknologi untuk menghasilkan karya yang tidak hanya indah, tetapi juga informatif dan memiliki makna.</p>
               <p>Di era digital ini, kebutuhan akan desainer visual semakin meningkat. Hampir semua aspek kehidupan manusia membutuhkan sentuhan desain, mulai dari kemasan produk, website, hingga konten media sosial. Oleh karena itu, jurusan DKV menjadi pilihan tepat bagi para peminat desain yang ingin berkarya dan memiliki karir yang cemerlang di masa depan.</p>
             
