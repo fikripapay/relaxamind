@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Waktu pembuatan: 20 Bulan Mei 2024 pada 17.40
+-- Waktu pembuatan: 23 Bulan Mei 2024 pada 11.38
 -- Versi server: 10.4.28-MariaDB
 -- Versi PHP: 8.2.4
 
@@ -39,6 +39,28 @@ CREATE TABLE `tbl_banner` (
 
 INSERT INTO `tbl_banner` (`id_banner`, `nama`, `path`) VALUES
 (25, 'tes', '../assets/img/hero/tes.png');
+
+-- --------------------------------------------------------
+
+--
+-- Struktur dari tabel `tbl_dataps`
+--
+
+CREATE TABLE `tbl_dataps` (
+  `id_dataps` int(11) NOT NULL,
+  `nama` varchar(250) NOT NULL,
+  `jenis_kelamin` varchar(9) NOT NULL,
+  `pendidikan` varchar(10) NOT NULL,
+  `jabatan` varchar(50) NOT NULL,
+  `deskripsi` text NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data untuk tabel `tbl_dataps`
+--
+
+INSERT INTO `tbl_dataps` (`id_dataps`, `nama`, `jenis_kelamin`, `pendidikan`, `jabatan`, `deskripsi`) VALUES
+(3, 'papay', 'Laki-laki', 'SMK', 'Mahasiswa', 'Nothing');
 
 -- --------------------------------------------------------
 
@@ -118,7 +140,6 @@ CREATE TABLE `tb_galeri` (
 INSERT INTO `tb_galeri` (`id`, `path`, `deskripsi`) VALUES
 (6, '../assets/img/galeri/Lomba Pencak Silat.png', 'Lomba Pencak Silat'),
 (7, '../assets/img/galeri/Turnamen Futsal.png', 'Turnamen Futsal'),
-(8, '../assets/img/galeri/Lomba Hadroh.png', 'Lomba Hadroh'),
 (9, '../assets/img/galeri/Lomba Paskibra.png', 'Lomba Paskibra'),
 (11, '../assets/img/galeri/Penampilan Ekstrakurikuler Tari.png', 'Penampilan Ekstrakurikuler Tari');
 
@@ -131,6 +152,12 @@ INSERT INTO `tb_galeri` (`id`, `path`, `deskripsi`) VALUES
 --
 ALTER TABLE `tbl_banner`
   ADD PRIMARY KEY (`id_banner`);
+
+--
+-- Indeks untuk tabel `tbl_dataps`
+--
+ALTER TABLE `tbl_dataps`
+  ADD PRIMARY KEY (`id_dataps`);
 
 --
 -- Indeks untuk tabel `tbl_sambutan`
@@ -158,7 +185,13 @@ ALTER TABLE `tb_galeri`
 -- AUTO_INCREMENT untuk tabel `tbl_banner`
 --
 ALTER TABLE `tbl_banner`
-  MODIFY `id_banner` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=26;
+  MODIFY `id_banner` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=27;
+
+--
+-- AUTO_INCREMENT untuk tabel `tbl_dataps`
+--
+ALTER TABLE `tbl_dataps`
+  MODIFY `id_dataps` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT untuk tabel `tbl_sambutan`
@@ -170,7 +203,7 @@ ALTER TABLE `tbl_sambutan`
 -- AUTO_INCREMENT untuk tabel `tb_berita`
 --
 ALTER TABLE `tb_berita`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
 
 --
 -- AUTO_INCREMENT untuk tabel `tb_galeri`
