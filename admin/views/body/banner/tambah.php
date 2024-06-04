@@ -11,11 +11,11 @@
     <div class="card-body">
         <form action="index.php?page=banner" method="post" enctype="multipart/form-data">                     
             <div class="row">
-                <div class="form-group">
+                <div class="form-group mr-2">
                     <!-- Label untuk input nama -->
-                    <label for="nama">Nama:</label>
+                    <label for="nama">Nama Banner (No Spasi):</label>
                     <!-- Input untuk memasukkan nama banner -->
-                    <input type="text" class="form-control" id="nama" name="nama">
+                    <input type="text" class="form-control" id="nama" name="nama" autocomplete="off">
                 </div>
                 <div class="form-group">
                     <!-- Label untuk input banner -->

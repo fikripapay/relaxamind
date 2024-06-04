@@ -73,7 +73,7 @@ if (isset($_GET['insert'])) {
                             // Menampilkan judul berita
                             echo "<td>" . $row["judul"] . "</td>";
                             // Menampilkan isi berita
-                            echo "<td>" . $row["berita"] . "</td>";
+                            echo "<td>" . "..." . "</td>";
                             // Menampilkan waktu berita
                             echo "<td>" . $row["waktu"] . "</td>";
                             echo "<td>";

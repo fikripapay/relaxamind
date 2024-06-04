@@ -22,23 +22,36 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         if ($jumlah_galeri > 0) {
             echo "<script>alert('Nama galeri sudah ada di database. Mohon pilih nama lain.');</script>";
         } else {
-            // Mendapatkan informasi file galeri yang diunggah
-            $nama_galeri = $_FILES['galeri']['name'];
-            $lokasi_galeri = $_FILES['galeri']['tmp_name'];
-            $path = "../assets/img/galeri/$deskripsi.png";
+            // Masukkan data berita ke database dengan nilai sementara
+            $query_insert = "INSERT INTO tb_galeri (path, deskripsi) VALUES ('', '$deskripsi')";
+            if (mysqli_query($conn, $query_insert)) {
 
-            // Memindahkan file galeri ke lokasi tujuan
-            if (move_uploaded_file($lokasi_galeri, $path)) {
-                // Memanggil metode tambahGaleri untuk menambahkan galeri baru ke database
-                if ($controller->tambahGaleri($path, $deskripsi, $conn)) {
-                    // Jika tambah berhasil, mengarahkan ke halaman galeri dengan parameter insert
-                    header("Location: index.php?page=galeri&insert");
-                    exit();
+                // Dapatkan ID terakhir yang dimasukkan
+                $id_galeri = mysqli_insert_id($conn);
+                
+                // Mendapatkan informasi file galeri yang diunggah
+                $nama_galeri = $_FILES['galeri']['name'];
+                $lokasi_galeri = $_FILES['galeri']['tmp_name'];
+                $path = "../assets/img/galeri/$id_galeri.png";
+
+                // Memindahkan file galeri ke lokasi tujuan
+                if (move_uploaded_file($lokasi_galeri, $path)) {
+                    // Perbarui path thumbnail di database
+                    $query_update = "UPDATE tb_galeri SET path='$path' WHERE id='$id_galeri'";
+                    if (mysqli_query($conn, $query_update)) {
+                        // Jika update berhasil, mengarahkan ke halaman berita dengan parameter insert
+                        header("Location: index.php?page=galeri&insert");
+                        exit();
+                    }
+                } else {
+                    // Jika gagal mengunggah file, tampilkan pesan kesalahan
+                    echo "<script>alert('Gagal mengunggah');</script>";
                 }
             } else {
-                // Jika gagal mengunggah file, tampilkan pesan kesalahan
-                echo "<script>alert('Gagal');</script>";
+                 // Jika gagal menambah galeri, tampilkan pesan kesalahan
+                 echo "<script>alert('Gagal menambah foto');</script>";
             }
+
         }
     }
 }
@@ -48,17 +61,16 @@ if ($_SERVER["REQUEST_METHOD"] == "GET" && isset($_GET['hapus'])) {
     // Membuat instance dari kelas Galeri_Model
     $controller = new Galeri_Model();
 
-    // Mendapatkan id dan nama file galeri yang akan dihapus
-    $id = $_GET['hapus'];
-    $namafile = $_GET['nama'];
+    // Mendapatkan id galeri yang akan dihapus
+    $id_galeri = $_GET['hapus'];
 
     // Memanggil fungsi hapus galeri
-    if ($controller->hapusGaleri($id, $namafile, $conn)) {
+    if ($controller->hapusGaleri($id_galeri, $conn)) {
         // Jika hapus berhasil, mengarahkan ke halaman galeri dengan parameter delete
         header("Location: index.php?page=galeri&delete");
         exit();
     } else {
         // Jika gagal menghapus, tampilkan pesan kesalahan
-        echo "<script>alert('Gagal menghapus karena data masih dibutuhkan');</script>";
+        echo "<script>alert('Gagal menghapus');</script>";
     }
 }

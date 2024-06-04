@@ -78,11 +78,11 @@ if (isset($_GET['insert'])) {
                             <!-- Nomor urut -->
                             <th scope='row'> <?php echo $no ?></th>
                             <?php
-                            echo "<td>" . htmlspecialchars($row["nama"]) . "</td>";
-                            echo "<td>" . htmlspecialchars($row["jenis_kelamin"]) . "</td>";
-                            echo "<td>" . htmlspecialchars($row["pendidikan"]) . "</td>";
-                            echo "<td>" . htmlspecialchars($row["jabatan"]) . "</td>";
-                            echo "<td>" . htmlspecialchars($row["deskripsi"]) . "</td>";
+                            echo "<td>" . $row["nama"] . "</td>";
+                            echo "<td>" . $row["jenis_kelamin"] . "</td>";
+                            echo "<td>" . $row["pendidikan"] . "</td>";
+                            echo "<td>" . $row["jabatan"] . "</td>";
+                            echo "<td>" . $row["deskripsi"] . "</td>";
                             echo "<td>";
                             ?>
                             <!-- Tombol edit -->

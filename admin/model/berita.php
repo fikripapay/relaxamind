@@ -17,20 +17,36 @@ class Berita_Model {
     }
 
     // Method untuk menghapus berita
-    public function hapusBerita($id_berita, $nama_berita, $conn) {
-
-        // Hapus file thumbnail berita dari direktori
-        unlink("../assets/img/berita/$nama_berita");
-
-        $stmt = $conn->prepare("DELETE FROM tb_berita WHERE id = ?");
-        $stmt->bind_param("i", $id_berita);
-
-        // Eksekusi statement SQL untuk menghapus berita
-        if ($stmt->execute()) {
-            return true; // Jika berhasil menghapus data
+    public function hapusBerita($id_berita, $conn) {
+        // Query untuk mendapatkan path thumbnail berdasarkan id_berita
+        $stmt_select = $conn->prepare("SELECT thumbnail FROM tb_berita WHERE id = ?");
+        $stmt_select->bind_param("i", $id_berita);
+        $stmt_select->execute();
+        $result_select = $stmt_select->get_result();
+    
+        if ($result_select->num_rows > 0) {
+            $row = $result_select->fetch_assoc();
+            $thumbnail_path = $row['thumbnail'];
+    
+            // Hapus file thumbnail berita dari direktori jika ada
+            if (file_exists($thumbnail_path)) {
+                unlink($thumbnail_path);
+            }
+    
+            // Hapus record berita dari database
+            $stmt_delete = $conn->prepare("DELETE FROM tb_berita WHERE id = ?");
+            $stmt_delete->bind_param("i", $id_berita);
+    
+            // Eksekusi statement SQL untuk menghapus berita
+            if ($stmt_delete->execute()) {
+                return true; // Jika berhasil menghapus data
+            } else {
+                return false; // Jika gagal menghapus data
+            }
         } else {
-            return false; // Jika gagal menghapus data
+            return false; // Jika tidak menemukan data dengan id_berita
         }
     }
+    
 }
 ?>

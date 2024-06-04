@@ -24,22 +24,33 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         if ($jumlah_berita > 0) {
             echo "<script>alert('Judul berita sudah ada di database. Mohon pilih judul lain.');</script>";
         } else {
-            // Mengambil informasi file thumbnail yang diunggah
-            $thumbnail = $_FILES['thumbnail']['name'];
-            $lokasi_thumbnail = $_FILES['thumbnail']['tmp_name'];
-            $path = "../assets/img/berita/$judul.png";
+            // Masukkan data berita ke database dengan nilai sementara untuk thumbnail
+            $query_insert = "INSERT INTO tb_berita (judul, berita, thumbnail) VALUES ('$judul', '$berita', '')";
+            if (mysqli_query($conn, $query_insert)) {
+                // Dapatkan ID terakhir yang dimasukkan
+                $id_berita = mysqli_insert_id($conn);
+                
+                // Mengambil informasi file thumbnail yang diunggah
+                $thumbnail = $_FILES['thumbnail']['name'];
+                $lokasi_thumbnail = $_FILES['thumbnail']['tmp_name'];
+                $path = "../assets/img/berita/$id_berita.png";
 
-            // Memindahkan file thumbnail ke lokasi tujuan
-            if (move_uploaded_file($lokasi_thumbnail, $path)) {
-                // Memanggil metode tambahBerita untuk menambahkan berita baru ke database
-                if ($controller->tambahBerita($path, $judul, $berita, $conn)) {
-                    // Jika tambah berhasil, mengarahkan ke halaman berita dengan parameter insert
-                    header("Location: index.php?page=berita&insert");
-                    exit();
+                // Memindahkan file thumbnail ke lokasi tujuan
+                if (move_uploaded_file($lokasi_thumbnail, $path)) {
+                    // Perbarui path thumbnail di database
+                    $query_update = "UPDATE tb_berita SET thumbnail='$path' WHERE id='$id_berita'";
+                    if (mysqli_query($conn, $query_update)) {
+                        // Jika update berhasil, mengarahkan ke halaman berita dengan parameter insert
+                        header("Location: index.php?page=berita&insert");
+                        exit();
+                    }
+                } else {
+                    // Jika gagal mengunggah file, tampilkan pesan kesalahan
+                    echo "<script>alert('Gagal mengunggah file thumbnail');</script>";
                 }
             } else {
-                // Jika gagal mengunggah file, tampilkan pesan kesalahan
-                echo "<script>alert('Gagal');</script>";
+                // Jika gagal menambah berita, tampilkan pesan kesalahan
+                echo "<script>alert('Gagal menambah berita');</script>";
             }
         }
     }
@@ -50,12 +61,11 @@ if ($_SERVER["REQUEST_METHOD"] == "GET" && isset($_GET['hapus'])) {
     // Membuat instance dari kelas Berita_Model
     $controller = new Berita_Model();
 
-    // Mendapatkan id_berita dan nama_berita yang akan dihapus
+    // Mendapatkan id_berita yang akan dihapus
     $id_berita = $_GET['hapus'];
-    $nama_berita = $_GET['nama'];
 
     // Memanggil fungsi hapus berita
-    if ($controller->hapusBerita($id_berita, $nama_berita, $conn)) {
+    if ($controller->hapusBerita($id_berita, $conn)) {
         // Jika hapus berhasil, mengarahkan ke halaman berita dengan parameter delete
         header("Location: index.php?page=berita&delete");
         exit();

@@ -48,7 +48,7 @@ if (isset($_GET['user'])){
                 <!-- Menampilkan label password -->
                 <label for="password">Password:</label>
                 <!-- Input untuk memasukkan password baru -->
-                <input type="text" name="password" minlength="8" pattern="^[a-zA-Z0-9!@#$%^&*()-_=+{};:,.<>?]+$">
+                <input type="text" name="password" minlength="8" pattern="^[a-zA-Z0-9!@#$%^&*()-_=+{};:,.<>?]+$" autocomplete="off">
             </div>
             <!-- Tombol untuk mengirimkan form -->
             <button type="submit" name="update" class="btn btn-primary">Submit</button>

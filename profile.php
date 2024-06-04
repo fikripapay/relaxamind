@@ -89,7 +89,7 @@
                             >
                             </li>
                             <li>
-                            <a class="dropdown-item my-dropdown" style="color: #071952;" href="mplb.php"
+                            <a class="dropdown-item my-dropdown text-wrap" style="color: #071952;" href="mplb.php"
                                 >Manajemen Perkantoran dan Layanan Bisnis</a
                             >
                             </li>
@@ -129,7 +129,7 @@
                     <div class="row mt-4">
                         <div class="col-md-4 col-lg-3 text-center" data-aos="fade-up" data-aos-duration="1000"
                             data-aos-easing="ease-in-sine" data-aos-once="true">
-                            <img src="assets/img/sambutan/<?php echo $rowsambutan["nama_kepsek"]; ?>.png" alt="gambar kepsek" />
+                            <img src="assets/img/sambutan/<?php echo $rowsambutan["id_sambutan"]; ?>.png" alt="gambar kepsek" />
                             <h3 class="mt-3"><?php echo $rowsambutan["nama_kepsek"]; ?></h3>
                         </div>
                         <div class="col" data-aos="fade-up" data-aos-duration="1000" data-aos-easing="ease-in-sine"

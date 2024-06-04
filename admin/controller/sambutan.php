@@ -19,7 +19,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         // Mengambil informasi file yang diunggah
         $nama_file = $_FILES['foto_kepsek']['name'];
         $lokasi_file = $_FILES['foto_kepsek']['tmp_name'];
-        $tujuan_file = "../assets/img/sambutan/$nama_kepsek.png";
+        $tujuan_file = "../assets/img/sambutan/$id_sambutan.png";
 
         // Memindahkan file yang diunggah ke lokasi tujuan
         if (move_uploaded_file($lokasi_file, $tujuan_file)) {

@@ -75,7 +75,7 @@
                             >
                             </li>
                             <li>
-                            <a class="dropdown-item my-dropdown" style="color: #071952;" href="mplb.php"
+                            <a class="dropdown-item my-dropdown text-wrap" style="color: #071952;" href="mplb.php"
                                 >Manajemen Perkantoran dan Layanan Bisnis</a
                             >
                             </li>
@@ -113,7 +113,7 @@
         ?>
                 <div class="col-md-5 col-lg-3" data-aos="fade-up" data-aos-duration="1000">
                     <div class="card">
-                        <img src="assets/img/berita/<?php echo $row['judul'] ?>.png" class="card-img-top"
+                        <img src="assets/img/berita/<?php echo $row['id'] ?>.png" class="card-img-top"
                             alt="<?php echo $row['judul'] ?>" height="150"/>
                         <div class="card-body">
                             <h5 class="card-title fs-6">

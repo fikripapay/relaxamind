@@ -17,7 +17,7 @@
                     <!-- Label untuk input judul berita -->
                     <label for="judul">Judul Berita:</label>
                     <!-- Input untuk memasukkan judul berita -->
-                    <input type="text" class="form-control" id="judul" name="judul">
+                    <input type="text" class="form-control" id="judul" name="judul" autocomplete="off">
                 </div>
             </div>
             <!-- Baris kedua -->

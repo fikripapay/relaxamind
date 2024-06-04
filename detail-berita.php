@@ -123,7 +123,7 @@ if (isset($_GET['detail'])){
                             >
                             </li>
                             <li>
-                            <a class="dropdown-item my-dropdown" style="color: #071952;" href="mplb.php"
+                            <a class="dropdown-item my-dropdown text-wrap" style="color: #071952;" href="mplb.php"
                                 >Manajemen Perkantoran dan Layanan Bisnis</a
                             >
                             </li>
