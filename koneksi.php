@@ -2,7 +2,7 @@
 $servername = "localhost";
 $username = "root";
 $password = "";
-$database = "smktonjong";
+$database = "relaxamind";
 
 // Membuat koneksi ke database
 $conn = new mysqli($servername, $username, $password, $database);
