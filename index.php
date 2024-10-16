@@ -30,7 +30,7 @@
 <body>
 
     <!-- Start Navbar -->
-    <nav class="navbar navbar-dark navbar-expand-lg sticky-top border-bottom" style="background-color: #071952;">
+    <nav class="navbar navbar-dark navbar-expand-lg sticky-top border-bottom" style="background: linear-gradient(to right, #ffffff, #A3C1DA);">
         <div class="container">
             <a class="navbar-brand d-flex align-items-center" href="index.php" data-aos="fade-down" data-aos-once="true"
                 data-aos-duration="1000">
