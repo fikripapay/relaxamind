@@ -1,13 +1,10 @@
 :root {
   /* Color */
-  --primary: #fcfcfc;
-  --bg: #eff9ff;
   --text: #858796;
 }
 
 body {
   font-family: "Poppins", sans-serif;
-  background-color: var(--primary);
 }
 
 p {
@@ -19,6 +16,44 @@ p {
   font-size: 1rem;
   font-weight: 600;
   color: var(--primary);
+}
+
+.brand-title > span {
+  letter-spacing: 1px;
+}
+
+/* Hero */
+#hero {
+  min-height: calc(100vh - 91px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-image: url(../img/background/hero.webp);
+  background-size: cover;
+  background-position: center;
+}
+
+#hero h1 {
+  color: #2c3e50;
+}
+
+#hero p {
+  color: #4a4a4a;
+}
+
+#hero a {
+  background-color: #ff6347;
+  border-color: #ff6347;
+}
+
+.hu__hu__ {
+  animation: hu__hu__ infinite 2s ease-in-out;
+}
+
+@keyframes hu__hu__ {
+  50% {
+    transform: translateY(5px);
+  }
 }
 
 /* Sambutan */
@@ -177,70 +212,11 @@ p {
   background-color: var(--bg);
 }
 
-/* Kontak */
-.kontak {
-  background-color: #00a0e3;
-  color: #fff;
-}
-
-.kontak h3 {
-  display: inline-block;
-  position: relative;
-  font-size: 1.1rem;
-  font-weight: 500;
-  margin-bottom: 2rem;
-  padding-bottom: 0.7rem;
-}
-
-.kontak h3::after {
-  content: "";
-  width: 100%;
-  height: 2px;
-  position: absolute;
-  left: 0;
-  bottom: 0;
-  background-color: #fff;
-}
-
-.kontak .followme a {
-  text-decoration: none;
-  color: #fff;
-}
-
-.kontak .followme i {
-  font-size: 1.8rem;
-  margin-right: 0.3rem;
-}
-
-.kontak .detail,
-.kontak .detail a {
-  display: flex;
-  align-items: center;
-}
-
-.kontak .detail a {
-  text-decoration: none;
-  color: #fff;
-}
-
-.kontak .detail i {
-  font-size: 1.8rem;
-  margin-right: 1rem;
-}
-
-.kontak .lokasi {
-  width: 100%;
-}
-
-.kontak iframe {
-  width: 100%;
-}
-
 /* Footer */
 .footer {
   height: 4rem;
   line-height: 4rem;
-  background-color: #62b8f4;
+  background-color: #005f73;
 }
 
 /* Responsive Breakpoints */
@@ -254,12 +230,6 @@ p {
   /* Sambutan */
   .judul {
     font-size: 1.5rem;
-  }
-
-  /* Kontak */
-  .kontak .followme,
-  .kontak .detail {
-    margin-bottom: 2rem;
   }
 
   /* Footer */
