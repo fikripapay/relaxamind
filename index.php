@@ -98,11 +98,6 @@
                                 >Musik Relaksasi</a
                             >
                             </li>
-                            <li>
-                            <a class="dropdown-item my-dropdown" style="color: #005f73;" href="#"
-                                >Tips Harian</a
-                            >
-                            </li>
                         </ul>
                     </li>
                     <a class="nav-link text-white" href="#">Perkembangan</a>
@@ -195,50 +190,18 @@
     </section>
     <!-- End Ekskul Section -->
 
-    <!-- Start Berita Section -->
-    <section id="berita" class="berita mt-5 py-5">
-        <div class="container">
-            <h2 class="judul text-center" data-aos="fade-up" data-aos-duration="1000">
-                BERITA
+    <!-- Start Q&A Section -->
+    <section class="ekskul mt-5 py-5 bg-danger">
+        <div class="container text-center">
+            <h2 class="judul" data-aos="fade-up" data-aos-duration="1000">
+                FORUM DISKUSI DAN TANYA JAWAB
             </h2>
-            <div class="row mt-4 gap-3 justify-content-center">
-
-                <!-- BERITA -->
-
-                <?php
-        include "koneksi.php";
-        ?>
-                <?php
-        $sql = "SELECT * FROM tb_berita ORDER BY id DESC LIMIT 6";
-        // Eksekusi query
-        $result = $conn->query($sql);
-        // Loop melalui hasil query dan tampilkan dalam tabel
-        if ($result->num_rows > 0) {
-          while ($row = $result->fetch_assoc()) {
-        ?>
-                <div class="col-md-5 col-lg-3" data-aos="fade-up" data-aos-duration="1000">
-                    <div class="card">
-                        <img src="assets/img/berita/<?php echo $row['id'] ?>.png" class="card-img-top" alt="<?php echo $row['judul'] ?>" height="150"/>
-                        <div class="card-body">
-                            <h5 class="card-title fs-6">
-                                <?php echo $row['judul'] ?>
-                            </h5>
-                            <p class="card-text"><?php echo $row['waktu'] ?></p>
-                            <a href="detail-berita.php?detail=<?php echo $row['id'] ?>" class="btn btn-primary">Selengkapnya</a>
-                        </div>
-                    </div>
-                </div>
-                <?php
-          }
-        }
-        ?>
-
-                <a class="text-center" href="berita.php" data-aos="fade-up" data-aos-duration="1000">Lihat Berita
-                    Lainya</a>
+            <div class="row justify-content-center gap-4 mt-4">
+                
             </div>
         </div>
     </section>
-    <!-- End Berita Section -->
+    <!-- End Q&A Section -->
 
     <!-- Start Footer -->
     <footer class="footer text-center">
