@@ -186,36 +186,83 @@
     </section>
     <!-- End Hero Section -->
 
-    <!-- Start Testimonial Section -->
+    <!-- Start Tips Section -->
     <section id="tips" class="tips mt-5">
       <div class="container text-center">
         <h2 class="judul" data-aos="fade-up" data-aos-duration="1000">
           1 HARI 1 TIPS
         </h2>
-        <div
-          class="card text-center w-50 m-auto card-custom"
-          data-aos="fade-up"
-          data-aos-duration="1000"
-        >
-          <div class="card-header">Tips Relaksasi</div>
-          <div class="card-body">
-            <h5 class="card-title">Meditasi 5 Menit</h5>
-            <p class="card-text">
-              Ambil 5 menit dari harimu untuk duduk diam dan fokus pada
-              pernapasan. Ini membantu menenangkan pikiran dan tubuh.
-            </p>
-            <img
-              src="assets/img/tips/1.webp"
-              width="200"
-              class="img-fluid rounded"
-              alt="..."
-            />
+        <div id="carouselExampleFade" class="carousel slide carousel-fade">
+          <div class="carousel-inner">
+            <div class="carousel-item active">
+              <div
+                class="card text-center w-50 m-auto card-custom"
+                data-aos="fade-up"
+                data-aos-duration="1000"
+              >
+                <div class="card-header">Tips Relaksasi</div>
+                <div class="card-body">
+                  <h5 class="card-title">Meditasi 5 Menit</h5>
+                  <p class="card-text">
+                    Ambil 5 menit dari harimu untuk duduk diam dan fokus pada
+                    pernapasan. Ini membantu menenangkan pikiran dan tubuh.
+                  </p>
+                  <img
+                    src="assets/img/tips/1.webp"
+                    width="200"
+                    class="img-fluid rounded"
+                    alt="..."
+                  />
+                </div>
+                <div class="card-footer text-body-secondary">Hari Ini</div>
+              </div>
+            </div>
+            <div class="carousel-item">
+              <div
+                class="card text-center w-50 m-auto card-custom"
+                data-aos="fade-up"
+                data-aos-duration="1000"
+              >
+                <div class="card-header">Mindfulness</div>
+                <div class="card-body">
+                  <h5 class="card-title">Berjalan Sejenak</h5>
+                  <p class="card-text">
+                    Jalan kaki singkat di luar rumah bisa menyegarkan pikiran
+                    dan membantu meredakan ketegangan otot.
+                  </p>
+                  <img
+                    src="assets/img/tips/2.webp"
+                    width="200"
+                    class="img-fluid rounded"
+                    alt="..."
+                  />
+                </div>
+                <div class="card-footer text-body-secondary">Kemarin</div>
+              </div>
+            </div>
           </div>
-          <div class="card-footer text-body-secondary">Hari Ini</div>
+          <button
+            class="carousel-control-prev"
+            type="button"
+            data-bs-target="#carouselExampleFade"
+            data-bs-slide="prev"
+          >
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+          </button>
+          <button
+            class="carousel-control-next"
+            type="button"
+            data-bs-target="#carouselExampleFade"
+            data-bs-slide="next"
+          >
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+          </button>
         </div>
       </div>
     </section>
-    <!-- End Testimonial Section -->
+    <!-- End Tips Section -->
 
     <!-- Start Question Section -->
     <section class="question mt-5">
@@ -480,7 +527,9 @@
     <!-- Start Q&A Section -->
     <section class="qa mt-5">
       <div class="container text-center">
-        <h2 class="judul">FORUM DISKUSI DAN TANYA JAWAB</h2>
+        <h2 class="judul" data-aos="fade-up" data-aos-duration="1000">
+          FORUM DISKUSI DAN TANYA JAWAB
+        </h2>
         <div id="disqus_thread" class="my-5"></div>
         <script>
           var disqus_config = function () {
