@@ -121,85 +121,191 @@
     </section>
     <!-- End Hero Section -->
 
-    <!-- Start Jurusan Section -->
-    <section id="jurusan" class="jurusan py-5">
-        <div class="container text-center">
+    <!-- Start Testimonial Section -->
+    <section id="testimonial" class="testimonial py-5">
+        <div class="container text-center w-50">
             <h2 class="judul" data-aos="fade-up" data-aos-duration="1000">
-                JURUSAN
+                APA KATA MEREKA?
             </h2>
-            <div class="row justify-content-center gap-3 mt-4">
-                <div class="col-11 col-md-5 rounded py-2 mm" data-aos="fade-up" data-aos-duration="1000"
-                    data-aos-easing="ease-in-sine" data-aos-delay="500">
-                    <img src="assets/img/logo/dkv.png" width="150" alt="Logo DKV" class="img-fluid" />
-                    <h3 class="mt-1">Desain Komunikasi Visual</h3>
+            <div id="carouselExampleFade" class="carousel slide carousel-fade">
+                <div class="carousel-inner d-flex justify-content-center">
+                    <div class="carousel-item active">
+                        <div class="card" style="width: 18rem;">
+                            <div class="card-body">
+                                <h5 class="card-title">Card title</h5>
+                                <h6 class="card-subtitle mb-2 text-body-secondary">Card subtitle</h6>
+                                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                                <a href="#" class="card-link">Card link</a>
+                                <a href="#" class="card-link">Another link</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="carousel-item">
+                        <div class="card" style="width: 18rem;">
+                            <div class="card-body">
+                                <h5 class="card-title">p</h5>
+                                <h6 class="card-subtitle mb-2 text-body-secondary">Card subtitle</h6>
+                                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                                <a href="#" class="card-link">Card link</a>
+                                <a href="#" class="card-link">Another link</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="carousel-item">
+                    <img src="..." class="d-block w-100" alt="...">
+                    </div>
                 </div>
-                <div class="col-11 col-md-5 rounded py-2 mp" data-aos="fade-up" data-aos-duration="1000"
-                    data-aos-easing="ease-in-sine" data-aos-delay="500">
-                    <img src="assets/img/logo/mplb.png" width="150" alt="Logo MPLB" class="img-fluid" />
-                    <h3 class="mt-1">Manajemen Perkantoran dan Layanan Bisnis</h3>
-                </div>
+                <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleFade" data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Previous</span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleFade" data-bs-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Next</span>
+                </button>
             </div>
         </div>
     </section>
-    <!-- End Jurusan Section -->
+    <!-- End Testimonial Section -->
 
-    <!-- Start Ekskul Section -->
-    <section class="ekskul mt-5">
-        <div class="container text-center">
-            <h2 class="judul" data-aos="fade-up" data-aos-duration="1000">
-                EKSTRA KURIKULER
+    <!-- Start Question Section -->
+    <section class="question mt-5">
+        <div class="container">
+            <h2 class="judul text-center" data-aos="fade-up" data-aos-duration="1000">
+                PERTANYAAN YANG SERING DIAJUKAN
             </h2>
-            <div class="row justify-content-center gap-4 mt-4">
-                <div class="col-8 col-md-4 col-lg-3 d-flex justify-content-md-center align-items-center p-3 futsal"
-                    data-aos="fade-up" data-aos-duration="1000" data-aos-easing="ease-in-sine" data-aos-delay="500">
-                    <i class="fa-regular fa-futbol me-4"></i>
-                    <span>Futsal</span>
+            <div class="accordion accordion-flush mt-4" id="accordionFlushExample">
+                <div class="accordion-item">
+                    <h2 class="fs-5" style="color: #005f73;">
+                    Pertanyaan Umum
+                    </h2>
                 </div>
-                <div class="col-8 col-md-4 col-lg-3 d-flex justify-content-md-center align-items-center p-3 marawis"
-                    data-aos="fade-up" data-aos-duration="1000" data-aos-easing="ease-in-sine" data-aos-delay="500">
-                    <i class="fa-solid fa-drum me-4"></i>
-                    <span>Hadroh</span>
+                <div class="accordion-item">
+                    <h2 class="accordion-header">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseOne" aria-expanded="false" aria-controls="flush-collapseOne">
+                    Apa itu RelaxaMind?
+                    </button>
+                    </h2>
+                    <div id="flush-collapseOne" class="accordion-collapse collapse text-justify" data-bs-parent="#accordionFlushExample">
+                        <div class="accordion-body">RelaxaMind adalah platform online yang dirancang untuk membantu Anda mengelola stres dan menjaga kesehatan mental melalui berbagai tes, tips, dan program manajemen stres. Dengan menggunakan RelaxaMind, Anda dapat dengan mudah mengukur tingkat stres Anda, mendapatkan rekomendasi yang dipersonalisasi, dan belajar teknik relaksasi untuk meningkatkan kesejahteraan emosional Anda. Platform ini juga menawarkan sumber daya bermanfaat untuk menjaga keseimbangan hidup di tengah rutinitas yang padat.</div>
+                    </div>
                 </div>
-                <div class="col-8 col-md-4 col-lg-3 d-flex justify-content-md-center align-items-center p-3 paskib"
-                    data-aos="fade-up" data-aos-duration="1000" data-aos-easing="ease-in-sine" data-aos-delay="500">
-                    <i class="fa-solid fa-person-military-pointing me-4"></i>
-                    <span>Paskibra</span>
+                <div class="accordion-item">
+                    <h2 class="accordion-header">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseTwo" aria-expanded="false" aria-controls="flush-collapseTwo">
+                    Apakah tes ini akurat?
+                    </button>
+                    </h2>
+                    <div id="flush-collapseTwo" class="accordion-collapse collapse text-justify" data-bs-parent="#accordionFlushExample">
+                    <div class="accordion-body">Tes ini menggunakan algoritma yang dirancang oleh para ahli di bidang kesehatan mental untuk memberikan gambaran umum tentang tingkat stres Anda. Meskipun tes ini dapat memberikan indikasi, hasil akhirnya sebaiknya digunakan sebagai panduan dan bukan sebagai diagnosis medis.</div>
+                    </div>
                 </div>
-                <div class="col-8 col-md-4 col-lg-3 d-flex justify-content-md-center align-items-center p-3 tari"
-                    data-aos="fade-up" data-aos-duration="1000" data-aos-easing="ease-in-sine" data-aos-delay="500">
-                    <i class="fa-solid fa-people-group me-4"></i>
-                    <span>Tari</span>
+                <div class="accordion-item">
+                    <h2 class="accordion-header">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseFour" aria-expanded="false" aria-controls="flush-collapseFour">
+                    Apakah hasil tes ini bersifat rahasia?
+                    </button>
+                    </h2>
+                    <div id="flush-collapseFour" class="accordion-collapse collapse text-justify" data-bs-parent="#accordionFlushExample">
+                    <div class="accordion-body">Ya, hasil tes Anda sepenuhnya bersifat pribadi dan rahasia. Kami tidak akan membagikan informasi Anda kepada pihak ketiga tanpa izin Anda.</div>
+                    </div>
                 </div>
-                <div class="col-8 col-md-4 col-lg-3 d-flex justify-content-md-center align-items-center p-3 silat"
-                    data-aos="fade-up" data-aos-duration="1000" data-aos-easing="ease-in-sine" data-aos-delay="500">
-                    <i class="fa-solid fa-people-robbery me-4"></i>
-                    <span>Pencak Silat</span>
+                <div class="accordion-item">
+                    <h2 class="accordion-header">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseFive" aria-expanded="false" aria-controls="flush-collapseFive">
+                    Apakah saya bisa mengikuti tes ini lebih dari sekali?
+                    </button>
+                    </h2>
+                    <div id="flush-collapseFive" class="accordion-collapse collapse text-justify" data-bs-parent="#accordionFlushExample">
+                    <div class="accordion-body">Ya, Anda dapat mengikuti tes ini kapan saja sesuai kebutuhan Anda. Kami bahkan merekomendasikan untuk mengikuti tes secara berkala untuk memantau tingkat stres Anda.</div>
+                    </div>
                 </div>
-                <div class="col-8 col-md-4 col-lg-3 d-flex justify-content-md-center align-items-center p-3 itclub"
-                    data-aos="fade-up" data-aos-duration="1000" data-aos-easing="ease-in-sine" data-aos-delay="500">
-                    <i class="fa-solid fa-computer me-4"></i>
-                    <span>IT Club</span>
+                <div class="accordion-item">
+                    <h2 class="accordion-header">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseSix" aria-expanded="false" aria-controls="flush-collapseSix">
+                    Bagaimana cara tes ini menghitung tingkat stres saya?
+                    </button>
+                    </h2>
+                    <div id="flush-collapseSix" class="accordion-collapse collapse text-justify" data-bs-parent="#accordionFlushExample">
+                    <div class="accordion-body">Tes ini menggunakan serangkaian pertanyaan yang dianalisis dengan metode tertentu untuk mengukur faktor-faktor stres dalam kehidupan Anda. Jawaban Anda diproses melalui algoritma yang menghasilkan skor stres.</div>
+                    </div>
                 </div>
-                <div class="col-8 col-md-4 col-lg-3 d-flex justify-content-md-center align-items-center p-3 esport"
-                    data-aos="fade-up" data-aos-duration="1000" data-aos-easing="ease-in-sine" data-aos-delay="500">
-                    <i class="fa-solid fa-gamepad me-4"></i>
-                    <span>E-Sport</span>
+                <div class="accordion-item mt-4">
+                    <h2 class="fs-5" style="color: #005f73;">
+                    Tentang Kesehatan Mental
+                    </h2>
+                </div>
+                <div class="accordion-item">
+                    <h2 class="accordion-header">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseThirteen" aria-expanded="false" aria-controls="flush-collapseThirteen">
+                    Apa saja gejala stres yang perlu saya waspadai?
+                    </button>
+                    </h2>
+                    <div id="flush-collapseThirteen" class="accordion-collapse collapse text-justify" data-bs-parent="#accordionFlushExample">
+                        <div class="accordion-body">Gejala stres bisa berbeda-beda pada setiap orang, namun beberapa gejala umum termasuk kelelahan, sulit tidur, kecemasan, gangguan konsentrasi, dan mudah marah.</div>
+                    </div>
+                </div>
+                <div class="accordion-item">
+                    <h2 class="accordion-header">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseFourteen" aria-expanded="false" aria-controls="flush-collapseFourteen">
+                    Bagaimana cara mengurangi stres?
+                    </button>
+                    </h2>
+                    <div id="flush-collapseFourteen" class="accordion-collapse collapse text-justify" data-bs-parent="#accordionFlushExample">
+                    <div class="accordion-body">Mengurangi stres bisa dilakukan melalui berbagai cara seperti berolahraga, meditasi, menjaga pola makan sehat, tidur yang cukup, atau berkonsultasi dengan profesional kesehatan mental.</div>
+                    </div>
+                </div>
+                <div class="accordion-item">
+                    <h2 class="accordion-header">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseFifteen" aria-expanded="false" aria-controls="flush-collapseFifteen">
+                    Kapan saya harus mencari bantuan profesional untuk masalah stres?
+                    </button>
+                    </h2>
+                    <div id="flush-collapseFifteen" class="accordion-collapse collapse text-justify" data-bs-parent="#accordionFlushExample">
+                    <div class="accordion-body">Jika Anda merasa stres sudah mempengaruhi kehidupan sehari-hari Anda secara signifikan atau jika Anda mengalami gejala fisik atau emosional yang tidak terkendali, disarankan untuk segera mencari bantuan dari profesional kesehatan mental.</div>
+                    </div>
+                </div>
+                <div class="accordion-item">
+                    <h2 class="accordion-header">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseSixteen" aria-expanded="false" aria-controls="flush-collapseSixteen">
+                    Apakah stres dapat menyebabkan penyakit fisik?
+                    </button>
+                    </h2>
+                    <div id="flush-collapseSixteen" class="accordion-collapse collapse text-justify" data-bs-parent="#accordionFlushExample">
+                    <div class="accordion-body">Ya, stres yang berkepanjangan dapat berdampak buruk pada kesehatan fisik, seperti meningkatkan risiko penyakit jantung, tekanan darah tinggi, gangguan tidur, dan masalah pencernaan.</div>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
-    <!-- End Ekskul Section -->
+    <!-- End Question Section -->
 
     <!-- Start Q&A Section -->
-    <section class="ekskul mt-5 py-5 bg-danger">
+    <section class="qa mt-5">
         <div class="container text-center">
-            <h2 class="judul" data-aos="fade-up" data-aos-duration="1000">
+            <h2 class="judul">
                 FORUM DISKUSI DAN TANYA JAWAB
             </h2>
-            <div class="row justify-content-center gap-4 mt-4">
-                
-            </div>
-        </div>
+            <div id="disqus_thread" class="my-5"></div>
+            <script>
+                /**
+                *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+                *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables    */
+                /*
+                var disqus_config = function () {
+                this.page.url = PAGE_URL;  // Replace PAGE_URL with your page's canonical URL variable
+                this.page.identifier = PAGE_IDENTIFIER; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+                };
+                */
+                (function() { // DON'T EDIT BELOW THIS LINE
+                var d = document, s = d.createElement('script');
+                s.src = 'https://relaxamind.disqus.com/embed.js';
+                s.setAttribute('data-timestamp', +new Date());
+                (d.head || d.body).appendChild(s);
+                })();
+            </script>
+            <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+        </div>  
     </section>
     <!-- End Q&A Section -->
 

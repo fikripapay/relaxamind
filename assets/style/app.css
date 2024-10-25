@@ -16,6 +16,7 @@ p {
   font-size: 1rem;
   font-weight: 600;
   color: var(--primary);
+  text-align: ;
 }
 
 .brand-title > span {
@@ -83,128 +84,30 @@ p {
   margin-bottom: 1.5em;
 }
 
-/* Jurusan */
-.jurusan {
+/* testimonial */
+.testimonial {
   background-color: var(--bg);
 }
 
-.jurusan h3 {
+.testimonial h3 {
   font-size: 1.3em;
 }
 
-.jurusan p {
+.testimonial p {
   font-size: 0.8rem;
 }
 
-.jurusan .mm {
+.testimonial .mm {
   background-color: #d3fcf8;
 }
 
-.jurusan .mp {
+.testimonial .mp {
   background-color: #f9e8e8;
 }
 
-/* Ekskul */
-.futsal,
-.marawis,
-.paskib,
-.tari,
-.silat,
-.itclub,
-.esport {
-  position: relative;
-  font-size: 1.5rem;
-  font-weight: 700;
-  color: var(--text);
-}
-
-.futsal {
-  background-color: #deeffa;
-}
-
-.marawis {
-  background-color: #d1f9f5;
-}
-
-.paskib {
-  background-color: #f6e2d7;
-}
-
-.tari {
-  background-color: #f7bbe4;
-}
-
-.silat {
-  background-color: #f8bdb2;
-}
-
-.itclub {
-  background-color: #d8dde0;
-}
-
-.esport {
-  background-color: #f5edbe;
-}
-
-.futsal::before,
-.marawis::before,
-.paskib::before,
-.tari::before,
-.silat::before,
-.itclub::before,
-.esport::before {
-  content: "";
-  position: absolute;
-  height: 100%;
-  width: 5px;
-  left: 0;
-}
-
-.futsal::before {
-  background-color: #4986ff;
-}
-
-.marawis::before {
-  background-color: #019688;
-}
-
-.paskib::before {
-  background-color: #ff8b4a;
-}
-
-.tari::before {
-  background-color: #ff66cc;
-}
-
-.silat::before {
-  background-color: #ff6347;
-}
-
-.itclub::before {
-  background-color: #b0bec5;
-}
-
-.esport::before {
-  background-color: #ffd700;
-}
-
-.futsal i,
-.marawis i,
-.paskib i {
-  font-size: 2.5rem;
-  margin-right: 1rem;
-}
-
-.futsal i {
-  color: #4986ff;
-}
-
-.marawis i {
-  color: #019688;
-}
-
-.paskib i {
-  color: #ff8b4a;
+/* Question */
+.text-justify {
+  text-align: justify;
 }
 
 /* Berita */
