@@ -84,24 +84,24 @@ p {
   margin-bottom: 1.5em;
 }
 
-/* testimonial */
-.testimonial {
+/* tips */
+.tips {
   background-color: var(--bg);
 }
 
-.testimonial h3 {
+.tips h3 {
   font-size: 1.3em;
 }
 
-.testimonial p {
+.tips p {
   font-size: 0.8rem;
 }
 
-.testimonial .mm {
+.tips .mm {
   background-color: #d3fcf8;
 }
 
-.testimonial .mp {
+.tips .mp {
   background-color: #f9e8e8;
 }
 
@@ -130,9 +130,9 @@ p {
     font-size: 0.7em;
   }
 
-  /* Sambutan */
-  .judul {
-    font-size: 1.5rem;
+  /* Tips */
+  .card-custom {
+    width: 100% !important;
   }
 
   /* Footer */
