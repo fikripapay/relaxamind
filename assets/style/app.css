@@ -140,3 +140,10 @@ p {
     font-size: 0.8em;
   }
 }
+
+@media screen and (max-width: 992px) {
+  /* Hero */
+  #hero {
+    min-height: 50vh;
+  }
+}
