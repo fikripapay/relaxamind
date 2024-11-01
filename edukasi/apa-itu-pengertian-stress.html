@@ -1,37 +1,54 @@
 <!DOCTYPE html>
 <html lang="id">
   <head>
-    <head>
-      <meta charset="UTF-8" />
-      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-      <title>Edukasi - RelaxaMind</title>
-      <link rel="icon" href="assets/img/logo/logo.png" />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Edukasi - RelaxaMind</title>
+    <link rel="icon" href="../assets/img/logo/logo.png" />
 
-      <!-- Fonts -->
-      <link rel="preconnect" href="https://fonts.googleapis.com" />
-      <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-      <link
-        href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&display=swap"
-        rel="stylesheet"
-      />
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&display=swap"
+      rel="stylesheet"
+    />
 
-      <!-- Bootstrap CSS -->
-      <link
-        href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
-        rel="stylesheet"
-        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
-        crossorigin="anonymous"
-      />
+    <!-- Bootstrap CSS -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
+      crossorigin="anonymous"
+    />
 
-      <!-- Style AOS -->
-      <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+    <!-- Style AOS -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
 
-      <!-- My CSS -->
-      <link rel="stylesheet" href="assets/style/app.css" />
-    </head>
+    <!-- My CSS -->
+    <link rel="stylesheet" href="../assets/style/app.css" />
+
+    <style>
+      .thumbnail img {
+        width: 50%;
+      }
+
+      @media (max-width: 768px) {
+        .thumbnail img {
+          width: 100%;
+        }
+      }
+
+      div > p,
+      li {
+        text-align: justify;
+      }
+    </style>
   </head>
 
-  <body class="min-vh-100">
+  <body>
+    <!-- Preloader -->
+
     <!-- Start Navbar -->
     <nav
       class="navbar navbar-dark navbar-expand-lg sticky-top border-bottom"
@@ -40,13 +57,13 @@
       <div class="container">
         <a
           class="navbar-brand d-flex align-items-center"
-          href="index.html"
+          href="../index.html"
           data-aos="fade-down"
           data-aos-once="true"
           data-aos-duration="1000"
         >
           <img
-            src="assets/img/logo/logo.png"
+            src="../assets/img/logo/logo.png"
             alt="RelaxaMind"
             height="65"
             class="d-inline-block align-text-center me-2"
@@ -77,7 +94,7 @@
           data-aos-duration="1000"
         >
           <div class="navbar-nav">
-            <a class="nav-link active" href="index.html">Beranda</a>
+            <a class="nav-link active" href="../index.html">Beranda</a>
             <li class="nav-item dropdown">
               <a
                 class="nav-link dropdown-toggle text-white"
@@ -93,7 +110,7 @@
                   <a
                     class="dropdown-item my-dropdown"
                     style="color: #005f73"
-                    href="berita.html"
+                    href="edukasi.html"
                     >Edukasi</a
                   >
                 </li>
@@ -153,85 +170,53 @@
               </ul>
             </li>
             <a class="nav-link text-white" href="#">Konseling</a>
-            <a
-              class="nav-link ms-lg-3 mt-3 mt-lg-0 text-center rounded text-white"
-              href="#"
-              style="background-color: #28a745"
-              ;
-              >Daftar</a
-            >
-            <a
-              class="nav-link ms-lg-3 mt-3 mt-lg-0 text-center rounded text-white"
-              href="#"
-              style="background-color: #007bff"
-              ;
-              >Masuk</a
-            >
           </div>
         </div>
       </div>
     </nav>
     <!-- End Navbar -->
 
-    <!-- Start Edukasi Section -->
-    <section id="berita" class="berita py-5">
-      <div class="container">
-        <h2
-          class="judul text-center"
-          data-aos="fade-up"
-          data-aos-duration="1000"
-        >
-          EDUKASI
-        </h2>
-        <div
-          class="row mt-4 gap-3 justify-content-center"
-          data-aos="fade-up"
-          data-aos-duration="1000"
-          data-aos-easing="ease-in-sine"
-          data-aos-delay="500"
-        >
-          <div
-            class="col-md-5 col-lg-3"
-            data-aos="fade-up"
-            data-aos-duration="1000"
-          >
-            <div class="card">
-              <img
-                src="assets/img/edukasi/1.jpg"
-                class="card-img-top"
-                alt="..."
-                height="150"
-              />
-              <div class="card-body">
-                <h5 class="card-title fs-6">Judul</h5>
-                <p class="card-text">Lorem ipsum dolor sit amet</p>
-                <a href="#" class="btn btn-primary">Selengkapnya</a>
-              </div>
-            </div>
-          </div>
-          <div
-            class="col-md-5 col-lg-3"
-            data-aos="fade-up"
-            data-aos-duration="1000"
-          >
-            <div class="card">
-              <img
-                src="assets/img/edukasi/1.jpg"
-                class="card-img-top"
-                alt="..."
-                height="150"
-              />
-              <div class="card-body">
-                <h5 class="card-title fs-6">Judul</h5>
-                <p class="card-text">Lorem ipsum dolor sit amet</p>
-                <a href="#" class="btn btn-primary">Selengkapnya</a>
-              </div>
-            </div>
-          </div>
+    <!-- Start Main -->
+    <main>
+      <div class="container py-5 text-center">
+        <h1>Apa itu Pengertian Stress?</h1>
+        <div class="thumbnail">
+          <img src="img/stress.webp" alt="Picture" class="img-fluid rounded" />
+        </div>
+        <div class="content text-start mt-4">
+          <p>
+            Stress merupakan keadaan yang disebabkan dengan adanya sebuah
+            tuntutan  internal maupun eksternal ( stimulus ) yang mengancam,
+            mengganggu, atau melebihi kemampuan individu akan bereaksi baik
+            biologis, psikologis atau sitem individu dalam menanganinya (
+            Hariyanto et.al 2014 ).
+          </p>
+          <p>Penyebab Stress pada Remaja:</p>
+          <ul>
+            <li>Masalah pelajaran sekolah.</li>
+            <li>Masalah teman dekat / pacar.</li>
+            <li>Masalah hubungan dengan orangtua.</li>
+          </ul>
+          <p>Tips mengatasi Stress pada Remaja:</p>
+          <ul>
+            <li>Berbicara dengan orang yang kita percaya.</li>
+            <li>Meminta bantuan agar tidak menghadapi sesuatu sendirian.</li>
+            <li>
+              Relaksasi nafas dalam, tindakan ini dapat menurunkan tingkat
+              stress seseorang.
+            </li>
+          </ul>
+          <p>Penatalaksanaan:</p>
+          <ul>
+            <li>Terapi musik.</li>
+            <li>Terapi butterfly hug.</li>
+            <li>Terapi mindfullnes.</li>
+            <li>Terapi relaksasi nafas dalam.</li>
+          </ul>
         </div>
       </div>
-    </section>
-    <!-- End Edukasi Section -->
+    </main>
+    <!-- End Main -->
 
     <!-- Start Footer -->
     <footer class="footer text-center">
