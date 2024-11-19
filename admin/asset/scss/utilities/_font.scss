@@ -1,0 +1,1137 @@
+// 1. login.php
+// <!DOCTYPE html>
+// <html lang="en">
+// <head>
+//     <meta charset="utf-8">
+//     <meta http-equiv="X-UA-Compatible" content="IE=edge">
+//     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+//     <meta name="description" content="">
+//     <meta name="author" content="">
+//     <title>Login</title>
+//     <link href="asset/vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
+//     <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i"
+//         rel="stylesheet">
+//     <link href="asset/css/sb-admin-2.min.css" rel="stylesheet">
+// </head>
+// <body class="bg-gradient-primary">
+//     <div class="container">
+//         <div align="center">
+//             <div class="col-xl-6 col-lg-6 col-md-15">
+//                 <div class="card o-hidden border-0 shadow-lg my-5">
+//                     <div class="card-body p-0">
+//                         <div class="p-5">
+//                             <div class="text-center">
+//                                 <h1 class="h4 text-gray-900 mb-4">MASUKAN AKSES LOGIN ANDA</h1>
+//                             </div>
+//                             <?php
+//                             if(isset($_GET['gagal'])) {
+//                                 echo "<div align='left' class='alert alert-danger' role='alert'>  <button type='button' class='close' data-dismiss='alert' aria-label='Close'><span aria-hidden='true'>&times;</span></button>Username atau password salah.</div>";
+//                             }
+//                             ?>
+//                             <form class="user" method="post" action="/ujikomtemplate/controller/user.php">
+//                                 <div class="form-group">
+//                                     <input type="text" class="form-control form-control-user" id="username" name="username" placeholder="Username">
+//                                 </div>
+//                                 <div class="form-group">
+//                                     <input type="password" class="form-control form-control-user" id="password" name="password" placeholder="Password">
+//                                 </div>
+//                                 <button type="submit" class="btn btn-primary btn-user btn-block">
+//                                     Login
+//                                 </button>
+//                             </form>
+//                         </div>
+//                     </div>
+//                 </div>
+//             </div>
+//         </div>
+//     </div>
+//     <script src="asset/vendor/jquery/jquery.min.js"></script>
+//     <script src="asset/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+//     <script src="asset/vendor/jquery-easing/jquery.easing.min.js"></script>
+//     <script src="asset/js/sb-admin-2.min.js"></script>
+// </body>
+// </html>
+
+
+
+// 2. index.php
+// <?php
+//     require('views/main/header.php');
+//     require('config/database.php');
+//     if(isset($_GET['page'])){
+//         switch($_GET['page']){
+//             case 'dashboard': include 'views/body/dashboard/index.php'; break;
+//             case 'dosen': include 'views/body/dosen/index.php'; break;
+//             case 'input-dosen': include 'views/body/dosen/tambah.php'; break;
+//             case 'edit-dosen': include 'views/body/dosen/ubah.php'; break;
+//             case 'detail-dosen': include 'views/body/dosen/lihat.php'; break;
+//             case 'jadwal': include 'views/body/jadwal/index.php'; break;
+//         }
+//     }else{
+//         echo '<meta http-equiv="refresh" content="0;url=index.php?page=dashboard" />';
+//     }
+
+//     require('views/main/footer.php');
+// ?>
+
+
+
+// 3. views/main/header.php
+// <?php
+// ob_start();
+// session_start();
+
+// // Periksa apakah pengguna sudah login atau belum
+// if (!isset($_SESSION['username'])) {
+//     header("Location: login.php");
+//     exit();
+// }
+// $username=strtoupper($_SESSION['username']);
+// ?>
+// <!DOCTYPE html>
+// <html lang="en">
+
+// <head>
+
+//     <meta charset="utf-8">
+//     <meta http-equiv="X-UA-Compatible" content="IE=edge">
+//     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+//     <meta name="description" content="">
+//     <meta name="author" content="">
+
+//     <title>UJIKOM</title>
+
+//     <!-- Custom fonts for this template -->
+//     <link href="asset/vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
+//     <link
+//         href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i"
+//         rel="stylesheet">
+
+//     <!-- Custom styles for this template -->
+//     <link href="asset/css/sb-admin-2.min.css" rel="stylesheet">
+
+//     <!-- Custom styles for this page -->
+//     <link href="asset/vendor/datatables/dataTables.bootstrap4.min.css" rel="stylesheet">
+//     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+
+
+// </head>
+
+// <body id="page-top">
+
+//     <!-- Page Wrapper -->
+//     <div id="wrapper">
+
+//         <!-- Sidebar -->
+//         <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
+
+//             <!-- Sidebar - Brand -->
+//             <a class="sidebar-brand d-flex align-items-center justify-content-center" href="index.html">
+//                 <div class="sidebar-brand-icon rotate-n-15">
+//                     <i class="fas fa-laugh-wink"></i>
+//                 </div>
+//                 <div class="sidebar-brand-text mx-3">SB Admin <sup>2</sup></div>
+//             </a>
+
+//             <!-- Divider -->
+//             <hr class="sidebar-divider my-0">
+
+//             <!-- Nav Item - Dashboard -->
+//             <li class="nav-item">
+//                 <a class="nav-link" href="index.php?page=dashboard">
+//                     <i class="fas fa-fw fa-tachometer-alt"></i>
+//                     <span>Dashboard</span></a>
+//             </li>
+
+//             <!-- Divider -->
+//             <hr class="sidebar-divider">
+
+//             <!-- Heading -->
+//             <div class="sidebar-heading">
+//                 Interface
+//             </div>
+
+//             <!-- Nav Item - Pages Collapse Menu -->
+//             <li class="nav-item">
+//                 <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTwo"
+//                     aria-expanded="true" aria-controls="collapseTwo">
+//                     <i class="fas fa-fw fa-cog"></i>
+//                     <span>Master</span>
+//                 </a>
+//                 <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
+//                     <div class="bg-white py-2 collapse-inner rounded">
+//                         <h6 class="collapse-header">Master Data</h6>
+//                         <a class="collapse-item" id="m_mahasiswa" href="index.php?page=mahasiswa">Mahasiwa</a>
+//                         <a class="collapse-item" id="m_dosen"  href="index.php?page=dosen">Dosen</a>
+//                     </div>
+//                 </div>
+//             </li>
+
+//             <!-- Nav Item - Utilities Collapse Menu -->
+//             <li class="nav-item">
+//                 <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseUtilities"
+//                     aria-expanded="true" aria-controls="collapseUtilities">
+//                     <i class="fas fa-fw fa-wrench"></i>
+//                     <span>Transaksi</span>
+//                 </a>
+//                 <div id="collapseUtilities" class="collapse" aria-labelledby="headingUtilities"
+//                     data-parent="#accordionSidebar">
+//                     <div class="bg-white py-2 collapse-inner rounded">
+//                         <h6 class="collapse-header">Data Transaksi:</h6>
+//                         <a class="collapse-item" id="jadwal"  href="index.php?page=jadwal">Jadwal</a>
+//                         <a class="collapse-item" id="krs"  href="index.php?page=krs">KRS</a>
+//                     </div>
+//                 </div>
+//             </li>
+
+           
+//             <!-- Sidebar Toggler (Sidebar) -->
+//             <div class="text-center d-none d-md-inline">
+//                 <button class="rounded-circle border-0" id="sidebarToggle"></button>
+//             </div>
+
+//         </ul>
+//         <!-- End of Sidebar -->
+
+//         <!-- Content Wrapper -->
+//         <div id="content-wrapper" class="d-flex flex-column">
+
+//             <!-- Main Content -->
+//             <div id="content">
+
+//                 <!-- Topbar -->
+//                 <nav class="navbar navbar-expand navbar-light bg-white topbar mb-4 static-top shadow">
+
+//                     <!-- Sidebar Toggle (Topbar) -->
+//                     <form class="form-inline">
+//                         <button id="sidebarToggleTop" class="btn btn-link d-md-none rounded-circle mr-3">
+//                             <i class="fa fa-bars"></i>
+//                         </button>
+//                     </form>
+
+
+//                     <!-- Topbar Navbar -->
+//                     <ul class="navbar-nav ml-auto">
+//                         <!-- Nav Item - User Information -->
+//                         <li class="nav-item dropdown no-arrow">
+//                             <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button"
+//                                 data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+//                                 <span class="mr-2 d-none d-lg-inline text-gray-600 small"><?php echo $username; ?></span>
+//                                 <img class="img-profile rounded-circle"
+//                                     src="asset/img/undraw_profile.svg">
+//                             </a>
+//                             <!-- Dropdown - User Information -->
+//                             <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in"
+//                                 aria-labelledby="userDropdown">
+//                                 <a class="dropdown-item" href="#">
+
+//                                 <h6>PETUGAS WEB</h6>
+//                                 </a>
+//                                 <div class="dropdown-divider"></div>
+//                                 <a class="dropdown-item" href="#" data-toggle="modal" data-target="#logoutModal">
+//                                     <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>
+//                                     Logout
+//                                 </a>
+//                             </div>
+//                         </li>
+
+//                     </ul>
+
+//                 </nav>
+//                 <!-- End of Topbar -->
+
+//                 <!-- Begin Page Content -->
+//                 <div id="contentData">
+//                 <div class="container-fluid">
+//         <!-- Page Heading -->
+
+
+
+// 4. views/main/footer.php
+// </div>
+//                 </div>
+//                 <!-- /.container-fluid -->
+
+//             </div>
+//             <!-- End of Main Content -->
+
+//             <!-- Footer -->
+//             <footer class="sticky-footer bg-white">
+//                 <div class="container my-auto">
+//                     <div class="copyright text-center my-auto">
+//                         <span>Copyright &copy; Universitas Pamulang 2024</span>
+//                     </div>
+//                 </div>
+//             </footer>
+//             <!-- End of Footer -->
+
+//         </div>
+//         <!-- End of Content Wrapper -->
+
+//     </div>
+//     <!-- End of Page Wrapper -->
+
+//     <!-- Scroll to Top Button-->
+//     <a class="scroll-to-top rounded" href="#page-top">
+//         <i class="fas fa-angle-up"></i>
+//     </a>
+
+//     <!-- Logout Modal-->
+//     <div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+//         aria-hidden="true">
+//         <div class="modal-dialog" role="document">
+//             <div class="modal-content">
+//                 <div class="modal-header">
+//                     <h5 class="modal-title" id="exampleModalLabel">Ready to Leave?</h5>
+//                     <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+//                         <span aria-hidden="true">×</span>
+//                     </button>
+//                 </div>
+//                 <div class="modal-body">Klik "Logout" untuk mengakhiri akses web.</div>
+//                 <div class="modal-footer">
+//                     <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
+//                     <a class="btn btn-primary" href="logout.php">Logout</a>
+//                 </div>
+//             </div>
+//         </div>
+//     </div>
+
+
+//     <!-- Hapus Modal-->
+//     <div class="modal fade" id="hapusmodal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+//         aria-hidden="true">
+//         <div class="modal-dialog" role="document">
+//             <div class="modal-content">
+//                 <div class="modal-header">
+//                     <h5 class="modal-title" id="exampleModalLabel">Menghapus Data?</h5>
+//                     <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+//                         <span aria-hidden="true">×</span>
+//                     </button>
+//                 </div>
+//                 <div class="modal-body">Klik "Hapus" untuk hapus data ini.</div>
+//                 <div class="modal-footer">
+//                     <button class="btn btn-secondary" type="button" data-dismiss="modal">Batal</button>
+//                     <a class="btn btn-danger" href="logout.php">Hapus</a>
+//                 </div>
+//             </div>
+//         </div>
+//     </div>
+
+//     <!-- Bootstrap core JavaScript-->
+//     <script src="asset/vendor/jquery/jquery.min.js"></script>
+//     <script src="asset/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+//     <!-- Core plugin JavaScript-->
+//     <script src="asset/vendor/jquery-easing/jquery.easing.min.js"></script>
+
+//     <!-- Custom scripts for all pages-->
+//     <script src="asset/js/sb-admin-2.min.js"></script>
+
+//     <!-- Page level plugins -->
+//     <script src="asset/vendor/datatables/jquery.dataTables.min.js"></script>
+//     <script src="asset/vendor/datatables/dataTables.bootstrap4.min.js"></script>
+
+//     <!-- Page level custom scripts -->
+//     <script src="asset/js/demo/datatables-demo.js"></script>
+   
+
+// </body>
+
+// </html>
+
+
+
+// 5. views/body/dosen/index.php
+// <?php
+// require_once 'controller/dosen.php';
+// ?>
+
+//     <div >
+//         <h1 class="h3 mb-4 text-gray-800">DATA DOSEN </h1>
+//     </div>
+//     <?php
+//         if(isset($_GET['insert'])) {
+//     ?>
+//         <div class="alert alert-success" role="alert"><button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+//             Data Berhasil Dimasukan Ke Database.
+//         </div> 
+//     <?php
+//         } 
+//         else if(isset($_GET['delete'])) {
+//     ?>
+//         <div class="alert alert-danger" role="alert"><button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+//             Data Berhasil Dihapus Dari Database.
+//         </div> 
+//     <?php
+//         } 
+//         else if(isset($_GET['update'])) {
+//     ?>
+//         <div class="alert alert-primary" role="alert"><button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+//             Data Berhasil Diupdate Ke Database.
+//         </div> 
+//     <?php
+//         } 
+//     ?>
+//     <div class="card shadow mb-4">    
+//         <div class="card-header py-3">
+//             <a href="index.php?page=input-dosen" class="btn btn-success btn-icon-split">
+//                 <span class="icon text-white-50"></span>
+//                 <span class="text">Tambah Data</span>
+//             </a>
+//         </div>
+//         <div class="card-body">
+//             <div class="table-responsive">
+//                 <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+//                     <thead>
+//                         <tr>
+//                             <th>DO</th>
+//                             <th>Kode Dosen</th>
+//                             <th>Nama</th>
+//                             <th>Alamat</th>
+//                             <th>Aksi</th>
+//                         </tr>
+//                     </thead>
+//                     <tfoot>
+//                         <tr>
+//                             <th>DO</th>
+//                             <th>Kode Dosen</th>
+//                             <th>Nama</th>
+//                             <th>Alamat</th>
+//                             <th>Aksi</th>
+//                         </tr>
+//                     </tfoot>
+//                     <tbody>
+//                         <?php
+//                             include "config/database.php";
+//                             $no=0;
+//                             $sql = "SELECT * FROM `tbl_dosen`";
+//                             // Eksekusi query
+//                             $result = $conn->query($sql);
+//                             // Loop melalui hasil query dan tampilkan dalam tabel
+//                             if ($result->num_rows > 0) {
+//                                 while ($row = $result->fetch_assoc()) {
+//                                     $no++;
+//                                     echo "<tr>";
+//                                     ?>
+//                                     <th scope='row'> <?php echo $no ?></th> 
+//                                     <?php
+//                                         echo "<td>" . $row["kd_dosen"] . "</td>";
+//                                         echo "<td>" . $row["nama"] . "</td>";
+//                                         echo "<td>" . $row["alamat"] . "</td>";
+//                                         echo "<td>
+//                                                 <a href='' class='btn btn-success'>
+//                                                     <span class='text'>Lihat</span>
+//                                                 </a>
+//                                                 <a href='index.php?page=edit-dosen&kd_dosen=" . $row["kd_dosen"] . "' class='btn btn-primary' style='margin-left: 5px;'>
+//                                                     <span class='text'>Edit</span>
+//                                                 </a>";
+//                                                 ?>
+//                                                 <a href='index.php?page=dosen&hapus=<?php echo $row["kd_dosen"] ?>' class='btn btn-danger' style='margin-left: 5px;' onclick="return confirm('Apakah Anda yakin ingin menghapus data ini?')">
+//                                                     <span class='text'>Hapus</span>
+//                                                 </a>
+//                                                 <?php
+                                            
+//                                     echo "</td></tr>";
+//                                 }
+//                             } 
+//                             // Tutup koneksi database
+//                             $conn->close();
+//                         ?>
+//                     </tbody>
+//                 </table>
+//             </div>
+//         </div>
+//     </div>
+
+
+
+// 6. views/body/dosen/lihat.php
+// <div>
+//     <h1 class="h3 mb-4 text-gray-800">LIHAT DATA DOSEN </h1>
+// </div>
+// <!-- Area Chart -->
+// <div class="row">
+// <div class="col-12 col-xl-6 mb-4 mb-lg-0">
+// <div class="card shadow mb-4">
+//     <div class="card-header py-3">
+//         <h6 class="m-0 font-weight-bold text-primary">Data Dosen</h6>
+//     </div>
+//     <div class="card-body">
+        
+//     <div class="table-responsive">
+//         <table class="table table-bordered table-striped">
+//             <tr>
+//                 <td>Transaksi</td>
+//                 <td style="width:5px;"> : </td>
+//                 <td>asadasdadadasdasdasasdasdasd</td>
+//             </tr>
+//             <tr>
+//                 <td>Transaksi</td>
+//                 <td> : </td>
+//                 <td>asadasdadadasdasdasasdasdasd</td>
+//             </tr>
+//             <tr>
+//                 <td>Transaksi</td>
+//                 <td> : </td>
+//                 <td>asadasdadadasdasdasasdasdasd</td>
+//             </tr>
+//         </table>
+//     </div>
+//             <button type="submit" name="tambah" class="btn btn-primary">Submit</button>
+//             <a href="index.php?page=dosen" class="btn btn-danger">
+//                 <span class="text">Kembali</span>
+//             </a>
+//     </div>
+// </div>
+// </div>
+// </div>
+
+
+
+
+// 7. views/body/dosen/tambah.php
+// <div>
+//     <h1 class="h3 mb-4 text-gray-800">TAMBAH DATA DOSEN </h1>
+// </div>
+// <!-- Area Chart -->
+// <div class="card shadow mb-4">
+//     <div class="card-header py-3">
+//         <h6 class="m-0 font-weight-bold text-primary">Masukan Data Dosen</h6>
+//     </div>
+//     <div class="card-body">
+//         <form action="index.php?page=dosen" method="post">                     
+//             <div class="row">
+//                 <div class="col-sm-4">
+//                     <div class="form-group">
+//                         <label for="kd_dosen">ID Dosen:</label>
+//                         <input type="text" class="form-control" id="kd_dosen" name="kd_dosen">
+//                     </div>
+//                 </div>
+//                 <div class="col-sm-4">
+//                     <div class="form-group">
+//                         <label for="nama">Nama Dosen:</label>
+//                         <input type="text" class="form-control" id="nama" name="nama">
+//                     </div>     
+//                 </div>
+//                 <div class="col-sm-4">
+//                     <div class="form-group">
+//                         <label for="alamat">Alamat Dosen:</label>
+//                         <input type="text" class="form-control" id="alamat" name="alamat">
+//                     </div>
+//                 </div>
+//             </div>
+//             <button type="submit" name="tambah" class="btn btn-primary">Submit</button>
+//             <a href="index.php?page=dosen" class="btn btn-danger">
+//                 <span class="text">Kembali</span>
+//             </a>
+//         </form>
+//     </div>
+// </div>
+
+
+
+
+// 8. views/body/dosen/ubah.php
+// <?php
+//     if (isset($_GET['kd_dosen'])){
+//         $kd_dosen = $_GET['kd_dosen'];
+
+//         $query = "SELECT * FROM tbl_dosen WHERE kd_dosen = ?";
+//         $stmt = $conn->prepare($query);
+//         $stmt->bind_param ("s", $kd_dosen);
+//         $stmt->execute();
+//         $result = $stmt->get_result();
+
+//         if ($result->num_rows > 0){
+//             while ($row = $result->fetch_assoc()){
+//                 $kd_dosen = $row['kd_dosen'];
+//                 $nama = $row['nama'];
+//                 $alamat = $row['alamat']; 
+//             }
+//         }
+
+//     }
+// ?>
+// <div>
+//     <h1 class="h3 mb-4 text-gray-800">EDIT DATA DOSEN </h1>
+// </div>
+// <!-- Area Chart -->
+// <div class="card shadow mb-4">
+//     <div class="card-header py-3">
+//         <h6 class="m-0 font-weight-bold text-primary">Edit Data Dosen</h6>
+//     </div>
+//     <div class="card-body">
+//         <form action="index.php?page=dosen" method="post">                     
+//             <div class="row">
+//                 <div class="col-sm-4">
+//                     <div class="form-group">
+//                         <label for="nama">Kode Dosen:</label>
+//                         <input type="text" class="form-control" value="<?php echo $kd_dosen ?>" disabled>
+//                         <input type="hidden" id="kd_dosen" name="kd_dosen" value="<?php echo $kd_dosen ?>">
+//                     </div>
+//                 </div>
+//                 <div class="col-sm-4">
+//                     <div class="form-group">
+//                         <label for="nama">Nama Dosen:</label>
+//                         <input type="text" class="form-control" id="nama" name="nama" value="<?php echo $nama ?>">
+//                     </div>     
+//                 </div>
+//                 <div class="col-sm-4">
+//                     <div class="form-group">
+//                         <label for="alamat">Alamat Dosen:</label>
+//                         <input type="text" class="form-control" id="alamat" name="alamat" value="<?php echo $alamat ?>">
+//                     </div>
+//                 </div>
+//             </div>
+//             <button type="submit" name="update" class="btn btn-primary">Submit</button>
+//             <a href="index.php?page=dosen" class="btn btn-danger">
+//                 <span class="text">Kembali</span>
+//             </a>
+//         </form>
+//     </div>
+// </div>
+
+
+
+// 9. controller/dosen.php
+// <?php
+//     require_once 'model/dosen.php';
+    
+//     if ($_SERVER["REQUEST_METHOD"] == "POST") {
+//     $controller = new Dosen_Model();
+
+//     // Memanggil fungsi tambahDosen jika tombol "Tambah Kelas" ditekan
+//     if (isset($_POST['tambah'])) {
+//         $kd_dosen = $_POST['kd_dosen'];
+//         $nama = $_POST['nama'];
+//         $alamat = $_POST['alamat'];
+
+//         if ($controller->tambahDosen($kd_dosen, $nama, $alamat, $conn)) {
+//             header("Location: index.php?page=dosen&insert");
+//             exit();
+//         }
+//     }
+    
+//     if (isset($_POST['update'])) {
+//         $kd_dosen = $_POST['kd_dosen'];
+//         $nama = $_POST['nama'];
+//         $alamat = $_POST['alamat'];
+        
+//         if ($controller->updateKelas($kd_dosen, $nama, $alamat, $conn)) {
+//             header("Location: index.php?page=dosen&update");
+//             exit();
+//         } 
+//     }
+//     }
+
+//     if ($_SERVER["REQUEST_METHOD"] == "GET" && isset($_GET['hapus'])) {
+        
+//     $controller = new Dosen_Model();
+
+//     // Mendapatkan id_kelas yang akan dihapus
+//     $kd_dosen = $_GET['hapus'];
+
+//     // Memanggil fungsi hapusKelas
+//     if ($controller->hapusKelas($kd_dosen, $conn)) {
+//         header("Location: index.php?page=dosen&delete");
+//         exit();
+//     }else {
+//         echo "<script>alert('Gagal menghapus karena data masih dibutuhkan jadwal');</script>";
+//     }
+//     }
+// ?>
+
+
+
+
+
+
+// 10. controller/user.php
+// <?php
+
+// session_start();
+
+// include '../model/user.php';
+// include '../config/database.php';
+
+// $username = $_POST['username'];
+// $password = $_POST['password'];
+
+// $model = new User();
+// if ($model->login($username, $password, $conn)) {
+//     $_SESSION['username'] = $username; 
+//     header("Location: ../index.php");
+// } else {   
+//     header("Location: ../login.php?gagal");
+// }
+
+// $conn->close();
+// ?>
+
+
+
+
+// 11. model/dosen.php
+// <?php
+// class Dosen_Model {
+
+//     public function tambahDosen($kd_dosen, $nama, $alamat, $conn) {
+//         $stmt = $conn->prepare("INSERT INTO tbl_dosen (kd_dosen, nama, alamat) VALUES (?, ?, ?)");
+//         $stmt->bind_param("sss", $kd_dosen, $nama, $alamat);
+        
+//         if ($stmt->execute()) {
+//             return true; // Jika berhasil memasukkan data
+//         } else {
+//             return false; // Jika gagal memasukkan data
+//         }
+//     }
+
+//     public function hapusKelas($kd_dosen, $conn) {
+//         $stmt = $conn->prepare("DELETE FROM tbl_dosen WHERE kd_dosen = ?");
+//         $stmt->bind_param("i", $kd_dosen);
+        
+//         if ($stmt->execute()) {
+//             return true; // Jika berhasil menghapus data
+//         } else {
+//             return false; // Jika gagal menghapus data
+//         }
+//     }
+
+//     public function updateKelas($kd_dosen, $nama, $alamat, $conn) {
+//         $stmt = $conn->prepare("UPDATE tbl_dosen SET nama = ?, alamat = ? WHERE kd_dosen = ?");
+//         $stmt->bind_param("ssi", $nama, $alamat, $kd_dosen);
+        
+//         if ($stmt->execute()) {
+//             return true; // Jika berhasil mengupdate data
+//         } else {
+//             return false; // Jika gagal mengupdate data
+//         }
+//     }
+// }
+// ?>
+
+
+
+
+
+// 12. model/user.php
+// <?php
+//     class User {
+
+//         public function login($username, $password, $conn) {
+//             $query = "SELECT * FROM tbl_user WHERE username = ? AND password = ?";
+//             $stmt = $conn->prepare($query);
+//             $stmt->bind_param("ss", $username, $password);
+//             $stmt->execute();
+//             $result = $stmt->get_result();
+//             if ($result->num_rows == 1) {
+//                 return true;
+//             } else {
+//                 return false;
+//             }
+//         }
+//     }
+// ?>
+
+
+
+
+// 13. config/database.php
+// <?php
+// $servername = "localhost"; // Gantilah dengan nama server database Anda
+// $username = "root"; // Gantilah dengan nama pengguna database Anda
+// $password = ""; // Gantilah dengan kata sandi database Anda
+// $database = "db_latihan"; // Gantilah dengan nama database yang Anda gunakan
+
+// // Membuat koneksi ke database
+// $conn = new mysqli($servername, $username, $password, $database);
+
+// ?>
+
+
+// 14. logout.php
+// <?php
+// session_start();
+// session_unset(); // Menghapus semua variabel sesi
+// session_destroy(); // Menghancurkan sesi
+// header("Location: login.php"); // Alihkan ke halaman login
+// exit();
+// ?>
+
+
+// 15. innerjoin
+//     SELECT tbl_jadwal.id, 
+//         tbl_dosen.nama AS nama_dosen, 
+//         tbl_matkul.nama AS nama_matkul, 
+//         tbl_matkul.sks, 
+//         tbl_jadwal.waktu, 
+//         tbl_jadwal.ruang 
+//     FROM tbl_jadwal 
+//     INNER JOIN tbl_dosen ON tbl_jadwal.kd_dosen = tbl_dosen.kd_dosen 
+//     INNER JOIN tbl_matkul ON tbl_jadwal.kd_matkul = tbl_matkul.kd_matkul
+
+
+// table 2
+// SELECT *
+// FROM customers
+// INNER JOIN orders ON customers.customer_id = orders.customer_id;
+
+
+// table 3
+// SELECT *
+// FROM customers
+// INNER JOIN orders ON customers.customer_id = orders.customer_id
+// INNER JOIN products ON orders.product_id = products.product_id;
+
+
+// table 4
+// SELECT *
+// FROM customers
+// INNER JOIN orders ON customers.customer_id = orders.customer_id
+// INNER JOIN products ON orders.product_id = products.product_id
+// INNER JOIN shipments ON orders.order_id = shipments.order_id;
+
+
+
+
+// 15. database
+// -- phpMyAdmin SQL Dump
+// -- version 5.2.0
+// -- https://www.phpmyadmin.net/
+// --
+// -- Host: 127.0.0.1
+// -- Waktu pembuatan: 24 Mar 2024 pada 16.47
+// -- Versi server: 10.4.25-MariaDB
+// -- Versi PHP: 7.4.30
+
+// SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+// START TRANSACTION;
+// SET time_zone = "+00:00";
+
+
+// /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
+// /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
+// /*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
+// /*!40101 SET NAMES utf8mb4 */;
+
+// --
+// -- Database: `db_latihan`
+// --
+
+// -- --------------------------------------------------------
+
+// --
+// -- Struktur dari tabel `tbl_dosen`
+// --
+
+// CREATE TABLE `tbl_dosen` (
+//   `kd_dosen` int(11) NOT NULL,
+//   `nama` varchar(50) NOT NULL,
+//   `alamat` varchar(255) NOT NULL
+// ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+// --
+// -- Dumping data untuk tabel `tbl_dosen`
+// --
+
+// INSERT INTO `tbl_dosen` (`kd_dosen`, `nama`, `alamat`) VALUES
+// (5001, 'Aris', 'Cikidang'),
+// (5002, 'Joko', 'Tangerang Selatan'),
+// (21321, 'wqe', 'w'),
+// (123123, 'weqwe', 'qweq');
+
+// -- --------------------------------------------------------
+
+// --
+// -- Struktur dari tabel `tbl_jadwal`
+// --
+
+// CREATE TABLE `tbl_jadwal` (
+//   `id` int(11) NOT NULL,
+//   `kd_dosen` int(11) NOT NULL,
+//   `kd_matkul` int(11) NOT NULL,
+//   `waktu` varchar(50) NOT NULL,
+//   `ruang` varchar(50) NOT NULL
+// ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+// --
+// -- Dumping data untuk tabel `tbl_jadwal`
+// --
+
+// INSERT INTO `tbl_jadwal` (`id`, `kd_dosen`, `kd_matkul`, `waktu`, `ruang`) VALUES
+// (1, 5001, 1001, '19.00-20.00 WIB', 'V. 601'),
+// (2, 5002, 1002, '19.00-20.00 WIB', 'V. 602');
+
+// -- --------------------------------------------------------
+
+// --
+// -- Struktur dari tabel `tbl_krs`
+// --
+
+// CREATE TABLE `tbl_krs` (
+//   `id` int(11) NOT NULL,
+//   `nim` int(11) NOT NULL,
+//   `id_jadwal` int(11) NOT NULL,
+//   `kd_semester` int(11) NOT NULL
+// ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+// --
+// -- Dumping data untuk tabel `tbl_krs`
+// --
+
+// INSERT INTO `tbl_krs` (`id`, `nim`, `id_jadwal`, `kd_semester`) VALUES
+// (1, 20114123, 1, 20221),
+// (2, 20114124, 2, 20222),
+// (3, 20114124, 1, 20221),
+// (4, 20114123, 1, 20222);
+
+// -- --------------------------------------------------------
+
+// --
+// -- Struktur dari tabel `tbl_mahasiswa`
+// --
+
+// CREATE TABLE `tbl_mahasiswa` (
+//   `nim` int(11) NOT NULL,
+//   `nama` varchar(50) NOT NULL,
+//   `alamat` varchar(255) NOT NULL,
+//   `jurusan` varchar(50) NOT NULL
+// ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+// --
+// -- Dumping data untuk tabel `tbl_mahasiswa`
+// --
+
+// INSERT INTO `tbl_mahasiswa` (`nim`, `nama`, `alamat`, `jurusan`) VALUES
+// (20114123, 'Dimas', 'jakarta', 'Teknik Informatika'),
+// (20114124, 'Heri', 'jakarta', 'Teknik Informatika');
+
+// -- --------------------------------------------------------
+
+// --
+// -- Struktur dari tabel `tbl_matkul`
+// --
+
+// CREATE TABLE `tbl_matkul` (
+//   `kd_matkul` int(11) NOT NULL,
+//   `nama` varchar(50) NOT NULL,
+//   `sks` varchar(10) NOT NULL
+// ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+// --
+// -- Dumping data untuk tabel `tbl_matkul`
+// --
+
+// INSERT INTO `tbl_matkul` (`kd_matkul`, `nama`, `sks`) VALUES
+// (1001, 'algo1', '2 sks'),
+// (1002, 'web2', '3 sks');
+
+// -- --------------------------------------------------------
+
+// --
+// -- Struktur dari tabel `tbl_semester`
+// --
+
+// CREATE TABLE `tbl_semester` (
+//   `kd_semester` int(11) NOT NULL,
+//   `semester` varchar(30) NOT NULL
+// ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+// --
+// -- Dumping data untuk tabel `tbl_semester`
+// --
+
+// INSERT INTO `tbl_semester` (`kd_semester`, `semester`) VALUES
+// (20221, 'Ganjil 2022/2023'),
+// (20222, 'Genap 2022/2023');
+
+// -- --------------------------------------------------------
+
+// --
+// -- Struktur dari tabel `tbl_user`
+// --
+
+// CREATE TABLE `tbl_user` (
+//   `id` int(11) NOT NULL,
+//   `username` varchar(50) NOT NULL,
+//   `password` varchar(255) NOT NULL
+// ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+// --
+// -- Dumping data untuk tabel `tbl_user`
+// --
+
+// INSERT INTO `tbl_user` (`id`, `username`, `password`) VALUES
+// (1, 'admin', 'admin');
+
+// --
+// -- Indexes for dumped tables
+// --
+
+// --
+// -- Indeks untuk tabel `tbl_dosen`
+// --
+// ALTER TABLE `tbl_dosen`
+//   ADD PRIMARY KEY (`kd_dosen`);
+
+// --
+// -- Indeks untuk tabel `tbl_jadwal`
+// --
+// ALTER TABLE `tbl_jadwal`
+//   ADD PRIMARY KEY (`id`),
+//   ADD KEY `fk_matkul` (`kd_matkul`),
+//   ADD KEY `fk_dosen` (`kd_dosen`);
+
+// --
+// -- Indeks untuk tabel `tbl_krs`
+// --
+// ALTER TABLE `tbl_krs`
+//   ADD PRIMARY KEY (`id`),
+//   ADD KEY `fk_mhs` (`nim`),
+//   ADD KEY `fk_jadwal` (`id_jadwal`),
+//   ADD KEY `fk_semester` (`kd_semester`);
+
+// --
+// -- Indeks untuk tabel `tbl_mahasiswa`
+// --
+// ALTER TABLE `tbl_mahasiswa`
+//   ADD PRIMARY KEY (`nim`);
+
+// --
+// -- Indeks untuk tabel `tbl_matkul`
+// --
+// ALTER TABLE `tbl_matkul`
+//   ADD PRIMARY KEY (`kd_matkul`);
+
+// --
+// -- Indeks untuk tabel `tbl_semester`
+// --
+// ALTER TABLE `tbl_semester`
+//   ADD PRIMARY KEY (`kd_semester`);
+
+// --
+// -- Indeks untuk tabel `tbl_user`
+// --
+// ALTER TABLE `tbl_user`
+//   ADD PRIMARY KEY (`id`);
+
+// --
+// -- AUTO_INCREMENT untuk tabel yang dibuang
+// --
+
+// --
+// -- AUTO_INCREMENT untuk tabel `tbl_jadwal`
+// --
+// ALTER TABLE `tbl_jadwal`
+//   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+
+// --
+// -- AUTO_INCREMENT untuk tabel `tbl_krs`
+// --
+// ALTER TABLE `tbl_krs`
+//   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+
+// --
+// -- AUTO_INCREMENT untuk tabel `tbl_user`
+// --
+// ALTER TABLE `tbl_user`
+//   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+
+// --
+// -- Ketidakleluasaan untuk tabel pelimpahan (Dumped Tables)
+// --
+
+// --
+// -- Ketidakleluasaan untuk tabel `tbl_jadwal`
+// --
+// ALTER TABLE `tbl_jadwal`
+//   ADD CONSTRAINT `fk_dosen` FOREIGN KEY (`kd_dosen`) REFERENCES `tbl_dosen` (`kd_dosen`),
+//   ADD CONSTRAINT `fk_matkul` FOREIGN KEY (`kd_matkul`) REFERENCES `tbl_matkul` (`kd_matkul`);
+
+// --
+// -- Ketidakleluasaan untuk tabel `tbl_krs`
+// --
+// ALTER TABLE `tbl_krs`
+//   ADD CONSTRAINT `fk_jadwal` FOREIGN KEY (`id_jadwal`) REFERENCES `tbl_jadwal` (`id`),
+//   ADD CONSTRAINT `fk_mhs` FOREIGN KEY (`nim`) REFERENCES `tbl_mahasiswa` (`nim`),
+//   ADD CONSTRAINT `fk_semester` FOREIGN KEY (`kd_semester`) REFERENCES `tbl_semester` (`kd_semester`);
+// COMMIT;
+
+// /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+// /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
+// /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
+
+
+
+
+
+// tambahan input jadwal
+// <?php 
+//     include "header.php";
+// ?>
+//     <div >
+//         <h1 class="h3 mb-4 text-gray-800">TAMBAH DATA JADWAL </h1>
+//     </div>
+
+//             <!-- Area Chart -->
+//             <div class="card shadow mb-4">
+//                 <div class="card-header py-3">
+//                     <h6 class="m-0 font-weight-bold text-primary">Masukan Data Jadwal</h6>
+//                 </div>
+//                 <div class="card-body">
+//                     <form action="proses.php?tambahjadwal" method="post">
+//                     <div class="form-group">
+                        // <label for="dosen">Dosen:</label>
+                        // <select class="form-control" id="dosen" name="dosen" required>
+                        //     <option value="">Pilih Dosen</option>
+                        //     <?php
+                                                        
+                        //     include "koneksi.php";
+                        //     // Query untuk mengambil nama dosen dari tabel tbl_dosen
+                        //     $query_dosen = "SELECT * FROM tbl_dosen";
+                        //     $result_dosen = mysqli_query($conn, $query_dosen);
+                        //     if ($result_dosen) {
+                        //         while ($row_dosen = mysqli_fetch_assoc($result_dosen)) {
+                        //             // Membuat option dengan nama dosen
+                        //             echo "<option value='" . $row_dosen['kd_dosen'] . "'>" . $row_dosen['nama'] . "</option>";
+                        //         }
+                        //         mysqli_free_result($result_dosen);
+                        //     }
+                        //     ?>
+                        // </select>
+//                     </div>
+//                     <div class="form-group">
+//                         <label for="matkul">Matkul:</label>
+//                         <select class="form-control" id="matkul" name="matkul" required>
+//                             <option value="">Pilih Matkul</option>
+//                             <?php
+//                             // Query untuk mengambil nama matkul dari tabel tbl_matkul
+//                             $query_matkul = "SELECT * FROM tbl_matkul";
+//                             $result_matkul = mysqli_query($conn, $query_matkul);
+//                             if ($result_matkul) {
+//                                 while ($row_matkul = mysqli_fetch_assoc($result_matkul)) {
+//                                     // Membuat option dengan nama matkul
+//                                     echo "<option value='" . $row_matkul['kd_matkul'] . "'>" . $row_matkul['nama'] . "</option>";
+//                                 }
+//                                 mysqli_free_result($result_matkul);
+//                             }
+//                             ?>
+//                         </select>
+//                     </div>
+
+//                         <div class="form-group">
+//                             <label for="waktu">Waktu:</label>
+//                             <input type="text" class="form-control" id="waktu" name="waktu" required>
+//                         </div>
+//                         <div class="form-group">
+//                             <label for="ruang">Ruang:</label>
+//                             <input type="text" class="form-control" id="ruang" name="ruang" required>
+//                         </div>
+//                         <button type="submit" class="btn btn-primary btn-user btn-block">Tambah Data</button>
+//                     </form>
+//                 </div>
+//             </div>
+
+// <?php 
+//     include "footer.php";
+// ?>
