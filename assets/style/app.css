@@ -119,6 +119,6 @@ p {
 @media screen and (max-width: 992px) {
   /* Hero */
   #hero {
-    min-height: calc(100vh - 91px);
+    min-height: 85vh;
   }
 }
