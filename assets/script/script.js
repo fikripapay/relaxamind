@@ -52,7 +52,7 @@ function showLoading() {
     let penanganan = "";
 
     if (score <= 13) {
-      stressLevel = "Rendah";
+      stressLevel = "Ringan";
       alertClass = "alert-success"; // Tingkat stres rendah
       penanganan =
         'Rekomendasi Penanganan <a href="terapi-relaksasi-nafas-dalam.html">Terapi Relaksasi Nafas Dalam</a> dan <a href="terapi-mindfulness.html">Terapi Mindfulness</a>.';
@@ -62,7 +62,7 @@ function showLoading() {
       penanganan =
         'Rekomendasi Penanganan <a href="terapi-butterfly-hug.html">Terapi Butterfly Hug</a> dan <a href="terapi-musik.html">Terapi Musik</a>.';
     } else {
-      stressLevel = "Tinggi";
+      stressLevel = "Berat";
       alertClass = "alert-danger"; // Tingkat stres tinggi
       penanganan = "Rekomendasi Penganan Melakukan Farmakoterapi.";
     }
