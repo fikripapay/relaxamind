@@ -9,7 +9,7 @@
 <footer class="sticky-footer bg-white">
     <div class="container my-auto">
         <div class="copyright text-center my-auto">
-            <span>Copyright &copy; 2024 SMK Tonjong. All Rights Reserved.</span>
+            <span>Copyright &copy; 2024 RelaxaMind. All Rights Reserved.</span>
         </div>
     </div>
 </footer>

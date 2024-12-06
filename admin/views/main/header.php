@@ -77,40 +77,10 @@ $username=strtoupper($_SESSION['username']);
                     MENU
                 </div>
 
-                <!-- Nav Item - Dashboard -->
-                <li class="nav-item">
-                    <a class="nav-link" href="index.php?page=banner">
-                        <i class="fa-solid fa-image"></i>
-                        <span>Banner</span>
-                    </a>
-                </li>
-
-                <!-- Nav Item - Dashboard -->
-                <li class="nav-item">
-                    <a class="nav-link" href="index.php?page=sambutan">
-                        <i class="fa-solid fa-door-open"></i>
-                        <span>Sambutan</span>
-                    </a>
-                </li>
-
-                <li class="nav-item">
-                    <a class="nav-link" href="index.php?page=berita">
-                    <i class="fa-solid fa-newspaper"></i>
-                        <span>Berita</span>
-                    </a>
-                </li>
-
-                <li class="nav-item">
-                    <a class="nav-link" href="index.php?page=galeri">
-                    <i class="fa-solid fa-photo-film"></i>
-                        <span>Galeri</span>
-                    </a>
-                </li>
-
                 <li class="nav-item">
                     <a class="nav-link" href="index.php?page=dataps">
-                    <i class="fa-solid fa-users"></i>
-                        <span>Pengajar & Staff</span>
+                    <i class="fa-solid fa-square-poll-vertical"></i>
+                        <span>Data Hasil Tes</span>
                     </a>
                 </li>
 
@@ -119,9 +89,15 @@ $username=strtoupper($_SESSION['username']);
 
                 <!-- Heading -->
                 <div class="sidebar-heading">
-                    USER
+                    SETTING
                 </div>
             
+                <li class="nav-item">
+                    <a class="nav-link collapsed" href="index.php?page=admin" >
+                        <i class="fas fa-fw fa-wrench"></i>
+                        <span>Users</span>
+                    </a>
+                </li>
                 <li class="nav-item">
                     <a class="nav-link collapsed" href="index.php?page=admin" >
                         <i class="fas fa-fw fa-wrench"></i>
