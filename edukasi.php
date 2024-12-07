@@ -42,7 +42,7 @@ session_start();
     <section
       id="edukasi"
       class="edukasi py-5"
-      style="min-height: calc(100vh - 155px)"
+      style="min-height: calc(100vh - 156px)"
     >
       <div class="container">
         <h2

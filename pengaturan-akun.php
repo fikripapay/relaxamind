@@ -2,63 +2,73 @@
 session_start();
 include "admin/config/database.php";
 
-// Cek apakah pengguna sudah login dengan memeriksa session username
-if (isset($_SESSION['username'])) {
-    // Jika sudah login, redirect ke halaman index.php
-    header("Location: index.php");
+// Cek apakah pengguna sudah login
+if (!isset($_SESSION['username'])) {
+    // Jika belum login, redirect ke halaman login
+    header("Location: masuk.php");
     exit();
 }
 
-if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    if (isset($_POST['submit'])) {
-        // Ambil input dari form
-        $nama = htmlspecialchars(trim($_POST["nama"]));
-        $umur = htmlspecialchars(trim($_POST["umur"]));
-        $jenis_kelamin = trim($_POST["jenis_kelamin"]);
-        $username = htmlspecialchars(trim($_POST["username"]));
-        $password = htmlspecialchars(trim($_POST["password"]));
+$id_users = $_SESSION['id_users']; // Mengambil ID pengguna yang sedang login
 
-        // Validasi input
-        if (empty($nama) || empty($umur) || empty($jenis_kelamin) || empty($username) || empty($password)) {
-            echo "<script>alert('Semua field harus diisi.'); window.location.href = 'daftar.php';</script>";
-            exit;
-        }
+// Query untuk mengambil data pengguna berdasarkan id_users
+$sql = "SELECT * FROM tbl_users WHERE id_users = ?";
+$stmt = $conn->prepare($sql);
+$stmt->bind_param("i", $id_users);
+$stmt->execute();
+$result = $stmt->get_result();
 
-        // Hash password
-        $password_hashed = password_hash($password, PASSWORD_DEFAULT);
+// Cek apakah data pengguna ditemukan
+if ($result->num_rows > 0) {
+    $user = $result->fetch_assoc();
 
-        // Periksa apakah username sudah ada
-        $sql_check = "SELECT username FROM tbl_users WHERE username = ?";
-        $stmt_check = $conn->prepare($sql_check);
-        $stmt_check->bind_param("s", $username);
-        $stmt_check->execute();
-        $stmt_check->store_result();
+    // Ambil data pengguna
+    $username = $user['username'];
+    $nama = $user['nama'];
+    $umur = $user['umur'];
+    $jenis_kelamin = $user['jenis_kelamin'];
+} else {
+    echo "Pengguna tidak ditemukan.";
+    exit();
+}
 
-        if ($stmt_check->num_rows > 0) {
-            echo "<script>alert('Username sudah digunakan.'); window.location.href = 'daftar.php';</script>";
-            exit;
-        }
-        $stmt_check->close();
-
-        // Masukkan data ke database
-        $sql_insert = "INSERT INTO tbl_users (nama, umur, jenis_kelamin, username, password) VALUES (?, ?, ?, ?, ?)";
-        $stmt_insert = $conn->prepare($sql_insert);
-        $stmt_insert->bind_param("sisss", $nama, $umur, $jenis_kelamin, $username, $password_hashed);
-
-        if ($stmt_insert->execute()) {
-            echo "<script>alert('Pendaftaran berhasil! Silakan masuk.'); window.location.href = 'masuk.php';</script>";
+// Proses jika form disubmit
+if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['submit'])) {
+    $nama = trim($_POST["nama"]);
+    $umur = trim($_POST["umur"]);
+    $jenis_kelamin = $_POST["jenis_kelamin"];
+    $password = $_POST["password"];
+    
+    // Validasi input
+    if (empty($nama) || empty($umur) || empty($jenis_kelamin)) {
+        echo "<script>alert('Semua kolom harus diisi kecuali password.');</script>";
+    } else {
+        if (!empty($password)) {
+            // Jika password diisi, hash password dan update
+            $password_hash = password_hash($password, PASSWORD_DEFAULT);
+            $update_sql = "UPDATE tbl_users SET nama = ?, umur = ?, jenis_kelamin = ?, password = ? WHERE id_users = ?";
+            $stmt = $conn->prepare($update_sql);
+            $stmt->bind_param("ssssi", $nama, $umur, $jenis_kelamin, $password_hash, $id_users);
         } else {
-            echo "<script>alert('Pendaftaran gagal. Silakan coba lagi.'); window.location.href = 'daftar.php';</script>";
+            // Jika password kosong, update tanpa mengubah password
+            $update_sql = "UPDATE tbl_users SET nama = ?, umur = ?, jenis_kelamin = ? WHERE id_users = ?";
+            $stmt = $conn->prepare($update_sql);
+            $stmt->bind_param("sssi", $nama, $umur, $jenis_kelamin, $id_users);
         }
-        $stmt_insert->close();
+        
+        if ($stmt->execute()) {
+            echo "<script>alert('Data berhasil diperbarui.'); window.location.href = 'index.php';</script>";
+        } else {
+            echo "<script>alert('Terjadi kesalahan. Silakan coba lagi.');</script>";
+        }
     }
 }
-?>
 
+?>
 
 <!DOCTYPE html>
 <html lang="id">
-<head>
+  <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>RelaxaMind</title>
@@ -68,23 +78,25 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-        href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&display=swap"
-        rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&display=swap"
+      rel="stylesheet"
     />
 
     <!-- Bootstrap CSS -->
     <link
-        href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
-        rel="stylesheet"
-        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
-        crossorigin="anonymous"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
+      crossorigin="anonymous"
     />
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
 
+    <!-- Style AOS -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+
     <!-- My CSS -->
     <link rel="stylesheet" href="assets/style/app.css" />
-    
-    <!-- My CSS -->
+
     <style>
         body {
             font-family: "Poppins", sans-serif;
@@ -95,15 +107,19 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             color: #858796;
         }
     </style>
-</head>
-<body>
-    <?php include 'includes/navbar.php'; ?>
+  </head>
 
-    <div class="container py-5 d-flex flex-column justify-content-center">
+  <body>
+  <?php include 'includes/navbar.php'; ?>
+  
+  <div class="container py-5 d-flex flex-column justify-content-center">
         <div class="row justify-content-center">
             <div class="col-10 col-md-8 col-lg-4 py-4 rounded bg-white border-top border-primary">
-                <h4 class="pb-4 fw-normal">Daftar</h4>
                 <form action="" method="post">
+                    <!-- Hidden Field for ID and Username -->
+                    <input type="hidden" name="id_users" value="<?php echo $id_users; ?>">
+                    <input type="hidden" name="username" value="<?php echo $username; ?>">
+
                     <div class="mb-3">
                         <label for="nama" class="form-label">Nama Lengkap</label>
                         <input
@@ -111,6 +127,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                             class="form-control"
                             id="nama"
                             name="nama"
+                            value="<?php echo $nama; ?>"
                             autocomplete="off"
                             required
                         />
@@ -122,6 +139,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                             class="form-control"
                             id="umur"
                             name="umur"
+                            value="<?php echo $umur; ?>"
                             autocomplete="off"
                             required
                         />
@@ -129,13 +147,13 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                     <div class="mb-3">
                         <label class="form-label">Jenis Kelamin</label>
                         <div class="form-check">
-                            <input class="form-check-input" type="radio" name="jenis_kelamin" id="lakilaki" value="Laki-laki" required>
+                            <input class="form-check-input" type="radio" name="jenis_kelamin" id="lakilaki" value="Laki-laki" <?php echo ($jenis_kelamin == "Laki-laki" ? "checked" : ""); ?> required>
                             <label class="form-check-label" for="lakilaki">
                                 Laki-laki
                             </label>
                         </div>
                         <div class="form-check">
-                            <input class="form-check-input" type="radio" name="jenis_kelamin" id="perempuan" value="Perempuan" required>
+                            <input class="form-check-input" type="radio" name="jenis_kelamin" id="perempuan" value="Perempuan" <?php echo ($jenis_kelamin == "Perempuan" ? "checked" : ""); ?> required>
                             <label class="form-check-label" for="perempuan">
                                 Perempuan
                             </label>
@@ -148,8 +166,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                             class="form-control"
                             id="username"
                             name="username"
+                            value="<?php echo $username; ?>"
                             autocomplete="off"
                             required
+                            readonly
                         />
                     </div>
                     <div class="mb-3">
@@ -161,7 +181,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                                 id="password"
                                 name="password"
                                 autocomplete="off"
-                                required
                                 minlength="8"
                             />
                             <button
@@ -173,29 +192,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                             </button>
                         </div>
                     </div>
-                    <button type="submit" name="submit" class="btn btn-primary">Daftar</button>
-                    <p></p>
-                    <p>Sudah punya akun? <a href="masuk.php">Masuk sekarang</a></p>
-                    <p>Kembali ke <a href="index.php">Beranda</a></p>
+                    <button type="submit" name="submit" class="btn btn-primary">Simpan</button>
                 </form>
             </div>
         </div>
     </div>
-
-    <!-- Start Footer -->
-    <footer class="footer text-center">
-      <p class="text-white">
-        Copyright &copy; 2024 RelaxaMind. All Rights Reserved.
-      </p>
-    </footer>
-    <!-- End Footer -->
-
-    <!-- Bootstrap Script -->
-    <script
-      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
-      integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
-      crossorigin="anonymous"
-    ></script>
 
     <!-- Script for toggle functionality -->
     <script>
@@ -215,5 +216,5 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                     : '<i class="bi bi-eye-slash"></i>';
         });
     </script>
-</body>
-</html>
+
+  <?php include 'includes/footer.php'; ?>

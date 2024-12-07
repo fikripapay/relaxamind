@@ -1,13 +1,68 @@
 <?php
 // Mulai sesi untuk mengecek status login
 session_start();
+require_once 'admin/config/database.php';
 
 // Cek apakah pengguna belum login dengan memeriksa session username
 if (!isset($_SESSION['username'])) {
-  // Jika belum login, tampilkan alert dan redirect ke halaman index.php
   echo "<script>alert('Untuk memulai tes, Anda harus masuk terlebih dahulu.'); window.location.href = 'masuk.php';</script>";
   exit();
 }
+
+// Ambil ID user dari session
+$id_users = $_SESSION['id_users'];
+
+// Memeriksa apakah form telah disubmit
+if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+  $total_score = 0;
+  $questions = ['q1', 'q2', 'q3', 'q4', 'q5', 'q6', 'q7', 'q8', 'q9', 'q10'];
+  $all_answered = true; // Flag untuk mengecek apakah semua pertanyaan sudah dijawab
+
+  // Loop untuk menghitung skor berdasarkan jawaban
+  foreach ($questions as $question) {
+    if (isset($_POST[$question])) {
+      $total_score += intval($_POST[$question]);
+    } else {
+      // Jika ada pertanyaan yang tidak dijawab
+      $all_answered = false;
+    }
+  }
+
+  if (!$all_answered) {
+    // Jika ada pertanyaan yang belum dijawab
+    $error = "Harap jawab semua pertanyaan!";
+  } else {
+    // Menentukan tingkat stres berdasarkan skor
+    $stress_level = '';
+    if ($total_score <= 13) {
+      $stress_level = "Ringan";
+      $alert_class = 'success';
+      $description = 'Rekomendasi Penanganan: <a href="terapi-relaksasi-nafas-dalam.html">Terapi Relaksasi Nafas Dalam</a> dan <a href="terapi-mindfulness.html">Terapi Mindfulness</a>.';
+    } elseif ($total_score <= 26) {
+      $stress_level = "Sedang";
+      $alert_class = 'warning';
+      $description = 'Rekomendasi Penanganan: <a href="terapi-butterfly-hug.html">Terapi Butterfly Hug</a> dan <a href="terapi-musik.html">Terapi Musik</a>.';
+    } else {
+      $stress_level = "Berat";
+      $alert_class = 'danger';
+      $description = 'Rekomendasi Penanganan: Disarankan melakukan farmakoterapi dengan konsultasi ke profesional kesehatan.';
+    }
+
+    // Jika tidak ada error, simpan hasilnya ke database
+    if (!isset($error)) {
+      $stmt = $conn->prepare("INSERT INTO stress_test_results (id_users, score, stress_level) VALUES (?, ?, ?)");
+      $stmt->bind_param("iis", $id_users, $total_score, $stress_level);
+      if ($stmt->execute()) {
+        $result_message = "Data berhasil disimpan!";
+      } else {
+        $result_message = "Gagal menyimpan data!";
+      }
+      $stmt->close();
+    }
+  }
+}
+
+$conn->close();
 ?>
 
 <!DOCTYPE html>
@@ -58,13 +113,14 @@ if (!isset($_SESSION['username'])) {
           data-aos="fade-up"
           data-aos-duration="1000"
         >
-          PENGUKURAN TINGKAT STRESS
+          PENGUKURAN TINGKAT STRES
         </h1>
         <form
           id="stressForm"
           class="row col-md-6 m-auto mt-4"
           data-aos="fade-up"
           data-aos-duration="1000"
+          method="POST"
         >
           <div class="q1 border rounded py-3">
             <p>
@@ -707,9 +763,9 @@ if (!isset($_SESSION['username'])) {
             </div>
           </div>
           <button
-            type="button"
+            type="submit"
             class="btn btn-primary d-inline mt-3 col-3 col-md-2"
-            onclick="showLoading()"
+            onclick="showLoading(event)"
           >
             Submit
           </button>
@@ -726,24 +782,82 @@ if (!isset($_SESSION['username'])) {
         </div>
 
         <!-- Output Hasil -->
-        <div id="result" class="mt-4 d-none col-md-6 mx-auto">
-          <div class="alert" role="alert">
-            <h4 class="alert-heading" id="result-title">Hasil Tes</h4>
-            <p id="result-text">
-              Skor total Anda adalah <strong id="score">0</strong>. Tingkat
-              stres Anda: <strong id="stress-level">Rendah</strong>.
-            </p>
-            <hr />
-            <p>
-              Jaga kesehatan mental Anda, dan tetaplah tenang dalam menghadapi
-              situasi.
-            </p>
-            <p class="mb-0" id="penanganan"></p>
-            <p></p>
+        <?php if (isset($result_message)) { ?>
+          <div id="result" class="mt-4 col-md-6 mx-auto">
+            <div class="alert alert-<?php echo $alert_class; ?>" role="alert">
+              <h4 class="alert-heading">Hasil Tes</h4>
+              <p>Nilai total Anda adalah <strong><?php echo $total_score ?></strong>. <br> Tingkat stres Anda: <strong><?php echo $stress_level ?></strong>.</p>
+              <hr />
+              <p><?php echo $description ?></p>
+            </div>
           </div>
-        </div>
+        <?php } elseif (isset($error)) { ?>
+          <div id="error" class="mt-4 col-md-6 mx-auto">
+            <div class="alert alert-danger" role="alert">
+              <h4 class="alert-heading">Error!</h4>
+              <p><?php echo $error; ?></p>
+            </div>
+          </div>
+        <?php } ?>
       </div>
     </section>
     <!-- End Tess Section -->
 
-    <?php include 'includes/footer.php'; ?>
+    <footer class="footer text-center">
+      <p class="text-white">
+        Copyright &copy; 2024 RelaxaMind. All Rights Reserved.
+      </p>
+    </footer>
+    <!-- End Footer -->
+
+    <!-- Bootstrap Script -->
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+      crossorigin="anonymous"
+    ></script>
+
+    <!-- Script AOS -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
+    <script>
+      AOS.init();
+    </script>
+
+    <script>
+      // Fungsi untuk menampilkan animasi loading dan validasi sebelum submit
+      function showLoading(event) {
+        event.preventDefault(); // Mencegah form disubmit langsung
+
+        // Validasi untuk memastikan semua pertanyaan terjawab
+        const questions = ['q1', 'q2', 'q3', 'q4', 'q5', 'q6', 'q7', 'q8', 'q9', 'q10'];
+        let allAnswered = true;
+
+        // Memeriksa setiap pertanyaan apakah sudah dijawab
+        questions.forEach(function(question) {
+          if (!document.querySelector(`input[name="${question}"]:checked`)) {
+            allAnswered = false;
+          }
+        });
+
+        if (!allAnswered) {
+          // Jika ada pertanyaan yang belum dijawab, tampilkan alert dan jangan lanjutkan ke proses submit
+          alert("Harap jawab semua pertanyaan!");
+          return; // Menghentikan pengiriman form
+        }
+
+        // Jika semua pertanyaan dijawab, tampilkan animasi loading
+        const loadingDiv = document.getElementById("loading");
+        const form = document.getElementById("stressForm");
+
+        loadingDiv.classList.remove("d-none"); // Menampilkan animasi loading
+
+        // Menunggu 2 detik sebelum submit form
+        setTimeout(function() {
+          form.submit(); // Mengirim form setelah animasi selesai
+        }, 2000);
+      }
+    </script>
+
+  </body>
+</html>

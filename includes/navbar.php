@@ -68,7 +68,7 @@
                     class="dropdown-item my-dropdown"
                     style="color: #005f73"
                     href="pengukuran-tingkat-stress.php"
-                    >Pengukuran Tingkat Stress</a
+                    >Pengukuran Tingkat Stres</a
                   >
                 </li>
               </ul>
@@ -141,14 +141,14 @@
                   data-bs-toggle="dropdown"
                   aria-expanded="false"
                 >
-                <?php echo $_SESSION['nama']; ?>
+                Halo👋 <?php echo $_SESSION['nama']; ?>
                 </a>
                 <ul class="dropdown-menu">
                   <li>
                     <a
                       class="dropdown-item my-dropdown"
                       style="color: #005f73"
-                      href="terapi-relaksasi-nafas-dalam.php"
+                      href="riwayat-tes.php"
                       >Riwayat Tes</a
                     >
                   </li>
@@ -156,7 +156,7 @@
                     <a
                       class="dropdown-item my-dropdown"
                       style="color: #005f73"
-                      href="terapi-mindfulness.php"
+                      href="pengaturan-akun.php"
                       >Pengaturan Akun</a
                     >
                   </li>

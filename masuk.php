@@ -1,6 +1,5 @@
 <?php
 session_start();
-include "admin/config/database.php";
 
 // Cek apakah pengguna sudah login dengan memeriksa session username
 if (isset($_SESSION['username'])) {
@@ -8,6 +7,8 @@ if (isset($_SESSION['username'])) {
     header("Location: index.php");
     exit();
 }
+
+include "admin/config/database.php";
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     if (isset($_POST['submit'])) {
@@ -35,6 +36,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             // Verifikasi password
             if (password_verify($password, $passdatabase)) {
                 // Set session
+                $_SESSION['id_users'] = $user['id_users']; 
                 $_SESSION["username"] = $user['username'];
                 $_SESSION['nama'] = $user['nama'];
 
@@ -51,14 +53,12 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 }
 ?>
 
-
-
 <!DOCTYPE html>
 <html lang="id">
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>RelaxaMind | Masuk</title>
+    <title>RelaxaMind</title>
     <link rel="icon" href="assets/img/logo/logo.png" />
 
     <!-- Fonts -->
@@ -79,6 +79,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
 
     <!-- My CSS -->
+    <link rel="stylesheet" href="assets/style/app.css" />
+    
+    <!-- My CSS -->
     <style>
         body {
             font-family: "Poppins", sans-serif;
@@ -91,7 +94,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     </style>
 </head>
 <body>
-    <div class="container vh-100 d-flex flex-column justify-content-center">
+    <?php include 'includes/navbar.php'; ?>
+
+    <div class="container py-5 d-flex flex-column justify-content-center" style="min-height: calc(100vh - 156px)">
         <div class="row justify-content-center">
             <div class="col-10 col-md-8 col-lg-4 py-4 rounded bg-white border-top border-primary">
                 <h4 class="pb-4 fw-normal">Masuk</h4>
@@ -135,6 +140,21 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             </div>
         </div>
     </div>
+
+    <!-- Start Footer -->
+    <footer class="footer text-center">
+      <p class="text-white">
+        Copyright &copy; 2024 RelaxaMind. All Rights Reserved.
+      </p>
+    </footer>
+    <!-- End Footer -->
+
+    <!-- Bootstrap Script -->
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+      crossorigin="anonymous"
+    ></script>
 
     <!-- Script for toggle functionality -->
     <script>
