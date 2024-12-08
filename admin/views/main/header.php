@@ -3,10 +3,11 @@ ob_start();
 session_start();
 
 // Periksa apakah pengguna sudah login atau belum
-if (!isset($_SESSION['username'])) {
-    header("Location: login.php");
+if (!isset($_SESSION['username']) || $_SESSION['username'] !== 'admin') {
+    header("Location: ../masuk.php");
     exit();
 }
+
 $username=strtoupper($_SESSION['username']);
 ?>
 <!DOCTYPE html>
@@ -21,6 +22,7 @@ $username=strtoupper($_SESSION['username']);
     <meta name="author" content="">
 
     <title>Dashboard</title>
+    <link rel="icon" href="../assets/img/logo/logo.png" />
 
     <!-- Custom fonts for this template -->
     <link href="../assets/fontawesome/css/all.min.css" rel="stylesheet" type="text/css">
@@ -78,44 +80,19 @@ $username=strtoupper($_SESSION['username']);
                 </div>
 
                 <li class="nav-item">
-                    <a class="nav-link" href="index.php?page=dataps">
+                    <a class="nav-link" href="index.php?page=datates">
                     <i class="fa-solid fa-square-poll-vertical"></i>
-                        <span>Data Hasil Tes</span>
-                    </a>
-                </li>
-
-                <!-- Divider -->
-                <hr class="sidebar-divider">
-
-                <!-- Heading -->
-                <div class="sidebar-heading">
-                    SETTING
-                </div>
-            
-                <li class="nav-item">
-                    <a class="nav-link collapsed" href="index.php?page=admin" >
-                        <i class="fas fa-fw fa-wrench"></i>
-                        <span>Users</span>
+                        <span>Data Riwayat Tes</span>
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link collapsed" href="index.php?page=admin" >
+                    <a class="nav-link collapsed" href="index.php?page=datausers" >
                         <i class="fas fa-fw fa-wrench"></i>
-                        <span>Admin</span>
+                        <span>Data Pengguna</span>
                     </a>
                 </li>
 
-            <?php } else {?>           
-                    <!-- Nav Item - Dashboard -->
-                    <li class="nav-item">
-                        <a class="nav-link" href="index.php?page=rekap">
-                            <i class="fas fa-fw fa-tachometer-alt"></i>
-                            <span>Rekap Data</span>
-                        </a>
-                    </li>
-                <?php
-                }
-            ?>
+            <?php } ?>
             
 
            

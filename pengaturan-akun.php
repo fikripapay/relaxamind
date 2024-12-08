@@ -173,7 +173,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['submit'])) {
                         />
                     </div>
                     <div class="mb-3">
-                        <label for="password" class="form-label">Password</label>
+                        <label for="password" class="form-label">Password Baru</label>
                         <div class="input-group">
                             <input
                                 type="password"
@@ -182,6 +182,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['submit'])) {
                                 name="password"
                                 autocomplete="off"
                                 minlength="8"
+                                placeholder="Opsional"
                             />
                             <button
                                 class="btn btn-outline-secondary"

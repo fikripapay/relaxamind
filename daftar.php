@@ -15,7 +15,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $nama = htmlspecialchars(trim($_POST["nama"]));
         $umur = htmlspecialchars(trim($_POST["umur"]));
         $jenis_kelamin = trim($_POST["jenis_kelamin"]);
-        $username = htmlspecialchars(trim($_POST["username"]));
+        $username = strtolower(htmlspecialchars(trim($_POST["username"])));
         $password = htmlspecialchars(trim($_POST["password"]));
 
         // Validasi input
@@ -142,18 +142,24 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                         </div>
                     </div>
                     <div class="mb-3">
-                        <label for="username" class="form-label">Username</label>
+                        <label for="username" class="form-label">Username <a href="#" class="text-decoration-none" data-bs-toggle="popover"
+                        data-bs-title="Username"
+                        data-bs-content="Username harus terdiri dari minimal 6 huruf kecil, tanpa spasi atau simbol."><sup class="text-secondary">?</sup></a></label>
                         <input
                             type="text"
                             class="form-control"
                             id="username"
                             name="username"
                             autocomplete="off"
+                            pattern="[a-z0-9]+"
+                            minlength="6"
                             required
                         />
                     </div>
                     <div class="mb-3">
-                        <label for="password" class="form-label">Password</label>
+                        <label for="password" class="form-label">Password <a href="#" class="text-decoration-none" data-bs-toggle="popover"
+                        data-bs-title="Password"
+                        data-bs-content="Minimal panjang password adalah 8 dan tidak boleh mengandung spasi."><sup class="text-secondary">?</sup></a></label>
                         <div class="input-group">
                             <input
                                 type="password"
@@ -201,6 +207,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     <script>
         const togglePassword = document.querySelector("#togglePassword");
         const passwordField = document.querySelector("#password");
+
+        const popoverTriggerList = document.querySelectorAll('[data-bs-toggle="popover"]')
+        const popoverList = [...popoverTriggerList].map(popoverTriggerEl => new bootstrap.Popover(popoverTriggerEl))
 
         togglePassword.addEventListener("click", function () {
             // Toggle the type attribute

@@ -145,6 +145,15 @@
                 </a>
                 <ul class="dropdown-menu">
                   <li>
+                  <?php if (isset($_SESSION['username']) && $_SESSION['username'] === 'admin'): ?>
+                    <a
+                      class="dropdown-item my-dropdown"
+                      style="color: #005f73"
+                      href="admin"
+                    >Dashboard</a>
+                  <?php endif; ?>
+                  </li>
+                  <li>
                     <a
                       class="dropdown-item my-dropdown"
                       style="color: #005f73"
