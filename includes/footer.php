@@ -1,7 +1,7 @@
 <!-- Start Footer -->
 <footer class="footer text-center">
       <p class="text-white">
-        Copyright &copy; 2024 RelaxaMind. All Rights Reserved.
+        Copyright &copy; 2025 RelaxaMind. All Rights Reserved.
       </p>
     </footer>
     <!-- End Footer -->

@@ -33,7 +33,7 @@ CREATE TABLE `stress_test_results` (
   `score` int NOT NULL,
   `stress_level` varchar(50) NOT NULL,
   `test_date` datetime DEFAULT CURRENT_TIMESTAMP
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Dumping data for table `stress_test_results`
@@ -77,7 +77,7 @@ CREATE TABLE `tbl_users` (
   `jenis_kelamin` varchar(20) NOT NULL,
   `username` varchar(50) NOT NULL,
   `password` varchar(200) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Dumping data for table `tbl_users`
