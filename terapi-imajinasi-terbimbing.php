@@ -55,7 +55,7 @@ session_start();
         </h1>
         <div class="row mt-5 justify-content-between">
           <div
-            class="col-lg-6 mx-auto"
+            class="col-lg-7 mx-auto"
             data-aos="fade-up"
             data-aos-duration="1000"
             data-aos-easing="ease-in-sine"
@@ -66,6 +66,24 @@ session_start();
               alt="Pengertian Terapi Imajinasi Terbimbing"
               class="img-fluid shadow rounded"
             />
+          </div>
+          <div
+            class="col-lg-7 mt-4 mx-auto"
+            data-aos="fade-up"
+            data-aos-duration="1000"
+            data-aos-easing="ease-in-sine"
+            data-aos-delay="500"
+          >
+            <iframe
+              class="w-100 rounded"
+              height="315"
+              src="https://www.youtube.com/embed/oW4IpPgd-wM?si=WddwlTjNzOLhAnbE"
+              title="YouTube video player"
+              frameborder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              referrerpolicy="strict-origin-when-cross-origin"
+              allowfullscreen
+            ></iframe>
           </div>
         </div>
       </div>
